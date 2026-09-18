@@ -7,7 +7,7 @@ function valid(p){
   if(!p||typeof p!=='object'||!p.name||!p.server||!p.port||!p.type)return false;
   const port=Number(p.port); if(!Number.isInteger(port)||port<1||port>65535)return false;
   const t=String(p.type).toLowerCase();
-  if(['vless','vmess'].includes(t)&&p.uuid&&!/^[0-9a-fA-F-]{32,36}$/.test(String(p.uuid)))return false;
+  if(['vless','vmess'].includes(t)&&(!p.uuid||!/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/.test(String(p.uuid))))return false;
   if(t==='shadowsocks'&&!p.cipher)return false;
   if(t==='trojan'&&!p.password)return false;
   if(p['reality-opts']){
@@ -135,7 +135,7 @@ try{
    const repNode=reputation.nodes?.[r.fingerprint];
    const currentOk=r.rounds>=3 && currentRate(r)>=0.9 &&
      currentLatency(r)<=2500 && Number(r.p95Latency||Infinity)<=5000;
-   if(!currentOk || repNode?.status==='quarantine')return false;
+   if(!currentOk || repNode?.status==='quarantine' || repNode?.status==='degraded')return false;
    // Cold start: three successful observations are enough for a conservative
    // first-run best pool; historical reputation takes over afterwards.
    if(m.tests===0)return r.successes>=3;
@@ -151,7 +151,14 @@ try{
   const long=Math.max(0,Math.min(1,m?.weightedRate??m?.longRate??0));
   const latency=m?.avg?Math.max(0,1-Math.min(1,m.avg/5000)):0;
   const p95=m?.p95?Math.max(0,1-Math.min(1,m.p95/10000)):0;
-  return Math.round(100*(0.4*success+0.3*long+0.2*latency+0.1*p95));
+  const sourceList=Array.isArray(r.sources)?r.sources:[r.source].filter(Boolean);
+  const sourceRates=sourceList.map(s=>Number(sourceQuality.get(s)?.nodeSuccessRate));
+  const validSourceRates=sourceRates.filter(Number.isFinite);
+  const sourceQualityScore=validSourceRates.length?validSourceRates.reduce((a,b)=>a+b,0)/validSourceRates.length:0;
+  // Provenance is only a small confidence signal: multiple public sources
+  // may copy one another, so it must never dominate actual health tests.
+  const provenance=Math.min(1,Math.max(0,(sourceList.length-1)/3));
+  return Math.round(100*(0.35*success+0.30*long+0.15*latency+0.10*p95+0.07*sourceQualityScore+0.03*provenance));
  }
  const pick=set=>clean.filter(p=>set.has(p.name));
  fs.writeFileSync('subscriptions/google.yaml',yaml.dump({proxies:pick(google)},{lineWidth:-1,noRefs:true}));
