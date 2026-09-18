@@ -27,6 +27,16 @@ async function main(){
  let history=[]; try{history=JSON.parse(fs.readFileSync('data/history.json','utf8'))}catch{}
  history.push(report); history=history.slice(-30);
  fs.writeFileSync('data/history.json',JSON.stringify(history,null,2));
+ const now=Date.now(), current=new Map(rows.map(r=>[r.fingerprint,r]));
+ const reputation={generatedAt:new Date().toISOString(),nodes:{}};
+ for(const [id,r] of current){
+   const past=history.flatMap(b=>b.results||[]).filter(x=>x.fingerprint===id);
+   const tests=past.reduce((n,x)=>n+x.rounds,0), successes=past.reduce((n,x)=>n+x.successes,0);
+   const failures=tests-successes, recent=past.slice(-6), recentFailures=recent.reduce((n,x)=>n+(x.rounds-x.successes),0);
+   const status=recentFailures>=6?'quarantine':(recentFailures>=3?'degraded':'active');
+   reputation.nodes[id]={name:r.name,longTermSuccessRate:tests?successes/tests:0,totalTests:tests,totalFailures:failures,recentFailures,status,lastSeen:new Date().toISOString()};
+ }
+ fs.writeFileSync('data/reputation.json',JSON.stringify(reputation,null,2));
  console.log('tested:',rows.length,'stable:',rows.filter(x=>x.successRate>=.8).length,'best:',rows.filter(x=>x.successRate>=.9&&x.p95Latency<=5000&&x.avgLatency<=2500).length);
 }
 main().catch(e=>{console.error(e);process.exit(1)});
