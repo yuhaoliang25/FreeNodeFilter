@@ -244,10 +244,13 @@ try{
      const rep=sourceReputation.sources?.[id];
      if(rep){
        s.reputation=rep.weightedNodeSuccessRate;
-       s.status=rep.status==='trusted'?'trusted':rep.status==='degraded'?'weak':rep.status==='weak'?'weak':(s.status==='candidate'?'normal':s.status);
-       s.lastSeen=new Date().toISOString();
-       s.fetchFailures=0;
-     }else if(fetched.has(id)){
+       // Do not resurrect a source that failed to fetch in this run merely
+       // because its historical reputation is still present.
+       if(!s.fetchFailures){
+         s.status=rep.status==='trusted'?'trusted':rep.status==='degraded'?'weak':rep.status==='weak'?'weak':(s.status==='candidate'?'normal':s.status);
+       }
+     }
+     if(fetched.has(id)){
        s.fetchFailures=0;
        s.lastSeen=new Date().toISOString();
      }
