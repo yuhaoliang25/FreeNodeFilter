@@ -120,3 +120,20 @@ Source 可能主动淘汰旧节点、寻找更好的节点。
 从最新 main 分支继续。
 
 下一阶段重点是让 NodeProbe 真正拥有“节点记忆”，而不是每轮重新从 Source 开始。代码已完成首次接入，等待下一次 GitHub Actions 实际运行验证。
+
+
+## 来源信誉与节点信誉分离
+
+本阶段明确来源信誉的职责：
+- 来源信誉评价的是“来源作为长期侦察渠道是否值得继续使用”，不是评价某个具体节点。
+- 主要用于发现两类需要降级/淘汰的来源：长期不再更新的来源，以及持续提供低质量、节点快速失效的来源。
+- 来源高频轮换本身不视为负面；轮换来源如果持续提供高质量节点，可以保持正常/可信状态。
+- source-reputation 现在记录 freshness（lastObservedAt/stalenessDays）、质量，以及 source-evolution 的轮换观测，但轮换率不直接扣分。
+- source-reputation 不再直接进入单节点 qualityScore；节点最终质量主要由 NodeProbe 自己的当前/历史健康证据决定。
+- 来源信誉仍然用于 Source lifecycle / probe frequency，避免来源长期不更新却一直按正常来源处理。
+
+当前状态：
+- Node Reputation：评价节点本身。
+- Node Pool：维护 NodeProbe 自有节点资产及生命周期。
+- Source Reputation：评价来源渠道。
+- Source Evolution：观察来源的节点集合变化，暂不直接惩罚来源。
