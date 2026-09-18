@@ -9,6 +9,8 @@ const STAGE1_LIMIT=Number(process.env.STAGE1_LIMIT||1500);
 const STAGE2_LIMIT=Number(process.env.STAGE2_LIMIT||300);
 const STAGE3_LIMIT=Number(process.env.STAGE3_LIMIT||100);
 const FAST_TIMEOUT=Number(process.env.FAST_TIMEOUT||5000);
+const BATCH_SIZE=Number(process.env.TEST_BATCH_SIZE||250);
+const BATCH_PAUSE=Number(process.env.TEST_BATCH_PAUSE_MS||500);
 async function json(url){const r=await fetch(url);const t=await r.text();if(!r.ok)throw new Error('HTTP '+r.status+' '+t.slice(0,300));return JSON.parse(t)}
 async function main(){
  const all={};
@@ -115,7 +117,7 @@ async function main(){
  let history=[]; try{history=JSON.parse(fs.readFileSync('data/history.json','utf8'))}catch{}
  history.push(report); history=history.slice(-30);
  fs.writeFileSync('data/history.json',JSON.stringify(history,null,2));
- const now=Date.now(), current=new Map(rows.map(r=>[r.fingerprint,r]));
+ const historyNow=Date.now(), current=new Map(rows.map(r=>[r.fingerprint,r]));
  const reputation={generatedAt:new Date().toISOString(),nodes:{}};
  for(const [id,r] of current){
    const past=history.flatMap(b=>b.results||[]).filter(x=>x.fingerprint===id);
