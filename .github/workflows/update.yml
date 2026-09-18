@@ -61,13 +61,19 @@ jobs:
           TEST_EXPECTED: '204'
           GOOGLE_TEST_URL: https://www.google.com/generate_204
         run: node scripts/test-google.js
+      - name: Diagnose failed nodes
+        env:
+          DIAG_LIMIT: '100'
+          DIAG_TIMEOUT: '8000'
+          GOOGLE_TEST_URL: https://www.google.com/generate_204
+        run: node scripts/diagnose-failures.js
       - name: Rebuild filtered subscriptions
         run: node scripts/build-subscriptions.js
       - name: Commit generated subscriptions
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add subscriptions data/candidates.json data/health.json data/history.json data/reputation.json
+          git add subscriptions data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh node candidates"
           git push
