@@ -21,8 +21,6 @@ jobs:
       - name: Fetch public sources
         run: npm run fetch
       - name: Build candidate subscription
-        env:
-          MAX_CANDIDATES: '100000'
         run: npm run build
       - name: Install Mihomo
         env:
@@ -48,19 +46,42 @@ jobs:
           fs.writeFileSync('mihomo/config.yaml',yaml.dump(cfg,{lineWidth:-1,noRefs:true}));
           console.log('nodes:',p.length);
           NODE
+      - name: Validate Mihomo config
+        run: |
+          set -euo pipefail
+          if ! mihomo/mihomo -t -d mihomo -f mihomo/config.yaml > mihomo/config-test.log 2>&1; then
+            cat mihomo/config-test.log
+            exit 1
+          fi
       - name: Start Mihomo
         run: |
           set -euo pipefail
           mihomo/mihomo -d mihomo -f mihomo/config.yaml > mihomo/mihomo.log 2>&1 &
-          echo $! > mihomo/mihomo.pid
-          sleep 5
-          kill -0 $(cat mihomo/mihomo.pid)
+          pid=$!
+          echo "$pid" > mihomo/mihomo.pid
+
+          for i in $(seq 1 30); do
+            if ! kill -0 "$pid" 2>/dev/null; then
+              echo "Mihomo exited during startup (attempt $i). Log:"
+              cat mihomo/mihomo.log || true
+              exit 1
+            fi
+            if curl -fsS --max-time 2 http://127.0.0.1:9090/version > mihomo/version.json 2>/dev/null; then
+              echo "Mihomo API is ready:"
+              cat mihomo/version.json
+              exit 0
+            fi
+            sleep 1
+          done
+
+          echo "Mihomo process is alive but API did not become ready. Log:"
+          cat mihomo/mihomo.log || true
+          exit 1
       - name: Multi-round Google health check
         env:
           TEST_ROUNDS: '3'
           TEST_TIMEOUT: '8000'
           FAST_TIMEOUT: '5000'
-          STAGE1_LIMIT: '100000'
           STAGE2_LIMIT: '300'
           STAGE3_LIMIT: '100'
           TEST_BATCH_SIZE: '250'
@@ -76,8 +97,6 @@ jobs:
           GOOGLE_TEST_URL: https://www.google.com/generate_204
         run: node scripts/diagnose-failures.js
       - name: Rebuild filtered subscriptions
-        env:
-          MAX_CANDIDATES: '100000'
         run: node scripts/build-subscriptions.js
       - name: Commit generated subscriptions
         run: |
