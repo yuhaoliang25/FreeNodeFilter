@@ -71,8 +71,14 @@ function extractSourceUrls(text){
 }
 
 function nextProbe(status,reputation){
-  const hours=status==='trusted'?24:status==='normal'?12:status==='weak'?72:status==='dead'?168:6;
-  if(reputation?.status==='degraded')return new Date(Date.now()+72*3600000).toISOString();
+  const effective=reputation?.status||status;
+  const hours=effective==='trusted'?24
+    :effective==='normal'?12
+    :effective==='weak'?72
+    :effective==='degraded'?72
+    :effective==='stale'?168
+    :effective==='dead'?720
+    :6;
   return new Date(Date.now()+hours*3600000).toISOString();
 }
 function lifecycle(old,rep,fetchOk){
@@ -164,7 +170,15 @@ async function main(){
     if(!s.url)continue;
     const id=s.name||sourceId(s.url);
     const rep=repState.sources?.[id]||repState.sources?.[s.url]||null;
-    if(rep){s.reputation=rep.weightedNodeSuccessRate;s.status=rep.status==='trusted'?'trusted':rep.status==='degraded'?'weak':rep.status==='weak'?'weak':(s.status==='candidate'?'normal':s.status)}
+    if(rep){
+  s.reputation=rep.weightedNodeSuccessRate;
+  s.status=rep.status==='trusted'?'trusted'
+    :rep.status==='degraded'?'weak'
+    :rep.status==='weak'?'weak'
+    :rep.status==='stale'?'stale'
+    :rep.status==='dead'?'dead'
+    :(s.status==='candidate'?'normal':s.status);
+}
     if(!s.status)s.status='candidate';
     if(!s.firstSeen)s.firstSeen=new Date().toISOString();
     if(!s.lastSeen)s.lastSeen=s.firstSeen;
