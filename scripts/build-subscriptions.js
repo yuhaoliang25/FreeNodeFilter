@@ -173,7 +173,7 @@ try{
   const sourceRates=sourceList.map(s=>{const historical=sourceReputation.sources?.[s]?.weightedNodeSuccessRate;return Number.isFinite(Number(historical))?Number(historical):Number(sourceQuality.get(s)?.nodeSuccessRate)});
   const validSourceRates=sourceRates.filter(Number.isFinite),sourceQualityScore=validSourceRates.length?validSourceRates.reduce((a,b)=>a+b,0)/validSourceRates.length:0;
   const provenance=Math.min(1,Math.max(0,(sourceList.length-1)/3));
-  return Math.round(100*(0.35*success+0.30*long+0.15*latency+0.10*p95+0.07*sourceQualityScore+0.03*provenance));
+  return Math.round(100*(0.38*success+0.35*long+0.15*latency+0.09*p95+0.03*provenance));
  }
  const pick=set=>clean.filter(p=>set.has(p.name));
 
@@ -255,11 +255,22 @@ try{
  fs.writeFileSync('data/scores.json',JSON.stringify({generatedAt:new Date().toISOString(),results:scored,sourceQuality:Object.fromEntries(sourceQuality)},null,2));
  const sourceHistory=[];
  try{sourceHistory.push(...JSON.parse(fs.readFileSync('data/source-history.json','utf8')))}catch{}
- sourceHistory.push({generatedAt:new Date().toISOString(),sources:Object.fromEntries(sourceQuality)});
- const sourceRuns=sourceHistory.slice(-30),sourceReputationOut={generatedAt:new Date().toISOString(),sources:{}};
- const sourceNames=new Set(sourceRuns.flatMap(run=>Object.keys(run.sources||{})));
+ const nowIso=new Date().toISOString();
+ sourceHistory.push({generatedAt:nowIso,sources:Object.fromEntries(sourceQuality)});
+ const sourceRuns=sourceHistory.slice(-30),sourceReputationOut={generatedAt:nowIso,sources:{}};
+ const sourceEvolution=(()=>{try{return JSON.parse(fs.readFileSync('data/source-evolution.json','utf8'))}catch{return {runs:[]}}})();
+ const sourceNames=new Set([
+   ...sourceRuns.flatMap(run=>Object.keys(run.sources||{})),
+   ...Object.keys((sourceEvolution.runs?.at(-1)?.sources)||{})
+ ]);
+ const registryState=(()=>{try{return JSON.parse(fs.readFileSync('data/sources.json','utf8'))}catch{return {sources:[]}}})();
+ const registryById=new Map((registryState.sources||[]).map(s=>[s.name||s.url,s]));
  for(const source of sourceNames){
-   const observations=sourceRuns.flatMap(run=>{const x=run.sources?.[source];if(!x)return [];return [{successRate:Number(x.successRate||0),nodeSuccessRate:Number(x.nodeSuccessRate||0),avgLatency:x.avgLatency==null?null:Number(x.avgLatency),nodes:Number(x.nodes||0)}]});
+   const observations=sourceRuns.flatMap(run=>{
+     const x=run.sources?.[source];
+     if(!x)return [];
+     return [{at:run.generatedAt,successRate:Number(x.successRate||0),nodeSuccessRate:Number(x.nodeSuccessRate||0),avgLatency:x.avgLatency==null?null:Number(x.avgLatency),nodes:Number(x.nodes||0)}];
+   });
    const recent=observations.slice(-12),weights=recent.map((_,i)=>i+1),total=weights.reduce((a,b)=>a+b,0);
    const weightedNodeSuccess=total?recent.reduce((s,x,i)=>s+x.nodeSuccessRate*weights[i],0)/total:0;
    const weightedTestSuccess=total?recent.reduce((s,x,i)=>s+x.successRate*weights[i],0)/total:0;
@@ -269,10 +280,40 @@ try{
    const denom=1+(z*z/Math.max(1,posteriorN));
    const wilsonLower=posteriorN>0?Math.max(0,(phat+(z*z/(2*posteriorN))-z*Math.sqrt((phat*(1-phat)/posteriorN)+(z*z/(4*posteriorN*posteriorN))))/denom):0;
    const usable=recent.filter(x=>x.avgLatency!=null),avgLatency=usable.length?Math.round(usable.reduce((s,x)=>s+x.avgLatency,0)/usable.length):null,last=recent.at(-1);
-   const status=recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1)?'degraded':(posteriorN>=10&&wilsonLower<0.35?'weak':(posteriorN>=20&&wilsonLower>=0.70?'trusted':'normal'));
-   sourceReputationOut.sources[source]={runs:observations.length,weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),effectiveNodes:Number(posteriorN.toFixed(2)),effectiveSuccessfulNodes:Number(posteriorS.toFixed(2)),posteriorMean:Number(posteriorMean.toFixed(4)),lowerBound90:Number(wilsonLower.toFixed(4)),avgLatency,currentNodeSuccessRate:last?.nodeSuccessRate??0,currentSuccessRate:last?.successRate??0,currentNodes:last?.nodes??0,status};
+   const lastObservedAt=last?.at||registryById.get(source)?.lastSeen||null;
+   const stalenessDays=lastObservedAt?Math.max(0,(Date.now()-Date.parse(lastObservedAt))/86400000):Infinity;
+   const evolutionRuns=(sourceEvolution.runs||[]).map(run=>run.sources?.[source]).filter(Boolean).slice(-12);
+   const churn=evolutionRuns.filter(x=>x.replacementRate!=null).map(x=>Number(x.replacementRate));
+   const avgReplacementRate=churn.length?churn.reduce((a,b)=>a+b,0)/churn.length:null;
+   const qualityTrend=evolutionRuns.length>=2?Number((Number(evolutionRuns.at(-1).quality||0)-Number(evolutionRuns[0].quality||0)).toFixed(4)):null;
+
+   let status;
+   if(stalenessDays>30)status='dead';
+   else if(stalenessDays>7)status='stale';
+   else if(recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1))status='degraded';
+   else if(posteriorN>=10&&wilsonLower<0.35)status='weak';
+   else if(posteriorN>=20&&wilsonLower>=0.70)status='trusted';
+   else status='normal';
+
+   sourceReputationOut.sources[source]={
+     runs:observations.length,
+     weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),
+     weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),
+     effectiveNodes:Number(posteriorN.toFixed(2)),
+     effectiveSuccessfulNodes:Number(posteriorS.toFixed(2)),
+     posteriorMean:Number(posteriorMean.toFixed(4)),
+     lowerBound90:Number(wilsonLower.toFixed(4)),
+     avgLatency,
+     currentNodeSuccessRate:last?.nodeSuccessRate??0,
+     currentSuccessRate:last?.successRate??0,
+     currentNodes:last?.nodes??0,
+     lastObservedAt,
+     stalenessDays:Number.isFinite(stalenessDays)?Number(stalenessDays.toFixed(2)):null,
+     evolution:{observations:evolutionRuns.length,avgReplacementRate:avgReplacementRate==null?null:Number(avgReplacementRate.toFixed(4)),qualityTrend},
+     status
+   };
  }
- fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
+fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
  fs.writeFileSync('data/source-reputation.json',JSON.stringify(sourceReputationOut,null,2));
  try{
    const registry=JSON.parse(fs.readFileSync('data/sources.json','utf8')),fetched=new Set(raw.map(x=>x.name));
