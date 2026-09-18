@@ -1,0 +1,25 @@
+[
+  {
+    "generatedAt": "2026-09-18T03:26:10.895Z",
+    "sources": {
+      "vxiaov-free-proxies": {
+        "nodes": 28,
+        "successful": 0,
+        "totalTests": 28,
+        "totalSuccesses": 0,
+        "successRate": 0,
+        "nodeSuccessRate": 0,
+        "avgLatency": null
+      },
+      "FreeNodes-clashmeta": {
+        "nodes": 272,
+        "successful": 0,
+        "totalTests": 272,
+        "totalSuccesses": 0,
+        "successRate": 0,
+        "nodeSuccessRate": 0,
+        "avgLatency": null
+      }
+    }
+  }
+]

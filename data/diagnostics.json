@@ -1,0 +1,606 @@
+{
+  "generatedAt": "2026-09-18T03:25:49.444Z",
+  "target": "https://www.google.com/generate_204",
+  "results": {
+    "3ad17876848385a5": {
+      "name": "SS-加拿大>英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "3f246d8859cd44cb": {
+      "name": "VMESS-未知>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "4aa545921011b5ba": {
+      "name": "VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b77b55cf8e50196f": {
+      "name": "SS-阿塞拜疆-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-45.154.204.7:990",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "3e4e605f2b396413": {
+      "name": "SS-英国-NF解锁自制剧-ChatGPT-TikTok-146.19.49.251:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "ad2a71af935ea547": {
+      "name": "VMESS-加拿大-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-15.235.41.200:80",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "a04df7dfda883a64": {
+      "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-71.19.148.143:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6f0437d230699990": {
+      "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-38.92.10.226:45979",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "13c130ea11e9d0ee": {
+      "name": "SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "8caa7eee1de7bb38": {
+      "name": "VMESS-加拿大-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-51.79.102.253:80",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b0ae8afaf908660e": {
+      "name": "SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.151.182.253:8080",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "140a9851a2c8e540": {
+      "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-92.118.112.101:9483",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "eb068dae5bb6971b": {
+      "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-15.204.247.49:12000",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "e50578946c82df4d": {
+      "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-pupas-shirting-unsung.freesocks.work:443",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "0302b8744e7f6f1e": {
+      "name": "SS-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:990",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "01d4fc838e38f63d": {
+      "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-v2ray.codefyinc.com:443",
+      "diagnostic": "http_or_transport",
+      "exitCode": 56,
+      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+    },
+    "62fc6f8c12b0ef6e": {
+      "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-23.95.75.146:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b525e11ace36bd87": {
+      "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-198.23.174.168:20086",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b16fde521192a346": {
+      "name": "SSR-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:989",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "dac8e5fc1421a8a9": {
+      "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c07.waimaojd.com:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6049e4b7160993e2": {
+      "name": "VMESS-美国>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-support.zoom.us:8080",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "285fe95250136c90": {
+      "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-209.126.84.189:443",
+      "diagnostic": "http_or_transport",
+      "exitCode": 56,
+      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+    },
+    "9c8ca477d9b4fd74": {
+      "name": "VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "2bf5a9516a2db486": {
+      "name": "VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b5ca06569d61c454": {
+      "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.175.87.207:10011",
+      "diagnostic": "http_or_transport",
+      "exitCode": 56,
+      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+    },
+    "8eb2b46992c80daf": {
+      "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.com:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "e3c320236c61a9fb": {
+      "name": "VMESS-美国-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443",
+      "diagnostic": "http_or_transport",
+      "exitCode": 56,
+      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+    },
+    "07735b81bdd8819c": {
+      "name": "VMESS-美国-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "613a77a1a70c0a21": {
+      "name": "🇧🇷BR巴西圣保罗丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "a8784c3d327a54bb": {
+      "name": "❓免費節點丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "24893feee047d347": {
+      "name": "❓未知丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "88a0a2b1bde93f8e": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "77477e008ea5e252": {
+      "name": "🇫🇷法國丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "a069e8bac3299acc": {
+      "name": "🇫🇷FR法國丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "39cd5fba7dec4d86": {
+      "name": "🇳🇱NL荷兰丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "d273563805795ac0": {
+      "name": "🇫🇷法国丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "acf35c3a6c7c5dc6": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "c4ed46743aa198cf": {
+      "name": "❓未知丨yoyapai.com_4",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "e4a2c8db98651d6a": {
+      "name": "🇺🇸US美國丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b0fac3a368b946a5": {
+      "name": "❓未知丨yoyapai.com_5",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "d9687fd4c062ba7a": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6600eb66c617efe5": {
+      "name": "🇹🇷TR土耳其丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "1d4e8a9d998a36c8": {
+      "name": "🇫🇷法国丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "43a9597d20baf46b": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_3",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "17785c43f05ac90c": {
+      "name": "🇫🇷FR法国丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "2ee2e260ba95c651": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_4",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "c27411bf8d5cb0ac": {
+      "name": "🇫🇷法国丨yoyapai.com_2",
+      "diagnostic": "http_or_transport",
+      "exitCode": 56,
+      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+    },
+    "8172534fa7e28642": {
+      "name": "❓未知丨yoyapai.com_6",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "dcd1731eb2b7c1f4": {
+      "name": "🇺🇸US美國丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "96eb66ef9a5e2a5f": {
+      "name": "❓未知丨yoyapai.com_7",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6afe1b21526aa026": {
+      "name": "🇺🇸US美国丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "a0fc89b895303992": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_5",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "7728a66365b02687": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_6",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "0a4b3fd312313fff": {
+      "name": "🇫🇷法国丨yoyapai.com_3",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "bc4a93be5f68dd8f": {
+      "name": "❓未知丨yoyapai.com_8",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "8436bd51674d9f6a": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_7",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "0088451952cff0ed": {
+      "name": "🇨🇦CA加拿大丨yoyapai.com_8",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6635f57d27682238": {
+      "name": "🇯🇵JP日本丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "e0275454a08636b3": {
+      "name": "🇺🇸US美國丨yoyapai.com_3",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6e26cd1c4bda57a3": {
+      "name": "🇭🇺HU匈牙利丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6587698a290392e5": {
+      "name": "🇱🇹LT立陶宛丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "84678c933fd0c34a": {
+      "name": "🇺🇸 US美國丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "d175e6f33afb7b16": {
+      "name": "🇺🇸 US美國丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "be43b7f4f82bc997": {
+      "name": "🇷🇴羅馬尼亞丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b00df2baae27afe6": {
+      "name": "🇨🇭CH瑞士丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "c169068ee2943d07": {
+      "name": "🇷🇺 RU俄羅斯丨yoyapai.com",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "6986bbba914477f7": {
+      "name": "🇺🇸US美國丨yoyapai.com_4",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "83a85c008ed852ab": {
+      "name": "🇺🇸US美國丨yoyapai.com_7",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "7d4a744d145dbfe0": {
+      "name": "🇱🇹LT立陶宛丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "f632da8ca6c31a60": {
+      "name": "🇱🇹LT立陶宛丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b8665113af819cf4": {
+      "name": "🇨🇭CH瑞士丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6337f0e91c290d20": {
+      "name": "🇨🇭CH瑞士丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "7d9f4837a3b9916f": {
+      "name": "🇱🇹LT立陶宛丨yoyapai.com_3",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "425db4fba9d7f1f8": {
+      "name": "🇺🇸US美國丨yoyapai.com_8",
+      "diagnostic": "http_or_transport",
+      "exitCode": 56,
+      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+    },
+    "3b9b03d670060c12": {
+      "name": "🇺🇸US美國丨yoyapai.com_9",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "e254fa3e33fe2b70": {
+      "name": "🇺🇸US美國丨yoyapai.com_10",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "9d503d780989c848": {
+      "name": "🇺🇸US美國丨yoyapai.com_11",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "f3530938e57a625b": {
+      "name": "FR法國丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "0782f9fbd7aef5d5": {
+      "name": "FR法國丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "dd554d9c53d24f14": {
+      "name": "FR法國丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "1addb7bb778783fc": {
+      "name": "FR法國丨yoyapai.com_3",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "eecdb6ea53b50ae5": {
+      "name": "FR法國丨yoyapai.com_4",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "78a7806bd7ec4e43": {
+      "name": "CA加拿大丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "939214f1323db092": {
+      "name": "🇳🇱_NL荷蘭丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "7803419cd2092546": {
+      "name": "🇷🇺俄羅斯丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "038bc88a117f90ca": {
+      "name": "FR法國丨yoyapai.com_5",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "1b61b4d06ce97cbc": {
+      "name": "FR法國丨yoyapai.com_7",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "db1a25a68d1b8574": {
+      "name": "🇸🇬 SG新加坡",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "0f7dd9ff2180858d": {
+      "name": "🇺🇸US美國丨yoyapai.com_13",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "9bda304469722ef2": {
+      "name": "🇺🇸US美國丨yoyapai.com_14",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "28bc317453600807": {
+      "name": "🇯🇵JP日本丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "a5a12b9a6e0e15f1": {
+      "name": "🇯🇵JP日本丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "14d2765bd44ed0ad": {
+      "name": "🇭🇰HK香港丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "14b6dd093aa1e0c8": {
+      "name": "🇭🇰HK香港丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "4f4925b7f372fc2a": {
+      "name": "🇭🇰HK香港丨yoyapai.com_2",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "ef98f0f283c81e22": {
+      "name": "🇭🇰HK香港丨yoyapai.com_3",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "4db4158c66471d17": {
+      "name": "🇭🇰HK香港丨yoyapai.com_4",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b22c2cf8092d0461": {
+      "name": "🇺🇸 美國賓利大學丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "6a696d0c42bbaeb1": {
+      "name": "🇯🇵JP日本節點丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "b48005e407feeabe": {
+      "name": "🇯🇵JP日本節點丨yoyapai.com_1",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    }
+  }
+}
