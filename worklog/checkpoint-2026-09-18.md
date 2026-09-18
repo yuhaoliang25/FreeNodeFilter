@@ -137,3 +137,41 @@ Source 可能主动淘汰旧节点、寻找更好的节点。
 - Node Pool：维护 NodeProbe 自有节点资产及生命周期。
 - Source Reputation：评价来源渠道。
 - Source Evolution：观察来源的节点集合变化，暂不直接惩罚来源。
+
+
+## 本阶段新增：互联网发现记忆
+
+发现机制已从“固定 GitHub 查询 + 每次取第一页”升级为有状态的探索机制。
+
+新增：
+- data/discovery-state.json
+- discover-sources.js 的 GitHub 多通道探索记忆
+
+当前 GitHub 探索通道：
+- updated：近期活跃项目
+- created：新创建项目
+- stars：成熟/高关注项目
+
+每个 channel 保存搜索页游标，避免每次只重复读取第一页。
+
+同时记录：
+- repository 首次/最近被发现；
+- repository 被发现次数；
+- repository 最近一次展开时间；
+- source 被作为 crawler parent 展开的次数与时间。
+
+Repository 设置了有限 revisit interval，近期已经展开过的 repo 不会立即重复消耗探索额度。
+
+因此现在明确区分：
+- Search ranking：GitHub 当前如何排序；
+- Discovery progress：NodeProbe 已经探索到哪里。
+
+这层 discovery memory 不参与 Source Reputation，也不参与 Node Reputation。
+
+当前设计仍保持 bounded crawler：
+- GitHub 每个 channel 每次只推进有限页；
+- 每轮限制 repository 展开数量；
+- 每轮限制 source-link 扩展数量；
+- 不把 NodeProbe 变成无限制的通用互联网爬虫。
+
+下一步应先观察实际 Workflow 数据，再决定是否需要更复杂的时间窗口、topic/owner/fork 关联发现等机制。
