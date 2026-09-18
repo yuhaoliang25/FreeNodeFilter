@@ -41,6 +41,13 @@ GitHub Actions 定期抓取、过滤、启动 Mihomo，并执行 Google 多轮�
 
 动态来源不会因为一次失败就删除，而是按 `candidate → normal → trusted/weak → dead` 的生命周期管理，并根据历史信誉安排不同的再次探测间隔。来源信誉只作为来源质量与调度信号，不会替代对节点本身的实际握手和 Google 连通性测试。
 
+## 来源相似度与独立性
+
+项目会根据当前候选节点的 endpoint identity 建立来源相似度图：如果两个来源长期出现大量相同节点，就记录它们之间的重叠程度（Jaccard similarity）。这一步**不用于给来源质量扣分**：一个来源即使大量传播已有节点，只要它长期发布的节点经过本项目实际测试后质量稳定，仍然可以拥有很高的 Source Quality。
+
+`data/source-similarity.json` 只描述来源之间的信息相关性，并提供一个保守的 `independenceWeight` 作为分析信号。它的作用是避免未来把“多个高度重复来源”误当成多个独立证据，也为后续寻找可能的 root / 高独立性来源提供数据基础。当前版本不会用这个权重覆盖或降低来源信誉。
+
+
 ## 支持的订阅格式
 
 采集层支持 Clash/Mihomo YAML、Base64 包装的订阅，以及常见的 VLESS、VMess、Trojan、Shadowsocks URI；同时尽量保留 WebSocket、gRPC、TLS、SNI、Reality 等传输参数。所有节点仍需经过 Mihomo 实际连通性测试，格式支持不代表节点可用。
