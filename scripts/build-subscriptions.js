@@ -190,16 +190,39 @@ try{
    const weights=recent.map((_,i)=>i+1), total=weights.reduce((a,b)=>a+b,0);
    const weightedNodeSuccess=total?recent.reduce((s,x,i)=>s+x.nodeSuccessRate*weights[i],0)/total:0;
    const weightedTestSuccess=total?recent.reduce((s,x,i)=>s+x.successRate*weights[i],0)/total:0;
+   const weightedNodes=total?recent.reduce((s,x,i)=>s+x.nodes*weights[i],0)/total:0;
+   const weightedSuccessfulNodes=total?recent.reduce((s,x,i)=>s+x.nodes*x.nodeSuccessRate*weights[i],0)/total:0;
+
+   // Treat each source's node-level result as one Bernoulli observation rather
+   // than pretending every individual round is independent. Repeated runs are
+   // recency-weighted and then shrunk toward a neutral Beta(2,2) prior.
+   // This prevents a source with only a handful of nodes from becoming
+   // "trusted" merely because its raw success rate is 100%.
+   const alpha=2, beta=2;
+   const posteriorN=weightedNodes;
+   const posteriorS=weightedSuccessfulNodes;
+   const posteriorMean=(posteriorS+alpha)/(posteriorN+alpha+beta);
+   const posteriorFailures=Math.max(0,posteriorN-posteriorS);
+   const phat=posteriorN>0?posteriorS/posteriorN:0;
+   const z=1.645;
+   const denom=1+(z*z/Math.max(1,posteriorN));
+   const wilsonLower=posteriorN>0
+     ? Math.max(0,(phat+(z*z/(2*posteriorN))-z*Math.sqrt((phat*(1-phat)/posteriorN)+(z*z/(4*posteriorN*posteriorN))))/denom)
+     : 0;
    const usable=recent.filter(x=>x.avgLatency!=null);
    const avgLatency=usable.length?Math.round(usable.reduce((s,x)=>s+x.avgLatency,0)/usable.length):null;
    const last=recent.at(-1);
    const status=recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1)?'degraded':
-     (weightedNodeSuccess<0.35?'weak':
-     (weightedNodeSuccess>=0.75?'trusted':'normal'));
+     (posteriorN>=10&&wilsonLower<0.35?'weak':
+     (posteriorN>=20&&wilsonLower>=0.70?'trusted':'normal'));
    sourceReputation.sources[source]={
      runs:observations.length,
      weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),
      weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),
+     effectiveNodes:Number(posteriorN.toFixed(2)),
+     effectiveSuccessfulNodes:Number(posteriorS.toFixed(2)),
+     posteriorMean:Number(posteriorMean.toFixed(4)),
+     lowerBound90:Number(wilsonLower.toFixed(4)),
      avgLatency,
      currentNodeSuccessRate:last?.nodeSuccessRate??0,
      currentSuccessRate:last?.successRate??0,
