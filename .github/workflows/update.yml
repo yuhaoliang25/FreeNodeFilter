@@ -18,6 +18,10 @@ jobs:
         with:
           node-version: 22
       - run: npm install
+      - name: Discover public sources
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run discover
       - name: Fetch public sources
         run: npm run fetch
       - name: Build candidate subscription
@@ -102,7 +106,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add subscriptions data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json data/scores.json data/source-history.json data/source-reputation.json
+          git add subscriptions data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json data/scores.json data/source-history.json data/source-reputation.json data/sources.json data/raw-sources.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh node candidates"
           git push
