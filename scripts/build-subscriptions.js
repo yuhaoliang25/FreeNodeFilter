@@ -3,6 +3,7 @@
 const fs=require('fs'),yaml=require('js-yaml'),crypto=require('crypto');
 const raw=JSON.parse(fs.readFileSync('data/raw-sources.json','utf8'));
 const proxies=[],seen=new Set(),usedNames=new Set();
+const MAX_CANDIDATES=Number(process.env.MAX_CANDIDATES||1500);
 function valid(p){
   if(!p||typeof p!=='object'||!p.name||!p.server||!p.port||!p.type)return false;
   const port=Number(p.port); if(!Number.isInteger(port)||port<1||port>65535)return false;
@@ -21,6 +22,7 @@ function fingerprint(p){
   return crypto.createHash('sha256').update(JSON.stringify([p.type,p.server,p.port,p.uuid,p.password,p.cipher,p.network,p.tls,p.sni,p['reality-opts']])).digest('hex').slice(0,8);
 }
 function add(p,source){
+  if(proxies.length>=MAX_CANDIDATES)return;
   if(!valid(p))return;
   const key=fingerprint(p); if(seen.has(key))return; seen.add(key);
   let name=String(p.name).trim()||String(p.server);
@@ -100,4 +102,4 @@ try{
  console.log('google/stable/best:',google.size,stable.size,best.size);
 }catch(e){console.log('health data unavailable; only all.yaml generated:',e.message)}
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
-console.log('candidate nodes:',clean.length);
+console.log('candidate nodes:',clean.length,'limit:',MAX_CANDIDATES);
