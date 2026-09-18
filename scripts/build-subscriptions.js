@@ -329,7 +329,8 @@ fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
          :(s.status==='candidate'?'normal':s.status);
      }
      if(fetched.has(id)){s.fetchFailures=0;s.lastSeen=new Date().toISOString();}
-     if(s.status==='dead')s.nextProbeAt=new Date(Date.now()+7*86400000).toISOString();
+     if(s.status==='dead')s.nextProbeAt=new Date(Date.now()+30*86400000).toISOString();
+     else if(s.status==='stale')s.nextProbeAt=new Date(Date.now()+7*86400000).toISOString();
      else if(s.status==='trusted')s.nextProbeAt=new Date(Date.now()+24*3600000).toISOString();
      else if(s.status==='normal')s.nextProbeAt=new Date(Date.now()+12*3600000).toISOString();
      else if(s.status==='weak')s.nextProbeAt=new Date(Date.now()+72*3600000).toISOString();
