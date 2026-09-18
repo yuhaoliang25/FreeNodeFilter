@@ -44,16 +44,26 @@ function buildConfig(proxies, file) {
     const countryNames = [];
 
     function countryCode(name) {
-      const m = String(name || '').match(/(?:^|\\s|[^A-Za-z])([\\u{1F1E6}-\\u{1F1FF}]{2})(?=[A-Z]{2}_|\\||\\s|$)/u);
-      if (m) {
-        const chars = [...m[1]];
-        if (chars.length === 2) {
-          const code = chars.map(c => String.fromCharCode(c.codePointAt(0) - 0x1F1E6 + 65)).join('');
+      const text = String(name || '');
+
+      // Prefer the explicit ISO marker used by generated node names, e.g. US_12.
+      const iso = text.match(/(?:^|[^A-Za-z])([A-Z]{2})_\d+(?:\||$)/);
+      if (iso && targets[iso[1]]) return iso[1];
+
+      // Fall back to Unicode regional-indicator pairs without relying on a
+      // regex Unicode code-point range (which is easy to over-escape in YAML/JS).
+      const chars = [...text];
+      for (let i = 0; i < chars.length - 1; i++) {
+        const a = chars[i].codePointAt(0);
+        const b = chars[i + 1].codePointAt(0);
+        if (a >= 0x1F1E6 && a <= 0x1F1FF && b >= 0x1F1E6 && b <= 0x1F1FF) {
+          const code = String.fromCharCode(a - 0x1F1E6 + 65) +
+            String.fromCharCode(b - 0x1F1E6 + 65);
           if (targets[code]) return code;
         }
       }
-      const iso = String(name || '').match(/(?:^|[^A-Za-z])([A-Z]{2})_\\d+(?:\\||$)/);
-      return iso && targets[iso[1]] ? iso[1] : null;
+
+      return null;
     }
 
     for (const [code, label] of Object.entries(targets)) {
