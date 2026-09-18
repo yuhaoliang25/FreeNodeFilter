@@ -6,7 +6,7 @@
   "scripts": {
     "discover": "node scripts/discover-sources.js",
     "fetch": "node scripts/fetch-sources.js",
-    "build": "node scripts/build-subscriptions.js",
+    "build": "node scripts/build-subscriptions.js && node scripts/convert-subscriptions.js",
     "source-graph": "node scripts/analyze-source-graph.js"
   },
   "dependencies": {
