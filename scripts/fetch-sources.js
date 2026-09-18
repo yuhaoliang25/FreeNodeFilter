@@ -48,15 +48,42 @@ async function main(){
     discoveredFrom:s.discoveredFrom||null
   };
  }));
+ const now=new Date().toISOString();
+ const registry=dynamicState;
+ const registryByUrl=new Map((registry.sources||[]).map(s=>[s.url,s]));
  results.forEach((r,i)=>{
   const s=sources[i];
+  const tracked=registryByUrl.get(s.url);
   if(r.status==='fulfilled'){
     out.push(r.value);
+    if(tracked){
+      tracked.fetchFailures=0;
+      tracked.lastSeen=now;
+      if(tracked.status==='dead')tracked.status='normal';
+      if(tracked.status==='candidate')tracked.status='normal';
+      tracked.nextProbeAt=new Date(Date.now()+(
+        tracked.status==='trusted'?24:
+        tracked.status==='weak'?72:12
+      )*3600000).toISOString();
+    }
     console.log('✓',s.name,r.value.format,r.value.text.length,'bytes');
   } else {
-    console.error('✗',s.name,r.reason?.message||r.reason);
+    const message=r.reason?.message||String(r.reason);
+    if(tracked){
+      tracked.fetchFailures=Number(tracked.fetchFailures||0)+1;
+      tracked.lastFailureAt=now;
+      if(tracked.fetchFailures>=6)tracked.status='dead';
+      else if(tracked.status!=='trusted')tracked.status='weak';
+      tracked.nextProbeAt=new Date(Date.now()+(
+        tracked.status==='dead'?168:tracked.status==='weak'?72:12
+      )*3600000).toISOString();
+    }
+    console.error('✗',s.name,message,'failures',tracked?.fetchFailures??'seed');
   }
  });
+ registry.updatedAt=now;
+ registry.version=1;
+ fs.writeFileSync('data/sources.json',JSON.stringify(registry,null,2));
  fs.writeFileSync('data/raw-sources.json',JSON.stringify(out));
  if(!out.length)throw new Error('没有成功获取任何节点源');
 }
