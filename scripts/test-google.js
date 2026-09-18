@@ -69,8 +69,15 @@ async function main(){
   return merged;
  }
  const r1=await testGroup(names,FAST_TIMEOUT);
- const survivors1=Object.entries(r1).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).map(([n])=>n);
- console.log('stage1:',names.length,'->',survivors1.length);
+ const firstPass=new Set(Object.entries(r1).filter(([,d])=>Number(d)>0).map(([n])=>n);
+ const firstFailures=names.filter(n=>!firstPass.has(n));
+ // A single timeout/transport error is not enough to discard a node.
+ // Retry Stage-1 failures once with the normal timeout.
+ const retry1=await testGroup(firstFailures,TIMEOUT);
+ const retryPass=new Set(Object.entries(retry1).filter(([,d])=>Number(d)>0).map(([n])=>n);
+ const survivors1=[...new Set([...firstPass,...retryPass])];
+ const flakyStage1=[...retryPass].filter(n=>!firstPass.has(n));
+ console.log('stage1:',names.length,'->',survivors1.length,'first-pass',firstPass.size,'retry-recovered',flakyStage1.length,'final-fail',names.length-survivors1.length);
 
  const r2=await testGroup(survivors1,TIMEOUT);
  const survivors2=Object.entries(r2).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE2_LIMIT).map(([n])=>n);
@@ -95,9 +102,9 @@ async function main(){
  // Stage-1/2 failures are intentionally retained in the report with fewer rounds.
  const rows=Object.entries(all).map(([name,delays])=>{
   const ok=delays.filter(x=>x>0),sorted=[...ok].sort((a,b)=>a-b),pct=p=>ok.length?sorted[Math.min(sorted.length-1,Math.ceil(sorted.length*p)-1)]:null;
-  return {name,fingerprint:ids.get(name)||null,source:sourceByName.get(name)||'unknown',rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,delays};
+  return {name,fingerprint:ids.get(name)||null,source:sourceByName.get(name)||'unknown',rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,stage1Flaky:flakyStage1.includes(name),delays};
  }).sort((a,b)=>(b.successRate-a.successRate)||(a.avgLatency??1e9)-(b.avgLatency??1e9));
- const report={generatedAt:new Date().toISOString(),identity:'endpoint-id-v1',target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,staging:{stage1:'all',stage2:STAGE2_LIMIT,stage3:STAGE3_LIMIT,fastTimeout:FAST_TIMEOUT},results:rows};
+ const report={generatedAt:new Date().toISOString(),identity:'endpoint-id-v1',target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,staging:{stage1:'all',stage1Retry:'failed-once',stage2:STAGE2_LIMIT,stage3:STAGE3_LIMIT,fastTimeout:FAST_TIMEOUT},results:rows};
  fs.mkdirSync('data',{recursive:true});
  report.sourceStats={};
  for(const r of rows){
@@ -129,6 +136,6 @@ async function main(){
    reputation.nodes[id]={name:r.name,longTermSuccessRate:tests?successes/tests:0,totalTests:tests,totalFailures:failures,recentFailures,status,lastSeen:new Date().toISOString()};
  }
  fs.writeFileSync('data/reputation.json',JSON.stringify(reputation,null,2));
- console.log('tested:',rows.length,'stable:',rows.filter(x=>x.successRate>=.8).length,'best:',rows.filter(x=>x.successRate>=.9&&x.p95Latency<=5000&&x.avgLatency<=2500).length);
+ console.log('tested:',rows.length,'current>=80%:',rows.filter(x=>x.successRate>=.8).length,'current>=90%+latency:',rows.filter(x=>x.successRate>=.9&&x.p95Latency<=5000&&x.avgLatency<=2500).length,'stage1-flaky:',rows.filter(x=>x.stage1Flaky).length);
 }
 main().catch(e=>{console.error(e);process.exit(1)});
