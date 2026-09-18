@@ -1,0 +1,48 @@
+name: Update free nodes
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */4 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install
+      - name: Fetch public sources
+        run: npm run fetch
+      - name: Build candidate subscription
+        run: npm run build
+      - name: Install Mihomo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          asset=$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/MetaCubeX/mihomo/releases/latest | jq -r '.assets[] | select(.name | test("^mihomo-linux-amd64-v[0-9][^-]*\\.gz$")) | .browser_download_url' | head -1)
+          test -n "$asset"
+          mkdir -p mihomo
+          curl -fsSL --retry 3 "$asset" -o mihomo/mihomo.gz
+          gunzip -f mihomo/mihomo.gz
+          chmod +x mihomo/mihomo
+      - name: Test candidates
+        run: |
+          echo "Candidate generation complete."
+          echo "Next stage will run Mihomo and perform multi-round Google tests."
+      - name: Commit generated subscriptions
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add subscriptions data/candidates.json
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: refresh node candidates"
+          git push
