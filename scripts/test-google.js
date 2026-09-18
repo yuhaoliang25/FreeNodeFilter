@@ -69,12 +69,12 @@ async function main(){
   return merged;
  }
  const r1=await testGroup(names,FAST_TIMEOUT);
- const firstPass=new Set(Object.entries(r1).filter(([,d])=>Number(d)>0).map(([n])=>n);
+ const firstPass=new Set(Object.entries(r1).filter(([,d])=>Number(d)>0).map(([n])=>n));
  const firstFailures=names.filter(n=>!firstPass.has(n));
  // A single timeout/transport error is not enough to discard a node.
  // Retry Stage-1 failures once with the normal timeout.
  const retry1=await testGroup(firstFailures,TIMEOUT);
- const retryPass=new Set(Object.entries(retry1).filter(([,d])=>Number(d)>0).map(([n])=>n);
+ const retryPass=new Set(Object.entries(retry1).filter(([,d])=>Number(d)>0).map(([n])=>n));
  const survivors1=[...new Set([...firstPass,...retryPass])];
  const flakyStage1=[...retryPass].filter(n=>!firstPass.has(n));
  console.log('stage1:',names.length,'->',survivors1.length,'first-pass',firstPass.size,'retry-recovered',flakyStage1.length,'final-fail',names.length-survivors1.length);
