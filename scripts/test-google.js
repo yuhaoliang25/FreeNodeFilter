@@ -38,23 +38,9 @@ async function main(){
   return 3;
  }
  const ranked=[...candidates].sort((a,b)=>score(b)-score(a));
- const known=ranked.filter(p=>rep[p._id] && rep[p._id].status!=='quarantine');
- const fresh=ranked.filter(p=>!rep[p._id]);
- const degraded=ranked.filter(p=>rep[p._id]?.status==='degraded');
- const exploitLimit=Math.floor(STAGE1_LIMIT*0.7);
- const exploreLimit=Math.floor(STAGE1_LIMIT*0.2);
- const recoveryLimit=STAGE1_LIMIT-exploitLimit-exploreLimit;
- function takeUnique(arr,n,used){
-  const out=[];
-  for(const p of arr)if(!used.has(p.name)&&out.length<n){used.add(p.name);out.push(p.name)}
-  return out;
- }
- const used=new Set();
- const names=[
-   ...takeUnique(known,exploitLimit,used),
-   ...takeUnique(fresh,exploreLimit,used),
-   ...takeUnique(degraded,recoveryLimit,used)
- ];
+ // Every candidate gets a mandatory Stage 1 test. Historical reputation only
+ // influences which Stage-1 survivors receive deeper testing later.
+ const names=candidates.map(p=>p.name);
  async function testGroup(selected,timeout){
   if(!selected.length)return {};
   const merged={};
@@ -63,7 +49,7 @@ async function main(){
    for(const name of batch){
     try{
      const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
-     const result=await json('/proxies/'+encodeURIComponent(name)+'/delay?'+q);
+     const result=await json(API+'/proxies/'+encodeURIComponent(name)+'/delay?'+q);
      const d=Number(result.delay);
      merged[name]=Number.isFinite(d)&&d>0?d:0;
      (all[name]??=[]).push(merged[name]);
@@ -77,16 +63,25 @@ async function main(){
   }
   return merged;
  }
- const budgets=new Map(candidates.map(p=>[p.name,budget(p)]));
  const r1=await testGroup(names,FAST_TIMEOUT);
- const survivors1=Object.entries(r1).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE2_LIMIT).map(([n])=>n);
+ const survivors1=Object.entries(r1).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).map(([n])=>n);
  console.log('stage1:',names.length,'->',survivors1.length);
+
  const r2=await testGroup(survivors1,TIMEOUT);
  const survivors2=Object.entries(r2).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE3_LIMIT).map(([n])=>n);
  console.log('stage2:',survivors1.length,'->',survivors2.length);
- for(let round=1;round<=ROUNDS;round++){
-  if(round===1)continue;
-  const eligible=survivors2.filter(name=>(budgets.get(name)||3)>=round);
+
+ const budgets=new Map(candidates.map(p=>{
+  const id=p['endpoint-id']||p._id, r=rep[id];
+  if(!r)return [p.name,3];
+  const rate=Number(r.longTermSuccessRate||0);
+  const recentFailures=Number(r.recentFailures||0);
+  if(r.status==='quarantine')return [p.name,0];
+  if(r.status==='degraded')return [p.name,1];
+  return [p.name,rate>=0.9?3:2];
+ }));
+ for(let round=2;round<=ROUNDS;round++){
+  const eligible=survivors2.filter(name=>(budgets.get(name)||0)>=round);
   const result=await testGroup(eligible,TIMEOUT);
   console.log('deep round',round,'tested',Object.keys(result).length);
   if(round<ROUNDS)await new Promise(r=>setTimeout(r,1500));
