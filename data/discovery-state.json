@@ -1,77 +1,77 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-18T08:00:00.668Z",
+  "updatedAt": "2026-09-18T09:01:06.461Z",
   "channels": {
     "updated::free proxy nodes clash": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:22.334Z",
-      "lastCount": 8
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:42.454Z",
+      "lastCount": 6
     },
     "updated::free v2ray nodes": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:22.696Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:42.766Z",
       "lastCount": 8
     },
     "updated::free proxy subscription": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:23.087Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:43.110Z",
       "lastCount": 8
     },
     "updated::clash subscription nodes": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:23.446Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:43.512Z",
       "lastCount": 8
     },
     "created::free proxy nodes clash": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:23.796Z",
-      "lastCount": 8
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:43.817Z",
+      "lastCount": 6
     },
     "created::free v2ray nodes": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:24.139Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:44.175Z",
       "lastCount": 8
     },
     "created::free proxy subscription": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:24.498Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:44.584Z",
       "lastCount": 8
     },
     "created::clash subscription nodes": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:24.938Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:44.943Z",
       "lastCount": 8
     },
     "stars::free proxy nodes clash": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:25.250Z",
-      "lastCount": 8
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:45.205Z",
+      "lastCount": 6
     },
     "stars::free v2ray nodes": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:25.589Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:45.554Z",
       "lastCount": 8
     },
     "stars::free proxy subscription": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:25.917Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:45.930Z",
       "lastCount": 8
     },
     "stars::clash subscription nodes": {
-      "page": 2,
-      "runs": 1,
-      "lastRun": "2026-09-18T07:57:26.275Z",
+      "page": 3,
+      "runs": 2,
+      "lastRun": "2026-09-18T08:59:46.197Z",
       "lastCount": 8
     }
   },
@@ -85,10 +85,10 @@
       "lastExpandedAt": "2026-09-18T07:57:26.275Z"
     },
     "junjun266/FreeProxyGo": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:57:38.502Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
       "stars": 165,
-      "pushedAt": "2026-09-18T07:00:01Z",
+      "pushedAt": "2026-09-18T08:00:01Z",
       "createdAt": "2025-09-26T13:24:36Z",
       "lastExpandedAt": "2026-09-18T07:57:38.502Z"
     },
@@ -101,8 +101,8 @@
       "lastExpandedAt": "2026-09-18T07:57:47.885Z"
     },
     "snakem982/proxypool": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:57:51.093Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:55.292Z",
       "stars": 2098,
       "pushedAt": "2026-09-18T04:15:04Z",
       "createdAt": "2023-06-18T09:09:37Z",
@@ -141,16 +141,16 @@
       "lastExpandedAt": "2026-09-18T07:58:04.284Z"
     },
     "vincent20240707/free-v2ray-nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:58:04.704Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
       "stars": 0,
       "pushedAt": "2026-09-18T07:28:07Z",
       "createdAt": "2026-09-17T01:44:11Z",
       "lastExpandedAt": "2026-09-18T07:58:04.704Z"
     },
     "xyfqzy/free-nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:58:05.418Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
       "stars": 163,
       "pushedAt": "2026-09-18T07:25:24Z",
       "createdAt": "2025-06-26T00:43:58Z",
@@ -165,16 +165,16 @@
       "lastExpandedAt": "2026-09-18T07:58:07.184Z"
     },
     "jichangx/free-nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:58:10.163Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
       "stars": 123,
       "pushedAt": "2026-09-18T06:16:25Z",
       "createdAt": "2026-07-08T13:23:04Z",
       "lastExpandedAt": "2026-09-18T07:58:10.164Z"
     },
     "lerjtl/Testfree": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:58:12.554Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
       "stars": 22,
       "pushedAt": "2026-09-18T06:01:33Z",
       "createdAt": "2025-11-22T08:02:22Z",
@@ -205,16 +205,16 @@
       "lastExpandedAt": "2026-09-18T07:58:25.340Z"
     },
     "Thordata/awesome-free-proxy-list": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:59:00.823Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:55.292Z",
       "stars": 18,
       "pushedAt": "2026-09-18T06:50:37Z",
       "createdAt": "2026-02-26T06:52:44Z",
       "lastExpandedAt": "2026-09-18T07:59:00.823Z"
     },
     "Alirewa/V2ray-Configs": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:59:05.563Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:55.292Z",
       "stars": 25,
       "pushedAt": "2026-09-18T06:35:15Z",
       "createdAt": "2026-06-06T19:14:56Z",
@@ -229,16 +229,16 @@
       "lastExpandedAt": "2026-09-18T07:59:06.693Z"
     },
     "littlebais/free-proxy-nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:59:10.685Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.156Z",
       "stars": 118,
       "pushedAt": "2026-04-20T04:47:37Z",
       "createdAt": "2026-04-19T12:12:38Z",
       "lastExpandedAt": "2026-09-18T07:59:10.685Z"
     },
     "UIforFreedom/Free_Proxy_Nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:59:11.213Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
       "stars": 19,
       "pushedAt": "2024-09-05T10:02:25Z",
       "createdAt": "2024-07-29T09:54:38Z",
@@ -285,9 +285,9 @@
       "lastExpandedAt": "2026-09-18T07:59:31.838Z"
     },
     "sunmiao4458/free-proxy-airport": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:59:45.157Z",
-      "stars": 329,
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-18T08:59:56.696Z",
+      "stars": 333,
       "pushedAt": "2026-09-18T05:32:20Z",
       "createdAt": "2026-06-22T13:55:15Z",
       "lastExpandedAt": "2026-09-18T07:59:45.157Z"
@@ -323,6 +323,78 @@
       "pushedAt": "2026-09-08T07:10:31Z",
       "createdAt": "2025-04-26T20:37:31Z",
       "lastExpandedAt": "2026-09-18T08:00:00.183Z"
+    },
+    "clippy3064/3vpn-windows": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:46.197Z",
+      "stars": 1,
+      "pushedAt": "2026-08-24T04:33:12Z",
+      "createdAt": "2026-08-24T03:09:28Z",
+      "lastExpandedAt": "2026-09-18T08:59:46.197Z"
+    },
+    "haonL-7/clash-nodes-app": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:48.299Z",
+      "stars": 0,
+      "pushedAt": "2026-07-10T01:48:03Z",
+      "createdAt": "2026-07-05T04:21:09Z",
+      "lastExpandedAt": "2026-09-18T08:59:48.299Z"
+    },
+    "mohammadghaffary/abc-configs-free-vpn-proxy-list": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:48.825Z",
+      "stars": 0,
+      "pushedAt": "2026-05-12T06:10:18Z",
+      "createdAt": "2026-05-12T06:13:03Z",
+      "lastExpandedAt": "2026-09-18T08:59:48.825Z"
+    },
+    "mylls-c/node-subscribe": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:51.156Z",
+      "stars": 0,
+      "pushedAt": "2026-04-06T10:37:55Z",
+      "createdAt": "2026-04-06T10:35:29Z",
+      "lastExpandedAt": "2026-09-18T08:59:51.156Z"
+    },
+    "twj0/subseek": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:51.711Z",
+      "stars": 26,
+      "pushedAt": "2026-09-18T05:32:01Z",
+      "createdAt": "2025-11-23T15:14:41Z",
+      "lastExpandedAt": "2026-09-18T08:59:51.711Z"
+    },
+    "wenxig/dongtai-sub": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:52.732Z",
+      "stars": 247,
+      "pushedAt": "2026-09-18T04:27:45Z",
+      "createdAt": "2025-07-21T02:15:16Z",
+      "lastExpandedAt": "2026-09-18T08:59:52.733Z"
+    },
+    "S-V-J/myclaude": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:55.292Z",
+      "stars": 0,
+      "pushedAt": "2026-09-18T05:43:52Z",
+      "createdAt": "2026-09-14T02:44:28Z",
+      "lastExpandedAt": "2026-09-18T08:59:55.292Z"
+    },
+    "worldmarketing02-design/proxy-master-list": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:56.696Z",
+      "stars": 1,
+      "pushedAt": "2026-09-18T04:04:23Z",
+      "createdAt": "2026-05-01T01:38:01Z",
+      "lastExpandedAt": "2026-09-18T08:59:56.696Z"
+    },
+    "tammader/freesub": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-18T08:59:57.256Z",
+      "stars": 0,
+      "pushedAt": "2026-09-18T03:56:19Z",
+      "createdAt": "2026-09-08T10:19:27Z",
+      "lastExpandedAt": "2026-09-18T08:59:57.256Z"
     }
   },
   "sources": {}
