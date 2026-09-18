@@ -176,14 +176,26 @@ try{
    return iso&&COUNTRY_TARGETS[iso[1]]?iso[1]:null;
  }
  const candidateByName=new Map(clean.map(p=>[p.name,p]));
+ let geoByHost={};
+ try{geoByHost=JSON.parse(fs.readFileSync('data/ip-geolocation.json','utf8'))}catch{}
  const countryBuckets=new Map(Object.keys(COUNTRY_TARGETS).map(k=>[k,[]]));
  for(const r of h.results){
    const p=candidateByName.get(r.name); if(!p)continue;
-   const code=countryCodeFromName(p.name); if(!code)continue;
+   const geo=geoByHost[String(p.server||'')];
+   // Country membership is based on the resolved server IP. If geolocation
+   // failed, fall back to the source-declared country so the pool does not
+   // disappear completely; the record is marked as fallback in metadata.
+   const detected=geo?.country_code&&COUNTRY_TARGETS[geo.country_code]?geo.country_code:null;
+   const declared=countryCodeFromName(p.name);
+   const code=detected||declared; if(!code)continue;
    const m=historyMetric(r.fingerprint);
    const usable=r.rounds>=2&&currentRate(r)>=0.8&&currentLatency(r)<=5000;
    if(!usable)continue;
-   countryBuckets.get(code).push({proxy:p,result:r,score:qualityScore(r,m)});
+   countryBuckets.get(code).push({
+     proxy:p,result:r,score:qualityScore(r,m),
+     detectedCountry:detected,declaredCountry:declared,
+     countrySource:detected?'ip':'declared'
+   });
  }
  const countrySelected=[];
  for(const [code,list] of countryBuckets){
@@ -209,7 +221,7 @@ try{
    limitPerCountry:COUNTRY_LIMIT,
    countries:Object.fromEntries([...countryBuckets].map(([code,list])=>[
      code,
-     {name:COUNTRY_TARGETS[code],available:list.length,selected:list.filter(x=>countrySet.has(x.proxy.name)).slice(0,COUNTRY_LIMIT).map(x=>({name:x.proxy.name,type:x.proxy.type,score:x.score}))}
+     {name:COUNTRY_TARGETS[code],available:list.length,selected:list.filter(x=>countrySet.has(x.proxy.name)).slice(0,COUNTRY_LIMIT).map(x=>({name:x.proxy.name,type:x.proxy.type,score:x.score,declaredCountry:x.declaredCountry,detectedCountry:x.detectedCountry,countrySource:x.countrySource}))}
    ]))
  },null,2));
  console.log('country pool:',countrySelected.length,'nodes across',Object.values(Object.fromEntries([...countryBuckets].map(([k,v])=>[k,v.length]))).filter(x=>x>0).length,'countries');
