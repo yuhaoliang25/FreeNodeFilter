@@ -37,10 +37,26 @@ fs.mkdirSync('subscriptions',{recursive:true});
 fs.writeFileSync('subscriptions/all.yaml',yaml.dump({proxies:clean},{lineWidth:-1,noRefs:true}));
 try{
  const h=JSON.parse(fs.readFileSync('data/health.json','utf8'));
- const byName=new Map(h.results.map(x=>[x.name,x]));
+ const history=JSON.parse(fs.readFileSync('data/history.json','utf8'));
+ const hist={};
+ for(const batch of history) for(const r of batch.results) if(r.fingerprint){
+   const x=hist[r.fingerprint]??={tests:0,successes:0,latencies:[]};
+   x.tests+=r.rounds; x.successes+=r.successes; x.latencies.push(...r.delays.filter(v=>v>0));
+ }
+ const metrics=new Map(Object.entries(hist).map(([id,x])=>{
+   const s=[...x.latencies].sort((a,b)=>a-b), p=q=>s.length?s[Math.min(s.length-1,Math.ceil(s.length*q)-1)]:null;
+   return [id,{longRate:x.tests?x.successes/x.tests:0,avg:s.length?Math.round(s.reduce((a,b)=>a+b,0)/s.length):null,p95:p(.95),tests:x.tests}];
+ }));
+ const idsByName=new Map(h.results.map(x=>[x.name,x.fingerprint]));
  const google=new Set(h.results.filter(x=>x.successRate>0).map(x=>x.name));
- const stable=new Set(h.results.filter(x=>x.successRate>=0.8&&x.p95Latency<=8000).map(x=>x.name));
- const best=new Set(h.results.filter(x=>x.successRate>=0.9&&x.p95Latency<=5000&&x.avgLatency<=2500).map(x=>x.name));
+ const stable=new Set(h.results.filter(x=>{
+   const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
+   return m.tests>=6 && m.longRate>=0.8 && x.successRate>=0.8 && x.p95Latency<=8000;
+ }).map(x=>x.name));
+ const best=new Set(h.results.filter(x=>{
+   const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
+   return m.tests>=9 && m.longRate>=0.9 && x.successRate>=0.9 && x.p95Latency<=5000 && x.avgLatency<=2500;
+ }).map(x=>x.name));
  const pick=set=>clean.filter(p=>set.has(p.name));
  fs.writeFileSync('subscriptions/google.yaml',yaml.dump({proxies:pick(google)},{lineWidth:-1,noRefs:true}));
  fs.writeFileSync('subscriptions/stable.yaml',yaml.dump({proxies:pick(stable)},{lineWidth:-1,noRefs:true}));
