@@ -7,6 +7,7 @@
     "discover": "node scripts/discover-sources.js",
     "fetch": "node scripts/fetch-sources.js",
     "build": "node scripts/build-subscriptions.js && node scripts/convert-subscriptions.js",
+    "geo": "node scripts/detect-ip-country.js",
     "source-graph": "node scripts/analyze-source-graph.js"
   },
   "dependencies": {
