@@ -1,17 +1,22 @@
 #!/usr/bin/env node
 'use strict';
-const fs=require('fs'),path=require('path'),yaml=require('js-yaml');
+const fs=require('fs'),path=require('path'),yaml=require('js-yaml'),crypto=require('crypto');
 
 const seedSources=yaml.load(fs.readFileSync(path.resolve('sources/sources.yaml'),'utf8')).sources||[];
 const dynamicState=(()=>{try{return JSON.parse(fs.readFileSync('data/sources.json','utf8'))}catch{return {sources:[]}}})();
 const seedUrls=new Set(seedSources.map(s=>s.url));
 
+function sourceId(url){
+  return 'dynamic-'+crypto.createHash('sha256').update(url).digest('hex').slice(0,12);
+}
+
 const dynamicSources=(dynamicState.sources||[])
   .filter(s=>s.url&&!seedUrls.has(s.url))
   .filter(s=>s.status!=='dead')
+  .filter(s=>!s.nextProbeAt||Date.parse(s.nextProbeAt)<=Date.now())
   .slice(0,25)
-  .map((s,i)=>({
-    name:'dynamic-'+String(i+1).padStart(3,'0'),
+  .map(s=>({
+    name:s.name||sourceId(s.url),
     url:s.url,
     discoveredFrom:s.discoveredFrom||null
   }));
