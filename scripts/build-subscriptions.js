@@ -3,7 +3,7 @@
 const fs=require('fs'),yaml=require('js-yaml'),crypto=require('crypto');
 const raw=JSON.parse(fs.readFileSync('data/raw-sources.json','utf8'));
 const proxies=[],seen=new Set(),usedNames=new Set();
-const MAX_CANDIDATES=Number(process.env.MAX_CANDIDATES||1500);
+const MAX_CANDIDATES=Number(process.env.MAX_CANDIDATES||100000);
 function valid(p){
   if(!p||typeof p!=='object'||!p.name||!p.server||!p.port||!p.type)return false;
   const port=Number(p.port); if(!Number.isInteger(port)||port<1||port>65535)return false;
@@ -30,7 +30,6 @@ function fingerprint(p){
   return endpointIdentity(p);
 }
 function add(p,source){
-  if(proxies.length>=MAX_CANDIDATES)return;
   if(!valid(p))return;
   const key=fingerprint(p); if(seen.has(key))return; seen.add(key);
   p['endpoint-id']=key;
