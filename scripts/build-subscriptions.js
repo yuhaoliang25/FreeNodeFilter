@@ -28,13 +28,9 @@ function endpointIdentity(p){
   const transportOpts={wsPath:ws.path||'',wsHost:ws.headers?.Host||'',grpcService:grpc['grpc-service-name']||''};
   return crypto.createHash('sha256').update(JSON.stringify([t,String(p.server).toLowerCase(),Number(p.port),auth,transport,transportOpts,tls,sni,p.flow||'',reality['public-key']||'',reality['short-id']||''])).digest('hex').slice(0,16);
 }
-function fingerprint(p){
-  return endpointIdentity(p);
-}
+function fingerprint(p){return endpointIdentity(p);}
 function add(p,source){
-  // Mihomo requires REALITY to run over TLS. Some public sources omit
-  // tls: true because their URI uses security=reality; normalize that here.
-  if(p && p['reality-opts'])p.tls=true;
+  if(p&&p['reality-opts'])p.tls=true;
   if(!valid(p))return;
   const key=fingerprint(p);
   if(seen.has(key)){
@@ -94,7 +90,17 @@ for(const p of proxies){
 }
 const clean=proxies.map(({_source,_sources,_id,...p})=>{delete p['endpoint-id'];return p;});
 fs.mkdirSync('subscriptions',{recursive:true});
-fs.writeFileSync('subscriptions/all.yaml',yaml.dump({proxies:clean},{lineWidth:-1,noRefs:true}));
+
+// Keep generated subscriptions maximally compatible with stricter YAML parsers.
+// In particular, public node names and credentials often contain punctuation
+// such as |, :, #, %, or leading indicator-like characters. js-yaml can emit
+// valid plain scalars for these, but some Clash clients use stricter YAML
+// parsing rules. Quoting all strings avoids parser-dependent interpretation.
+const yamlOptions={lineWidth:-1,noRefs:true,forceQuotes:true,quotingType:"'"};
+function dumpSubscription(set){
+  return yaml.dump({proxies:set},{...yamlOptions});
+}
+fs.writeFileSync('subscriptions/all.yaml',dumpSubscription(clean));
 try{
  const h=JSON.parse(fs.readFileSync('data/health.json','utf8'));
  const history=JSON.parse(fs.readFileSync('data/history.json','utf8'));
@@ -108,12 +114,9 @@ try{
    return [id,{longRate:x.tests?x.successes/x.tests:0,avg:s.length?Math.round(s.reduce((a,b)=>a+b,0)/s.length):null,p95:p(.95),tests:x.tests}];
  }));
  const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x])); const sourceReputation=(()=>{try{return JSON.parse(fs.readFileSync('data/source-reputation.json','utf8'))}catch{return {sources:{}}}})();
-
  const histStats=new Map(Object.entries(hist).map(([id,x])=>{
    const observations=[];
-   for(const batch of history){
-     for(const r of batch.results||[])if(r.fingerprint===id&&Array.isArray(r.delays))observations.push(...r.delays);
-   }
+   for(const batch of history) for(const r of batch.results||[])if(r.fingerprint===id&&Array.isArray(r.delays))observations.push(...r.delays);
    const recent=observations.slice(-12), weights=recent.map((_,i)=>i+1), total=weights.reduce((a,b)=>a+b,0);
    const weightedRate=total?recent.reduce((s,v,i)=>s+(Number(v)>0?weights[i]:0),0)/total:0;
    return [id,{...x,recentTests:recent.length,weightedRate}];
@@ -123,23 +126,17 @@ try{
  function historyMetric(id){return histStats.get(id)||{tests:0,successes:0,latencies:[],recentTests:0,weightedRate:0}}
  function stableEligible(r){
    const m=historyMetric(r.fingerprint);
-   const currentOk=r.rounds>=2 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
+   const currentOk=r.rounds>=2&&currentRate(r)>=0.8&&currentLatency(r)<=5000;
    if(!currentOk)return false;
-   // Cold start: before enough history exists, require two successful
-   // observations in this run. Once history accumulates, use reputation.
    if(m.tests===0)return r.successes>=2;
-   return m.recentTests>=6 && m.weightedRate>=0.8;
+   return m.recentTests>=6&&m.weightedRate>=0.8;
  }
  function bestEligible(r){
-   const m=historyMetric(r.fingerprint);
-   const repNode=reputation.nodes?.[r.fingerprint];
-   const currentOk=r.rounds>=3 && currentRate(r)>=0.9 &&
-     currentLatency(r)<=2500 && Number(r.p95Latency||Infinity)<=5000;
-   if(!currentOk || repNode?.status==='quarantine' || repNode?.status==='degraded')return false;
-   // Cold start: three successful observations are enough for a conservative
-   // first-run best pool; historical reputation takes over afterwards.
+   const m=historyMetric(r.fingerprint),repNode=reputation.nodes?.[r.fingerprint];
+   const currentOk=r.rounds>=3&&currentRate(r)>=0.9&&currentLatency(r)<=2500&&Number(r.p95Latency||Infinity)<=5000;
+   if(!currentOk||repNode?.status==='quarantine'||repNode?.status==='degraded')return false;
    if(m.tests===0)return r.successes>=3;
-   return m.recentTests>=9 && m.weightedRate>=0.9;
+   return m.recentTests>=9&&m.weightedRate>=0.9;
  }
  const google=new Set(h.results.filter(r=>currentRate(r)>0).map(r=>r.name));
  const stable=new Set(h.results.filter(stableEligible).map(r=>r.name));
@@ -147,113 +144,47 @@ try{
  try{reputation=JSON.parse(fs.readFileSync('data/reputation.json','utf8'))}catch{}
  const best=new Set(h.results.filter(bestEligible).map(r=>r.name));
  function qualityScore(r,m){
-  const success=Math.max(0,Math.min(1,r.successRate||0));
-  const long=Math.max(0,Math.min(1,m?.weightedRate??m?.longRate??0));
-  const latency=m?.avg?Math.max(0,1-Math.min(1,m.avg/5000)):0;
-  const p95=m?.p95?Math.max(0,1-Math.min(1,m.p95/10000)):0;
+  const success=Math.max(0,Math.min(1,r.successRate||0)),long=Math.max(0,Math.min(1,m?.weightedRate??m?.longRate??0));
+  const latency=m?.avg?Math.max(0,1-Math.min(1,m.avg/5000)):0,p95=m?.p95?Math.max(0,1-Math.min(1,m.p95/10000)):0;
   const sourceList=Array.isArray(r.sources)?r.sources:[r.source].filter(Boolean);
-  const sourceRates=sourceList.map(s=>{
-    const historical=sourceReputation.sources?.[s]?.weightedNodeSuccessRate;
-    return Number.isFinite(Number(historical))?Number(historical):Number(sourceQuality.get(s)?.nodeSuccessRate);
-  });
-  const validSourceRates=sourceRates.filter(Number.isFinite);
-  const sourceQualityScore=validSourceRates.length?validSourceRates.reduce((a,b)=>a+b,0)/validSourceRates.length:0;
-  // Provenance is only a small confidence signal: multiple public sources
-  // may copy one another, so it must never dominate actual health tests.
+  const sourceRates=sourceList.map(s=>{const historical=sourceReputation.sources?.[s]?.weightedNodeSuccessRate;return Number.isFinite(Number(historical))?Number(historical):Number(sourceQuality.get(s)?.nodeSuccessRate)});
+  const validSourceRates=sourceRates.filter(Number.isFinite),sourceQualityScore=validSourceRates.length?validSourceRates.reduce((a,b)=>a+b,0)/validSourceRates.length:0;
   const provenance=Math.min(1,Math.max(0,(sourceList.length-1)/3));
   return Math.round(100*(0.35*success+0.30*long+0.15*latency+0.10*p95+0.07*sourceQualityScore+0.03*provenance));
  }
  const pick=set=>clean.filter(p=>set.has(p.name));
- fs.writeFileSync('subscriptions/google.yaml',yaml.dump({proxies:pick(google)},{lineWidth:-1,noRefs:true}));
- fs.writeFileSync('subscriptions/stable.yaml',yaml.dump({proxies:pick(stable)},{lineWidth:-1,noRefs:true}));
- fs.writeFileSync('subscriptions/best.yaml',yaml.dump({proxies:pick(best)},{lineWidth:-1,noRefs:true}));
+ fs.writeFileSync('subscriptions/google.yaml',dumpSubscription(pick(google)));
+ fs.writeFileSync('subscriptions/stable.yaml',dumpSubscription(pick(stable)));
+ fs.writeFileSync('subscriptions/best.yaml',dumpSubscription(pick(best)));
  const scored=h.results.map(r=>{const m=metrics.get(r.fingerprint)||{};return {...r,qualityScore:qualityScore(r,m)}}).sort((a,b)=>b.qualityScore-a.qualityScore);
  fs.writeFileSync('data/scores.json',JSON.stringify({generatedAt:new Date().toISOString(),results:scored,sourceQuality:Object.fromEntries(sourceQuality)},null,2));
  const sourceHistory=[];
  try{sourceHistory.push(...JSON.parse(fs.readFileSync('data/source-history.json','utf8')))}catch{}
  sourceHistory.push({generatedAt:new Date().toISOString(),sources:Object.fromEntries(sourceQuality)});
- const sourceRuns=sourceHistory.slice(-30);
- const sourceReputationOut={generatedAt:new Date().toISOString(),sources:{}};
+ const sourceRuns=sourceHistory.slice(-30),sourceReputationOut={generatedAt:new Date().toISOString(),sources:{}};
  const sourceNames=new Set(sourceRuns.flatMap(run=>Object.keys(run.sources||{})));
  for(const source of sourceNames){
-   const observations=sourceRuns.flatMap(run=>{
-     const x=run.sources?.[source];
-     if(!x)return [];
-     return [{
-       successRate:Number(x.successRate||0),
-       nodeSuccessRate:Number(x.nodeSuccessRate||0),
-       avgLatency:x.avgLatency==null?null:Number(x.avgLatency),
-       nodes:Number(x.nodes||0)
-     }];
-   });
-   const recent=observations.slice(-12);
-   const weights=recent.map((_,i)=>i+1), total=weights.reduce((a,b)=>a+b,0);
+   const observations=sourceRuns.flatMap(run=>{const x=run.sources?.[source];if(!x)return [];return [{successRate:Number(x.successRate||0),nodeSuccessRate:Number(x.nodeSuccessRate||0),avgLatency:x.avgLatency==null?null:Number(x.avgLatency),nodes:Number(x.nodes||0)}]});
+   const recent=observations.slice(-12),weights=recent.map((_,i)=>i+1),total=weights.reduce((a,b)=>a+b,0);
    const weightedNodeSuccess=total?recent.reduce((s,x,i)=>s+x.nodeSuccessRate*weights[i],0)/total:0;
    const weightedTestSuccess=total?recent.reduce((s,x,i)=>s+x.successRate*weights[i],0)/total:0;
    const weightedNodes=total?recent.reduce((s,x,i)=>s+x.nodes*weights[i],0)/total:0;
    const weightedSuccessfulNodes=total?recent.reduce((s,x,i)=>s+x.nodes*x.nodeSuccessRate*weights[i],0)/total:0;
-
-   // Treat each source's node-level result as one Bernoulli observation rather
-   // than pretending every individual round is independent. Repeated runs are
-   // recency-weighted and then shrunk toward a neutral Beta(2,2) prior.
-   // This prevents a source with only a handful of nodes from becoming
-   // "trusted" merely because its raw success rate is 100%.
-   const alpha=2, beta=2;
-   const posteriorN=weightedNodes;
-   const posteriorS=weightedSuccessfulNodes;
-   const posteriorMean=(posteriorS+alpha)/(posteriorN+alpha+beta);
-   const posteriorFailures=Math.max(0,posteriorN-posteriorS);
-   const phat=posteriorN>0?posteriorS/posteriorN:0;
-   const z=1.645;
+   const alpha=2,beta=2,posteriorN=weightedNodes,posteriorS=weightedSuccessfulNodes,posteriorMean=(posteriorS+alpha)/(posteriorN+alpha+beta),phat=posteriorN>0?posteriorS/posteriorN:0,z=1.645;
    const denom=1+(z*z/Math.max(1,posteriorN));
-   const wilsonLower=posteriorN>0
-     ? Math.max(0,(phat+(z*z/(2*posteriorN))-z*Math.sqrt((phat*(1-phat)/posteriorN)+(z*z/(4*posteriorN*posteriorN))))/denom)
-     : 0;
-   const usable=recent.filter(x=>x.avgLatency!=null);
-   const avgLatency=usable.length?Math.round(usable.reduce((s,x)=>s+x.avgLatency,0)/usable.length):null;
-   const last=recent.at(-1);
-   const status=recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1)?'degraded':
-     (posteriorN>=10&&wilsonLower<0.35?'weak':
-     (posteriorN>=20&&wilsonLower>=0.70?'trusted':'normal'));
-   sourceReputationOut.sources[source]={
-     runs:observations.length,
-     weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),
-     weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),
-     effectiveNodes:Number(posteriorN.toFixed(2)),
-     effectiveSuccessfulNodes:Number(posteriorS.toFixed(2)),
-     posteriorMean:Number(posteriorMean.toFixed(4)),
-     lowerBound90:Number(wilsonLower.toFixed(4)),
-     avgLatency,
-     currentNodeSuccessRate:last?.nodeSuccessRate??0,
-     currentSuccessRate:last?.successRate??0,
-     currentNodes:last?.nodes??0,
-     status
-   };
+   const wilsonLower=posteriorN>0?Math.max(0,(phat+(z*z/(2*posteriorN))-z*Math.sqrt((phat*(1-phat)/posteriorN)+(z*z/(4*posteriorN*posteriorN))))/denom):0;
+   const usable=recent.filter(x=>x.avgLatency!=null),avgLatency=usable.length?Math.round(usable.reduce((s,x)=>s+x.avgLatency,0)/usable.length):null,last=recent.at(-1);
+   const status=recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1)?'degraded':(posteriorN>=10&&wilsonLower<0.35?'weak':(posteriorN>=20&&wilsonLower>=0.70?'trusted':'normal'));
+   sourceReputationOut.sources[source]={runs:observations.length,weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),effectiveNodes:Number(posteriorN.toFixed(2)),effectiveSuccessfulNodes:Number(posteriorS.toFixed(2)),posteriorMean:Number(posteriorMean.toFixed(4)),lowerBound90:Number(wilsonLower.toFixed(4)),avgLatency,currentNodeSuccessRate:last?.nodeSuccessRate??0,currentSuccessRate:last?.successRate??0,currentNodes:last?.nodes??0,status};
  }
  fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
  fs.writeFileSync('data/source-reputation.json',JSON.stringify(sourceReputationOut,null,2));
-
- // Feed source reputation back into the dynamic source registry.
- // Seeds remain controlled by sources/sources.yaml; only discovered sources
- // participate in this lifecycle.
  try{
-   const registry=JSON.parse(fs.readFileSync('data/sources.json','utf8'));
-   const fetched=new Set(raw.map(x=>x.name));
+   const registry=JSON.parse(fs.readFileSync('data/sources.json','utf8')),fetched=new Set(raw.map(x=>x.name));
    for(const s of registry.sources||[]){
-     const id=s.name||s.url;
-     const rep=sourceReputation.sources?.[id];
-     if(rep){
-       s.reputation=rep.weightedNodeSuccessRate;
-       // Do not resurrect a source that failed to fetch in this run merely
-       // because its historical reputation is still present.
-       if(!s.fetchFailures){
-         s.status=rep.status==='trusted'?'trusted':rep.status==='degraded'?'weak':rep.status==='weak'?'weak':(s.status==='candidate'?'normal':s.status);
-       }
-     }
-     if(fetched.has(id)){
-       s.fetchFailures=0;
-       s.lastSeen=new Date().toISOString();
-     }
+     const id=s.name||s.url,rep=sourceReputationOut.sources?.[id];
+     if(rep){s.reputation=rep.weightedNodeSuccessRate;if(!s.fetchFailures)s.status=rep.status==='trusted'?'trusted':rep.status==='degraded'?'weak':rep.status==='weak'?'weak':(s.status==='candidate'?'normal':s.status);}
+     if(fetched.has(id)){s.fetchFailures=0;s.lastSeen=new Date().toISOString();}
      if(s.status==='dead')s.nextProbeAt=new Date(Date.now()+7*86400000).toISOString();
      else if(s.status==='trusted')s.nextProbeAt=new Date(Date.now()+24*3600000).toISOString();
      else if(s.status==='normal')s.nextProbeAt=new Date(Date.now()+12*3600000).toISOString();
@@ -262,7 +193,7 @@ try{
    }
    registry.updatedAt=new Date().toISOString();
    fs.writeFileSync('data/sources.json',JSON.stringify(registry,null,2));
- }catch(e){console.log('source registry update skipped:',e.message)} 
+ }catch(e){console.log('source registry update skipped:',e.message)}
  console.log('google/stable/best:',google.size,stable.size,best.size);
 }catch(e){console.log('health data unavailable; only all.yaml generated:',e.message)}
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
