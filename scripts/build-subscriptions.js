@@ -187,7 +187,7 @@ try{
  };
  const COUNTRY_LIMIT=3;
  function countryCodeFromName(name){
-   const m=String(name||'').match(/(?:^|\\s|[^A-Za-z])([\\u{1F1E6}-\\u{1F1FF}]{2})(?=[A-Z]{2}_|\\||\\s|$)/u);
+   const m=String(name||'').match(/(?:^|\s|[^A-Za-z])([\u{1F1E6}-\u{1F1FF}]{2})(?=[A-Z]{2}_|\||\s|$)/u);
    if(m){
      const chars=[...m[1]];
      if(chars.length===2){
@@ -195,7 +195,7 @@ try{
        if(COUNTRY_TARGETS[code])return code;
      }
    }
-   const iso=String(name||'').match(/(?:^|[^A-Za-z])([A-Z]{2})_\\d+(?:\\||$)/);
+   const iso=String(name||'').match(/(?:^|[^A-Za-z])([A-Z]{2})_\d+(?:\||$)/);
    return iso&&COUNTRY_TARGETS[iso[1]]?iso[1]:null;
  }
  const candidateByName=new Map(clean.map(p=>[p.name,p]));
