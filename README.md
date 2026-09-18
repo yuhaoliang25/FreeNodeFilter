@@ -25,3 +25,7 @@
 ## 自动更新
 
 GitHub Actions 定期抓取、过滤、启动 Mihomo，并执行 Google 多轮测试后生成订阅。
+
+## 长期信誉
+
+`data/reputation.json` 会根据历史测试批次维护节点状态。连续失败会进入 `degraded`，最近 6 次测试全部失败则进入 `quarantine`；被隔离的节点不会进入 `best.yaml`。这样可以避免节点偶尔恢复一次就立即回到高质量池。
