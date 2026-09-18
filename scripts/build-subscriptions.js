@@ -319,7 +319,15 @@ fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
    const registry=JSON.parse(fs.readFileSync('data/sources.json','utf8')),fetched=new Set(raw.map(x=>x.name));
    for(const s of registry.sources||[]){
      const id=s.name||s.url,rep=sourceReputationOut.sources?.[id];
-     if(rep){s.reputation=rep.weightedNodeSuccessRate;if(!s.fetchFailures)s.status=rep.status==='trusted'?'trusted':rep.status==='degraded'?'weak':rep.status==='weak'?'weak':(s.status==='candidate'?'normal':s.status);}
+     if(rep){
+       s.reputation=rep.weightedNodeSuccessRate;
+       if(!s.fetchFailures)s.status=rep.status==='trusted'?'trusted'
+         :rep.status==='degraded'?'weak'
+         :rep.status==='weak'?'weak'
+         :rep.status==='stale'?'stale'
+         :rep.status==='dead'?'dead'
+         :(s.status==='candidate'?'normal':s.status);
+     }
      if(fetched.has(id)){s.fetchFailures=0;s.lastSeen=new Date().toISOString();}
      if(s.status==='dead')s.nextProbeAt=new Date(Date.now()+7*86400000).toISOString();
      else if(s.status==='trusted')s.nextProbeAt=new Date(Date.now()+24*3600000).toISOString();
