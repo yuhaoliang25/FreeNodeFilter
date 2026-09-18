@@ -13,7 +13,7 @@ async function json(url){const r=await fetch(url);const t=await r.text();if(!r.o
 async function main(){
  const all={};
  const candidates=JSON.parse(fs.readFileSync('data/candidates.json','utf8'));
- const ids=new Map(candidates.map(x=>[x.name,x._id]));
+ const ids=new Map(candidates.map(x=>[x.name,x['endpoint-id']||x._id]));
  const rep=(()=>{try{return JSON.parse(fs.readFileSync('data/reputation.json','utf8')).nodes||{}}catch{return {}}})();
  const now=Date.now();
  function score(p){
@@ -78,7 +78,7 @@ async function main(){
   const ok=delays.filter(x=>x>0),sorted=[...ok].sort((a,b)=>a-b),pct=p=>ok.length?sorted[Math.min(sorted.length-1,Math.ceil(sorted.length*p)-1)]:null;
   return {name,fingerprint:ids.get(name)||null,rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,delays};
  }).sort((a,b)=>(b.successRate-a.successRate)||(a.avgLatency??1e9)-(b.avgLatency??1e9));
- const report={generatedAt:new Date().toISOString(),target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,staging:{stage1:STAGE1_LIMIT,stage2:STAGE2_LIMIT,stage3:STAGE3_LIMIT,fastTimeout:FAST_TIMEOUT},results:rows};
+ const report={generatedAt:new Date().toISOString(),identity:'endpoint-id-v1',target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,staging:{stage1:STAGE1_LIMIT,stage2:STAGE2_LIMIT,stage3:STAGE3_LIMIT,fastTimeout:FAST_TIMEOUT},results:rows};
  fs.mkdirSync('data',{recursive:true});
  fs.writeFileSync('data/health.json',JSON.stringify(report,null,2));
  let history=[]; try{history=JSON.parse(fs.readFileSync('data/history.json','utf8'))}catch{}
