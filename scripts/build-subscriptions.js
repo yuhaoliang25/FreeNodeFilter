@@ -88,6 +88,29 @@ for(const p of proxies){
   const list=sourcesById.get(p._id)||[p._source];
   p._sources=[...new Set(list)];
 }
+const poolFile='data/node-pool.json';
+try{
+ const pool=JSON.parse(fs.readFileSync(poolFile,'utf8'));
+ for(const entry of pool.nodes||[]){
+   if(entry.status==='dead')continue;
+   const id=entry.fingerprint||entry.proxy?.['endpoint-id'];
+   const p=entry.proxy?{...entry.proxy}:{};
+   if(!id||!p.server||!p.port||seen.has(id))continue;
+   p['endpoint-id']=id;
+   p._id=id;
+   p._poolOnly=true;
+   p._source=null;
+   p._sources=Array.isArray(entry.currentSources)?entry.currentSources:[];
+   seen.add(id);
+   sourcesById.set(id,[...p._sources]);
+   let name=String(p.name||p.server).trim()||String(p.server);
+   if(usedNames.has(name))name=name+'-pool-'+id;
+   usedNames.add(name);
+   proxies.push({...p,name});
+ }
+ console.log('persistent node pool merged:',(pool.nodes||[]).filter(x=>x.status!=='dead').length,'entries');
+}catch(e){console.log('persistent node pool unavailable:',e.message)}
+
 const clean=proxies.map(({_source,_sources,_id,...p})=>{delete p['endpoint-id'];return p;});
 fs.mkdirSync('subscriptions',{recursive:true});
 
