@@ -32,6 +32,8 @@ GitHub Actions 定期抓取、过滤、启动 Mihomo，并执行 Google 多轮�
 
 质量评分还会把来源质量作为小权重信号：来源自身的历史节点成功率越高，节点得分略有提升；多来源出现也只提供很小的 provenance 加成，因为公开节点源之间可能互相复制，不能把“被多个源收录”当成独立验证。
 
+来源质量也有独立的历史信誉：保留最近 30 次运行，并对最近 12 次运行做递增加权。来源会按节点成功率划分为 `trusted`、`normal`、`weak` 或 `degraded`，节点评分优先使用这种历史来源信誉，而不是只看当前一次运行。
+
 ## 支持的订阅格式
 
 采集层支持 Clash/Mihomo YAML、Base64 包装的订阅，以及常见的 VLESS、VMess、Trojan、Shadowsocks URI；同时尽量保留 WebSocket、gRPC、TLS、SNI、Reality 等传输参数。所有节点仍需经过 Mihomo 实际连通性测试，格式支持不代表节点可用。
