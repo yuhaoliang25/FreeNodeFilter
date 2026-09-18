@@ -33,3 +33,7 @@ GitHub Actions 定期抓取、过滤、启动 Mihomo，并执行 Google 多轮�
 ## 支持的订阅格式
 
 采集层支持 Clash/Mihomo YAML、Base64 包装的订阅，以及常见的 VLESS、VMess、Trojan、Shadowsocks URI；同时尽量保留 WebSocket、gRPC、TLS、SNI、Reality 等传输参数。所有节点仍需经过 Mihomo 实际连通性测试，格式支持不代表节点可用。
+
+## 失败诊断
+
+每批测试后，最多对 100 个未完全成功的节点进行二次诊断。通过 Mihomo 选中节点后，经本地 HTTP 代理再次访问测试 URL，并尝试区分 DNS、TLS、连接拒绝、超时等常见失败类型；诊断结果保存在 `data/diagnostics.json`。
