@@ -12,7 +12,8 @@ function sourceId(url){
 
 const dynamicSources=(dynamicState.sources||[])
   .filter(s=>s.url&&!seedUrls.has(s.url))
-  .filter(s=>s.status!=='dead')
+  // Dead sources are not deleted: once their long retry interval expires,
+  // probe them again so a revived source can return to the pool.
   .filter(s=>!s.nextProbeAt||Date.parse(s.nextProbeAt)<=Date.now())
   .slice(0,25)
   .map(s=>({
