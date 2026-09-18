@@ -1,621 +1,61 @@
 {
-  "generatedAt": "2026-09-18T06:05:25.372Z",
+  "generatedAt": "2026-09-18T06:26:07.026Z",
   "target": "https://www.google.com/generate_204",
   "results": {
-    "5206efb600cadccf": {
-      "name": "🇺🇸US_2|891KB/s|M002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.033015,
-      "stderr": ""
-    },
-    "2b90c08d83af1d1d": {
-      "name": "🇺🇸US_4|725KB/s|C002-260622 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.0291,
-      "stderr": ""
-    },
-    "023628b7ed50c65a": {
-      "name": "🇺🇸US_16|894KB/s|B007-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.025971,
-      "stderr": ""
-    },
-    "0823f4f3b0d40b65": {
-      "name": "🇺🇸US_221|990KB/s|C002-260622 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027647,
-      "stderr": ""
-    },
-    "cff367242da6c9cc": {
-      "name": "🇺🇸US_31|740KB/s|M002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.028032,
-      "stderr": ""
-    },
-    "043ec5cc1f701603": {
-      "name": "🇫🇷FR_1569|350KB/s|X001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.150094,
-      "stderr": ""
-    },
-    "523f4d7cf18d3b64": {
-      "name": "🇫🇷FR_825|593KB/s|C002-260622 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.45792,
-      "stderr": ""
-    },
-    "0be239880a4d21d1": {
-      "name": "🇺🇸US_744|691KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 3.096728,
-      "stderr": ""
-    },
-    "2e5ca8137b396348": {
-      "name": "🇺🇸US_336|1.0MB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.608781,
-      "stderr": ""
-    },
-    "75c58e4f0cbf6abd": {
-      "name": "🇺🇸US_752|551KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.495892,
-      "stderr": ""
-    },
-    "11c003024231d9e2": {
-      "name": "🇺🇸US_89|795KB/s|C002-260622 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024274,
-      "stderr": ""
-    },
-    "80fd228b26dd48d3": {
-      "name": "🇯🇵JP_15|673KB/s|C002-260622 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 2.489058,
-      "stderr": ""
-    },
-    "d36d99e8382f3782": {
-      "name": "🇬🇧GB_70|7.0MB/s|A004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.406523,
-      "stderr": ""
-    },
-    "3c1295dff8ac5621": {
-      "name": "🇳🇱NL_188|2.6MB/s|A004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.529444,
-      "stderr": ""
-    },
-    "8f21ba5eddd222cb": {
-      "name": "🇳🇱NL_240|855KB/s|M002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.539785,
-      "stderr": ""
-    },
-    "09351a8203a33c61": {
-      "name": "🇳🇱NL_233|3.3MB/s|R002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.588857,
-      "stderr": ""
-    },
-    "74c395febdeb15d9": {
-      "name": "🇳🇱NL_27|2.9MB/s|A004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.460552,
-      "stderr": ""
-    },
-    "65c467fa230edc20": {
-      "name": "🇳🇱NL_66|4.3MB/s|S004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.457491,
-      "stderr": ""
-    },
-    "745b7ca3db16e1d7": {
-      "name": "🇳🇱NL_218|1.7MB/s|A004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.454897,
-      "stderr": ""
-    },
-    "f6c46c82c5268225": {
-      "name": "🇩🇪DE_65|1.5MB/s|A004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.594206,
-      "stderr": ""
-    },
-    "b8d04eaf40d10a79": {
-      "name": "🇺🇸 美国_6TTDG4",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 3.877755,
-      "stderr": ""
-    },
-    "5555a7feaa66ec54": {
-      "name": "🇹🇼TW_28|394KB/s|R002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.817173,
-      "stderr": ""
-    },
-    "ad454eddb6a220be": {
-      "name": "🇩🇪DE_78|557KB/s|B007-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.818558,
-      "stderr": ""
-    },
-    "381dda7cc661aca3": {
-      "name": "🇫🇷FR_471|817KB/s|T001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.784032,
-      "stderr": ""
-    },
-    "7354e6869e55080b": {
-      "name": "🇩🇪DE_69|686KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.839001,
-      "stderr": ""
-    },
-    "01255b83956b1e52": {
-      "name": "🇵🇱PL_11|1.4MB/s|R002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 1.245631,
-      "stderr": ""
-    },
-    "7a8325306090f776": {
-      "name": "🇱🇻LV_9|2.0MB/s|A004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.630669,
-      "stderr": ""
-    },
-    "ecbf10b65561efff": {
-      "name": "🇫🇷 法国_KHRAR9",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.524365,
-      "stderr": ""
-    },
-    "be2f429e95126958": {
-      "name": "🇧🇩BD_1|384KB/s|R002-260618 01",
+    "d18496b045e7f4c7": {
+      "name": "🇫🇷FR_1757|978KB/s|M002-260618 01",
       "diagnostic": "tls",
       "exitCode": 35,
       "httpCode": "000",
-      "timeTotal": 5.002185,
+      "timeTotal": 5.002271,
       "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
     },
-    "088f7c7e0bebed02": {
-      "name": "🇫🇷FR_33|118KB/s 01",
+    "9b8bd22379eb0b4f": {
+      "name": "🇫🇷FR_1954|1.0MB/s|M003-260806 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 5.002525,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "896227a53871ab68": {
+      "name": "🇺🇸US_525|311KB/s 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 2.382567,
+      "timeTotal": 0.297628,
       "stderr": ""
     },
-    "c5beebff9ec5e8d0": {
-      "name": "🇳🇱NL_92|1.9MB/s|A004-260618 01",
+    "dd95a5924866d039": {
+      "name": "🇺🇸US_500|154KB/s|R002-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.458571,
+      "timeTotal": 0.337838,
       "stderr": ""
     },
-    "e6b727b6e8cc39c5": {
-      "name": "🇰🇷KR²_1|0.7MB/s|GPT|X|History 01",
+    "d7fb9e7ea5c6aa54": {
+      "name": "🇲🇽MX_8|189KB/s|R002-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 4.73718,
+      "timeTotal": 0.271489,
       "stderr": ""
     },
-    "3729d11d769bda26": {
-      "name": "🇫🇷FR_174|598KB/s|A001-260618 01",
+    "ff4389307cb85ed0": {
+      "name": "🇺🇸US_474|276KB/s|F003-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 2.906215,
+      "timeTotal": 0.907986,
       "stderr": ""
     },
-    "e964211d05ea9295": {
-      "name": "🇳🇱NL_204|1.2MB/s|B007-260618 01",
+    "1df3a03e694c3b06": {
+      "name": "🇺🇸US_544|115KB/s|F003-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 6.095841,
-      "stderr": ""
-    },
-    "4b8d9b749dc64460": {
-      "name": "🇺🇸US_754|587KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 1.540093,
-      "stderr": ""
-    },
-    "d2db56669e9382bd": {
-      "name": "🇺🇸US_524|338KB/s 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027492,
-      "stderr": ""
-    },
-    "7ac45d3b0aa40c3c": {
-      "name": "🇭🇰HK香港節點丨yoyapai.com_1",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.029638,
-      "stderr": ""
-    },
-    "cfd07382b7a3f439": {
-      "name": "🇫🇷FR_783|466KB/s|X001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023643,
-      "stderr": ""
-    },
-    "df82ae82ddf02178": {
-      "name": "🇭🇰HK香港節點丨yoyapai.com_2",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.031688,
-      "stderr": ""
-    },
-    "1b91855d719d8c60": {
-      "name": "🇫🇷FR_871|263KB/s|X001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.025461,
-      "stderr": ""
-    },
-    "81bda1c15be134ca": {
-      "name": "🇫🇷FR_294|446KB/s|S004-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.030376,
-      "stderr": ""
-    },
-    "59bb11625423ebe0": {
-      "name": "🇺🇸US_521|866KB/s|R002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.025913,
-      "stderr": ""
-    },
-    "c2d12d40e7fce6fe": {
-      "name": "🇺🇸US_525|284KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024488,
-      "stderr": ""
-    },
-    "b7f62b7da025116b": {
-      "name": "🇺🇸US_334|764KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023166,
-      "stderr": ""
-    },
-    "e3068171dc3bbade": {
-      "name": "🇺🇸US_456|765KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.020855,
-      "stderr": ""
-    },
-    "ea52a8bdb4739be2": {
-      "name": "🇺🇸US_535|354KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027413,
-      "stderr": ""
-    },
-    "1dd2125ed4fbf465": {
-      "name": "🇺🇸US_558|761KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.030072,
-      "stderr": ""
-    },
-    "df8eb2bef450a733": {
-      "name": "🇺🇸US_715|292KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.480695,
-      "stderr": ""
-    },
-    "87a3bde1b6fd0338": {
-      "name": "❓Other_52|376KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.030999,
-      "stderr": ""
-    },
-    "ba8ef83819513c6a": {
-      "name": "🇺🇸US_348|1.1MB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.031308,
-      "stderr": ""
-    },
-    "e819d8ef97b6d994": {
-      "name": "🇺🇸US_652|815KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.032137,
-      "stderr": ""
-    },
-    "95d1cc37ec83490c": {
-      "name": "🇺🇸US_658|144KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.022702,
-      "stderr": ""
-    },
-    "edc307256a2dfc60": {
-      "name": "❓Other_35|403KB/s|X001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.025652,
-      "stderr": ""
-    },
-    "6fb0812dac5cbf62": {
-      "name": "🇺🇸US_559|287KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.029204,
-      "stderr": ""
-    },
-    "3b5fa5ab084fc683": {
-      "name": "🇺🇸US_648|344KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.02603,
-      "stderr": ""
-    },
-    "579c2a4c7754926e": {
-      "name": "🇺🇸US_687|334KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.02788,
-      "stderr": ""
-    },
-    "fef1e70a2351a731": {
-      "name": "🇺🇸US_714|277KB/s|X001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.02664,
-      "stderr": ""
-    },
-    "c19e02314ea4c0dd": {
-      "name": "🇺🇸US_530|259KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.028982,
-      "stderr": ""
-    },
-    "90db83766b035836": {
-      "name": "🇺🇸US_552|676KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027204,
-      "stderr": ""
-    },
-    "a3052fc325b646cd": {
-      "name": "🇺🇸US_638|884KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.02393,
-      "stderr": ""
-    },
-    "31187a16a272ddc1": {
-      "name": "🇺🇸US_465|376KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027034,
-      "stderr": ""
-    },
-    "fdcd94a283929e0d": {
-      "name": "🇺🇸US_469|557KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023294,
-      "stderr": ""
-    },
-    "e0c0a9eac22751e0": {
-      "name": "🇺🇸US_711|477KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.02817,
-      "stderr": ""
-    },
-    "595fef627ff38697": {
-      "name": "🇺🇸US_599|601KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.025538,
-      "stderr": ""
-    },
-    "77e8f0ddb172b38a": {
-      "name": "🇺🇸US_424|1.0MB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.026028,
-      "stderr": ""
-    },
-    "746d2569d7c42589": {
-      "name": "🇺🇸US_467|592KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.020425,
-      "stderr": ""
-    },
-    "0b7d9cd81a5d49be": {
-      "name": "🇺🇸US_656|472KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027173,
-      "stderr": ""
-    },
-    "496d68f282ca8913": {
-      "name": "🇺🇸US_712|215KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023533,
-      "stderr": ""
-    },
-    "4c3d21e5429ef97e": {
-      "name": "🇺🇸US_735|535KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.026753,
-      "stderr": ""
-    },
-    "3aae214f6a52cd63": {
-      "name": "🇺🇸US_422|289KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023054,
-      "stderr": ""
-    },
-    "344c114e78f7cc50": {
-      "name": "🇺🇸US_551|284KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027714,
-      "stderr": ""
-    },
-    "afb8da0ea14fd9be": {
-      "name": "🇺🇸US_747|1.2MB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024123,
-      "stderr": ""
-    },
-    "352805851992ff5b": {
-      "name": "🇺🇸US_325|1.0MB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023768,
-      "stderr": ""
-    },
-    "6a228f2a71cba1a8": {
-      "name": "🇺🇸US_363|472KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024894,
-      "stderr": ""
-    },
-    "34103b155ce66ee9": {
-      "name": "🇺🇸US_480|563KB/s|A001-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024722,
-      "stderr": ""
-    },
-    "87643b7e6e67fa2c": {
-      "name": "🇺🇸US_679|414KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023372,
-      "stderr": ""
-    },
-    "2bb18ea47e7abc6f": {
-      "name": "❓Other_15|869KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.026753,
+      "timeTotal": 0.463317,
       "stderr": ""
     },
     "2e2160057690c89e": {
@@ -623,103 +63,47 @@
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.0267,
+      "timeTotal": 0.460396,
       "stderr": ""
     },
-    "22ac283b3875311c": {
-      "name": "🇺🇸US_479|190KB/s|A001-260618 01",
+    "07fe72e28b7a0714": {
+      "name": "🇺🇸US_546|253KB/s|F003-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.030736,
+      "timeTotal": 0.470938,
       "stderr": ""
     },
-    "f1ba254096efc6fa": {
-      "name": "🇺🇸US_548|863KB/s|F003-260618 01",
+    "e9e7b2f10924d56b": {
+      "name": "🇺🇸US_759|1.1MB/s|F003-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.024259,
+      "timeTotal": 0.441641,
       "stderr": ""
     },
-    "1d11f46e9f237cdf": {
-      "name": "🇺🇸US_503|80KB/s|F003-260618 01",
+    "bef5d0e00f7743ae": {
+      "name": "🇺🇸US_447|565KB/s|F003-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.024133,
+      "timeTotal": 0.497423,
       "stderr": ""
     },
-    "a5e0874f5ab1776e": {
-      "name": "🇺🇸US_636|215KB/s|F003-260618 01",
+    "41108d774b2d956b": {
+      "name": "🇺🇸US_378|1.0MB/s|X001-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.024327,
+      "timeTotal": 0.45157,
       "stderr": ""
     },
-    "4fe3160e2e2c240c": {
-      "name": "🇺🇸US_678|360KB/s|F003-260618 01",
+    "9dfaf89e46c5ebc1": {
+      "name": "🇺🇸US_442|535KB/s|F003-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.025623,
-      "stderr": ""
-    },
-    "17ce8aa4ed25c31f": {
-      "name": "🇺🇸US_347|413KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.026097,
-      "stderr": ""
-    },
-    "08d2803fad7c56fe": {
-      "name": "🇺🇸US_346|579KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.027887,
-      "stderr": ""
-    },
-    "a3e453c7b47a28ab": {
-      "name": "🇺🇸US_436|422KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.02737,
-      "stderr": ""
-    },
-    "a7529d6ed24b5e85": {
-      "name": "🇺🇸US_475|801KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024933,
-      "stderr": ""
-    },
-    "7caddbf2fc0ea5ce": {
-      "name": "🇺🇸US_517|232KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024141,
-      "stderr": ""
-    },
-    "25cb61cd16b3ce8e": {
-      "name": "🇺🇸US_534|746KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.024691,
-      "stderr": ""
-    },
-    "874dbd93708fb5ed": {
-      "name": "🇺🇸US_751|487KB/s|F003-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.023471,
+      "timeTotal": 0.432965,
       "stderr": ""
     },
     "06b98d3c218645ac": {
@@ -727,31 +111,295 @@
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.023497,
+      "timeTotal": 0.461088,
       "stderr": ""
     },
-    "b35c593fd0231287": {
-      "name": "🇺🇸US_641|1013KB/s|F003-260618 01",
+    "f54fc50a24c3cffe": {
+      "name": "🇩🇪DE_84|7.5MB/s|A004-260618 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 1.26886,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "36c08b96675abaef": {
+      "name": "🇳🇱NL_264|1.7MB/s|M002-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.026927,
+      "timeTotal": 0.579314,
       "stderr": ""
     },
-    "a36ec7e53ae569af": {
-      "name": "🇺🇸US_326|544KB/s|F003-260618 01",
+    "c2b8adde120c24ed": {
+      "name": "🇻🇪VE_1|572KB/s|R002-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.026589,
+      "timeTotal": 0.458049,
       "stderr": ""
     },
-    "cad734e209e8cefc": {
-      "name": "🇯🇵JP_34|427KB/s|A004-260618 01",
+    "f6c46c82c5268225": {
+      "name": "🇩🇪DE_65|1.5MB/s|A004-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.024102,
+      "timeTotal": 0.897593,
+      "stderr": ""
+    },
+    "b8d04eaf40d10a79": {
+      "name": "🇺🇸 美国_6TTDG4",
+      "diagnostic": "timeout",
+      "exitCode": 28,
+      "httpCode": "000",
+      "timeTotal": 8.002202,
+      "stderr": "curl: (28) Connection timed out after 8002 milliseconds\n"
+    },
+    "0b747aa2742834fb": {
+      "name": "🇭🇰 香港 14",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.80598,
+      "stderr": ""
+    },
+    "0811fb4d4a3e4a6a": {
+      "name": "🇭🇰 香港_QYM04Z",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.376396,
+      "stderr": ""
+    },
+    "4bb3c70580da0297": {
+      "name": "🇭🇰 香港 15",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.31826,
+      "stderr": ""
+    },
+    "96be92c60b096a72": {
+      "name": "🇷🇴RO_99|265KB/s|A004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.629517,
+      "stderr": ""
+    },
+    "3ef540ad477d7e41": {
+      "name": "🇫🇷FR_1134|383KB/s|S004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.74676,
+      "stderr": ""
+    },
+    "74db179bb59397f4": {
+      "name": "🇫🇷FR_709|202KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.040839,
+      "stderr": ""
+    },
+    "cd520242f4580ed9": {
+      "name": "❓Other_40|1.1MB/s|A004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.66989,
+      "stderr": ""
+    },
+    "088f7c7e0bebed02": {
+      "name": "🇫🇷FR_33|118KB/s 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 3.201253,
+      "stderr": ""
+    },
+    "66b3e27bd6d353d7": {
+      "name": "🇺🇿UZ_6|282KB/s|T001-260618 01",
+      "diagnostic": "timeout",
+      "exitCode": 28,
+      "httpCode": "000",
+      "timeTotal": 8.002228,
+      "stderr": "curl: (28) Connection timed out after 8002 milliseconds\n"
+    },
+    "d3d9cf4283910de5": {
+      "name": "🇺🇸US_732|114KB/s|M003-260806 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 5.534453,
+      "stderr": ""
+    },
+    "7ae9c25547c29cee": {
+      "name": "🇮🇹IT_3|1.1MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.111866,
+      "stderr": ""
+    },
+    "3729d11d769bda26": {
+      "name": "🇫🇷FR_174|598KB/s|A001-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.876715,
+      "stderr": ""
+    },
+    "5b7ad390e5511dd2": {
+      "name": "🇨🇦CA_24|1.2MB/s|A004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 4.230792,
+      "stderr": ""
+    },
+    "7a223d425bb0d505": {
+      "name": "🇯🇵JP_20|118KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.605218,
+      "stderr": ""
+    },
+    "4b76843f3db705ef": {
+      "name": "🇨🇦CA_26|1.5MB/s|B007-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 7.686916,
+      "stderr": ""
+    },
+    "7d33c03df5dc1e8a": {
+      "name": "🇮🇳IN_3|744KB/s|B007-260618 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 5.003168,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "effb493a8b6b9dd4": {
+      "name": "🇺🇸US_699|270KB/s|M001-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 2.653667,
+      "stderr": ""
+    },
+    "d2db56669e9382bd": {
+      "name": "🇺🇸US_524|338KB/s 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 1.475529,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "89c7700d11d75879": {
+      "name": "🇫🇷FR_1279|975KB/s|X001-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.295328,
+      "stderr": ""
+    },
+    "ef00e95c24c1cbba": {
+      "name": "🇫🇷FR_1544|905KB/s|M003-260806 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 1.182498,
+      "stderr": ""
+    },
+    "1fd639ecae08768c": {
+      "name": "🇫🇷FR_1327|290KB/s|A004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.482343,
+      "stderr": ""
+    },
+    "c29a715063c15060": {
+      "name": "🇫🇷FR_1913|663KB/s|A004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023892,
+      "stderr": ""
+    },
+    "ad79bb794c377712": {
+      "name": "🇭🇰HK香港節點丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.025958,
+      "stderr": ""
+    },
+    "19e91d5025a4939f": {
+      "name": "🇫🇷FR_1863|474KB/s|M003-260806 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.026668,
+      "stderr": ""
+    },
+    "cfd07382b7a3f439": {
+      "name": "🇫🇷FR_783|466KB/s|X001-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024968,
+      "stderr": ""
+    },
+    "59bb11625423ebe0": {
+      "name": "🇺🇸US_521|866KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023795,
+      "stderr": ""
+    },
+    "4ecb2e960863e4be": {
+      "name": "🇺🇸US_482|382KB/s|A001-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.022185,
+      "stderr": ""
+    },
+    "beb7f3fe8ce47555": {
+      "name": "🇺🇸US_633|374KB/s|F003-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023138,
+      "stderr": ""
+    },
+    "cc87b919041a6d71": {
+      "name": "🇺🇸US_443|971KB/s|F003-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.025593,
+      "stderr": ""
+    },
+    "c164d69dd8355bcd": {
+      "name": "🇺🇸US_749|598KB/s|F003-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.340858,
+      "stderr": ""
+    },
+    "f216caa01369f26c": {
+      "name": "🇺🇸US_484|758KB/s|F003-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.276474,
       "stderr": ""
     },
     "dad151f01d12c18c": {
@@ -759,15 +407,23 @@
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.027649,
+      "timeTotal": 0.402455,
       "stderr": ""
     },
-    "959db54e218d1517": {
-      "name": "🇻🇪VE_3|740KB/s|R002-260618 01",
+    "aade820541322b3d": {
+      "name": "🇬🇧GB_91|592KB/s|P002-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.025806,
+      "timeTotal": 0.024457,
+      "stderr": ""
+    },
+    "7384e813f5405765": {
+      "name": "🇬🇧GB_70|487KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.53132,
       "stderr": ""
     },
     "2e7357e3f7e29cad": {
@@ -775,23 +431,23 @@
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.021925,
+      "timeTotal": 0.024391,
       "stderr": ""
     },
-    "338f48bb75ac64ee": {
-      "name": "🇬🇧GB_103|373KB/s|R002-260618 01",
+    "8c193968dc520090": {
+      "name": "🇬🇧GB_95|537KB/s|P002-260618 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 1.014645,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "6293524f244d2e36": {
+      "name": "🇬🇧GB_56|878KB/s|R002-260618 01",
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.028223,
-      "stderr": ""
-    },
-    "30124699fd80a1b6": {
-      "name": "❓Other_26|350KB/s|P002-260618 01",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "httpCode": "204",
-      "timeTotal": 0.025062,
+      "timeTotal": 0.023659,
       "stderr": ""
     },
     "6110a7758f678b76": {
@@ -799,7 +455,351 @@
       "diagnostic": "http_success",
       "exitCode": 0,
       "httpCode": "204",
-      "timeTotal": 0.030108,
+      "timeTotal": 0.023878,
+      "stderr": ""
+    },
+    "338f48bb75ac64ee": {
+      "name": "🇬🇧GB_103|373KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023807,
+      "stderr": ""
+    },
+    "2ae922ca3a0d5ad2": {
+      "name": "🇬🇧GB_101|1.3MB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027845,
+      "stderr": ""
+    },
+    "30124699fd80a1b6": {
+      "name": "❓Other_26|350KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024191,
+      "stderr": ""
+    },
+    "93d18ce6ee077022": {
+      "name": "🇫🇷_FR_法国-93d18ce6ee077022",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024124,
+      "stderr": ""
+    },
+    "2c68848c26467a27": {
+      "name": "🇦🇺AU澳大利亚丨yoyapai.com",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024383,
+      "stderr": ""
+    },
+    "fe655b544ff4c5af": {
+      "name": "🇳🇱NL_158|511KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.025739,
+      "stderr": ""
+    },
+    "590ada1c4fa447d0": {
+      "name": "🇬🇧GB_71|656KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027915,
+      "stderr": ""
+    },
+    "8beade73aca92ea0": {
+      "name": "🇬🇧GB_99|930KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.029415,
+      "stderr": ""
+    },
+    "21f21fe102f3509c": {
+      "name": "🇬🇧GB_106|575KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024013,
+      "stderr": ""
+    },
+    "9a403b445c60501d": {
+      "name": "🇬🇧GB_80|1.3MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.026574,
+      "stderr": ""
+    },
+    "09d90a57a1173b08": {
+      "name": "🇬🇧GB_64|849KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024961,
+      "stderr": ""
+    },
+    "412af49611692269": {
+      "name": "🇧🇪BE_3|855KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027288,
+      "stderr": ""
+    },
+    "0963e92ebb272237": {
+      "name": "❓Other_45|434KB/s|B007-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027584,
+      "stderr": ""
+    },
+    "2019091e9862a9bf": {
+      "name": "🇧🇪BE_2|1.1MB/s|R002-260618 01-2019091e9862a9bf",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023698,
+      "stderr": ""
+    },
+    "6b09e21a9b43f078": {
+      "name": "🇬🇧GB_102|1.0MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024808,
+      "stderr": ""
+    },
+    "5d555d800a2cee61": {
+      "name": "🇩🇪DE_27|659KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.02682,
+      "stderr": ""
+    },
+    "cf4e59bde5a9fc21": {
+      "name": "🇩🇪DE_29|544KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023667,
+      "stderr": ""
+    },
+    "33fd37ae1ad24b8d": {
+      "name": "🇩🇪DE_52|1.6MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.127457,
+      "stderr": ""
+    },
+    "ae687a75b811ccb6": {
+      "name": "🇩🇪DE_59|438KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.705076,
+      "stderr": ""
+    },
+    "b51bbdf64c72d921": {
+      "name": "🇧🇪BE_1|1.5MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.495797,
+      "stderr": ""
+    },
+    "dbf3c1c88538fe72": {
+      "name": "🇩🇪DE_28|1.4MB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024308,
+      "stderr": ""
+    },
+    "e9399841f8bbc39a": {
+      "name": "🇩🇪DE_57|1.3MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.024026,
+      "stderr": ""
+    },
+    "ce56c1af26c3bed2": {
+      "name": "🇩🇪DE_61|1.3MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027702,
+      "stderr": ""
+    },
+    "a05c3f2665957086": {
+      "name": "🇺🇸US_625|456KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.025555,
+      "stderr": ""
+    },
+    "aa5b99a7d680449b": {
+      "name": "🇪🇨EC_1|517KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.026924,
+      "stderr": ""
+    },
+    "4dd450e8ca4c9b0a": {
+      "name": "🇧🇪BE_2|1.1MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027628,
+      "stderr": ""
+    },
+    "71349588be3a0a0e": {
+      "name": "🇩🇪DE_3|1.4MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.026789,
+      "stderr": ""
+    },
+    "1b51c65aa5449c52": {
+      "name": "🇮🇪IE_1|1.1MB/s|R002-260618 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 1.990687,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "83b1d746b9d5847b": {
+      "name": "🇨🇭CH_3|627KB/s|P002-260618 01",
+      "diagnostic": "tls",
+      "exitCode": 35,
+      "httpCode": "000",
+      "timeTotal": 1.483364,
+      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+    },
+    "842ed5827aae6b77": {
+      "name": "🇬🇧GB_131|692KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.528983,
+      "stderr": ""
+    },
+    "71fa30daac5e4a12": {
+      "name": "🇫🇷FR_590|434KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023024,
+      "stderr": ""
+    },
+    "77d3d03c719b1b11": {
+      "name": "🇨🇴CO_2|123KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.02276,
+      "stderr": ""
+    },
+    "b9c3f4dd90425ca6": {
+      "name": "🇨🇭CH_2|574KB/s 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.032116,
+      "stderr": ""
+    },
+    "f8e90449bab5830e": {
+      "name": "🇫🇷FR_1826|982KB/s|M003-260806 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.035873,
+      "stderr": ""
+    },
+    "e602531b1aec3ae6": {
+      "name": "🇸🇪SE_10|1.4MB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.034078,
+      "stderr": ""
+    },
+    "4d87ff97e5e730e4": {
+      "name": "🇸🇪SE_5|526KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.034866,
+      "stderr": ""
+    },
+    "0bcbdac47ac218d2": {
+      "name": "🇩🇰DK_1|1.5MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023302,
+      "stderr": ""
+    },
+    "96fe909d92e0aaaf": {
+      "name": "🇸🇪SE_4|1.1MB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027731,
+      "stderr": ""
+    },
+    "ac38059f7c9c1033": {
+      "name": "🇦🇹AT_4|309KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.0233,
+      "stderr": ""
+    },
+    "45f8c68a46a65854": {
+      "name": "🇸🇪SE_1|628KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.023225,
+      "stderr": ""
+    },
+    "4498cf637ee010c3": {
+      "name": "🇩🇰DK_1|648KB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.027472,
+      "stderr": ""
+    },
+    "b58621e1273d586c": {
+      "name": "🇦🇹AT_3|551KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.026785,
+      "stderr": ""
+    },
+    "d0e8111c05d00432": {
+      "name": "🇪🇸ES_16|1.4MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "httpCode": "204",
+      "timeTotal": 0.02427,
       "stderr": ""
     }
   }
