@@ -1,0 +1,7 @@
+sources:
+  - name: mfuu-FreeProxies
+    url: https://raw.githubusercontent.com/mfuu/FreeProxies/main/subscribe/clash.yaml
+  - name: bq2015-FreeProxies
+    url: https://raw.githubusercontent.com/bq2015/FreeProxies/main/README.md
+  - name: vxiaov-free-proxies
+    url: https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash.yaml
