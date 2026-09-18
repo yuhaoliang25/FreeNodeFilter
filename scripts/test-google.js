@@ -11,6 +11,7 @@ const STAGE3_LIMIT=Number(process.env.STAGE3_LIMIT||100);
 const FAST_TIMEOUT=Number(process.env.FAST_TIMEOUT||5000);
 const BATCH_SIZE=Number(process.env.TEST_BATCH_SIZE||250);
 const BATCH_PAUSE=Number(process.env.TEST_BATCH_PAUSE_MS||500);
+const CONCURRENCY=Math.max(1,Number(process.env.TEST_CONCURRENCY||24));
 async function json(url){const r=await fetch(url);const t=await r.text();if(!r.ok)throw new Error('HTTP '+r.status+' '+t.slice(0,300));return JSON.parse(t)}
 async function main(){
  const all={};
@@ -46,19 +47,26 @@ async function main(){
   const merged={};
   for(let i=0;i<selected.length;i+=BATCH_SIZE){
    const batch=selected.slice(i,i+BATCH_SIZE);
-   for(const name of batch){
-    try{
-     const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
-     const result=await json(API+'/proxies/'+encodeURIComponent(name)+'/delay?'+q);
-     const d=Number(result.delay);
-     merged[name]=Number.isFinite(d)&&d>0?d:0;
-     (all[name]??=[]).push(merged[name]);
-    }catch(e){
-     merged[name]=0;
-     (all[name]??=[]).push(0);
+   let cursor=0;
+   async function worker(){
+    while(true){
+     const idx=cursor++;
+     if(idx>=batch.length)return;
+     const name=batch[idx];
+     try{
+      const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
+      const result=await json(API+'/proxies/'+encodeURIComponent(name)+'/delay?'+q);
+      const d=Number(result.delay);
+      merged[name]=Number.isFinite(d)&&d>0?d:0;
+      (all[name]??=[]).push(merged[name]);
+     }catch(e){
+      merged[name]=0;
+      (all[name]??=[]).push(0);
+     }
     }
    }
-   console.log(' batch',Math.floor(i/BATCH_SIZE)+1,'/',Math.ceil(selected.length/BATCH_SIZE),'tested',batch.length);
+   await Promise.all(Array.from({length:Math.min(CONCURRENCY,batch.length)},()=>worker()));
+   console.log(' batch',Math.floor(i/BATCH_SIZE)+1,'/',Math.ceil(selected.length/BATCH_SIZE),'tested',batch.length,'concurrency',Math.min(CONCURRENCY,batch.length));
    if(i+BATCH_SIZE<selected.length)await new Promise(r=>setTimeout(r,BATCH_PAUSE));
   }
   return merged;
