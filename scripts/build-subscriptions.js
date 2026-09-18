@@ -153,6 +153,66 @@ try{
   return Math.round(100*(0.35*success+0.30*long+0.15*latency+0.10*p95+0.07*sourceQualityScore+0.03*provenance));
  }
  const pick=set=>clean.filter(p=>set.has(p.name));
+
+ // Country pool: keep a small, intentional set of well-known regions rather
+ // than trying to maximize geographic coverage. Prefer nodes that already
+ // passed the current health checks, and cap each country independently.
+ const COUNTRY_TARGETS={
+   US:'United States',JP:'Japan',KR:'South Korea',SG:'Singapore',
+   GB:'United Kingdom',DE:'Germany',FR:'France',NL:'Netherlands',
+   CA:'Canada',AU:'Australia',IN:'India',TW:'Taiwan',HK:'Hong Kong'
+ };
+ const COUNTRY_LIMIT=3;
+ function countryCodeFromName(name){
+   const m=String(name||'').match(/(?:^|\\s|[^A-Za-z])([\\u{1F1E6}-\\u{1F1FF}]{2})(?=[A-Z]{2}_|\\||\\s|$)/u);
+   if(m){
+     const chars=[...m[1]];
+     if(chars.length===2){
+       const code=chars.map(c=>String.fromCharCode(c.codePointAt(0)-0x1F1E6+65)).join('');
+       if(COUNTRY_TARGETS[code])return code;
+     }
+   }
+   const iso=String(name||'').match(/(?:^|[^A-Za-z])([A-Z]{2})_\\d+(?:\\||$)/);
+   return iso&&COUNTRY_TARGETS[iso[1]]?iso[1]:null;
+ }
+ const candidateByName=new Map(clean.map(p=>[p.name,p]));
+ const countryBuckets=new Map(Object.keys(COUNTRY_TARGETS).map(k=>[k,[]]));
+ for(const r of h.results){
+   const p=candidateByName.get(r.name); if(!p)continue;
+   const code=countryCodeFromName(p.name); if(!code)continue;
+   const m=historyMetric(r.fingerprint);
+   const usable=r.rounds>=2&&currentRate(r)>=0.8&&currentLatency(r)<=5000;
+   if(!usable)continue;
+   countryBuckets.get(code).push({proxy:p,result:r,score:qualityScore(r,m)});
+ }
+ const countrySelected=[];
+ for(const [code,list] of countryBuckets){
+   list.sort((a,b)=>b.score-a.score);
+   const selected=[];
+   const protocols=new Set();
+   for(const item of list){
+     const type=String(item.proxy.type||'').toLowerCase();
+     if(selected.length>=COUNTRY_LIMIT)break;
+     if(!protocols.has(type)){selected.push(item);protocols.add(type);}
+   }
+   for(const item of list){
+     if(selected.length>=COUNTRY_LIMIT)break;
+     if(!selected.includes(item))selected.push(item);
+   }
+   countrySelected.push(...selected.map(x=>x.proxy));
+ }
+ const countrySet=new Set(countrySelected.map(p=>p.name));
+ fs.writeFileSync('subscriptions/country.yaml',dumpSubscription(countrySelected));
+ fs.writeFileSync('data/country-pool.json',JSON.stringify({
+   generatedAt:new Date().toISOString(),
+   targets:COUNTRY_TARGETS,
+   limitPerCountry:COUNTRY_LIMIT,
+   countries:Object.fromEntries([...countryBuckets].map(([code,list])=>[
+     code,
+     {name:COUNTRY_TARGETS[code],available:list.length,selected:list.filter(x=>countrySet.has(x.proxy.name)).slice(0,COUNTRY_LIMIT).map(x=>({name:x.proxy.name,type:x.proxy.type,score:x.score}))}
+   ]))
+ },null,2));
+ console.log('country pool:',countrySelected.length,'nodes across',Object.values(Object.fromEntries([...countryBuckets].map(([k,v])=>[k,v.length]))).filter(x=>x>0).length,'countries');
  fs.writeFileSync('subscriptions/google.yaml',dumpSubscription(pick(google)));
  fs.writeFileSync('subscriptions/stable.yaml',dumpSubscription(pick(stable)));
  fs.writeFileSync('subscriptions/best.yaml',dumpSubscription(pick(best)));
