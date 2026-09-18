@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T16:24:46.995Z",
+  "generatedAt": "2026-09-18T22:36:08.675Z",
   "method": {
     "description": "Endpoint-overlap graph for source similarity; similarity is an independence signal, not a source-quality penalty.",
     "minSourceNodes": 5,
@@ -8,13 +8,26 @@
     "strongSimilarityThreshold": 0.3
   },
   "summary": {
-    "candidates": 3903,
-    "eligibleSources": 11,
-    "relatedPairs": 4
+    "candidates": 3483,
+    "eligibleSources": 12,
+    "relatedPairs": 5
   },
   "sources": {
     "FreeNodes-clashmeta": {
-      "nodes": 3590,
+      "nodes": 2571,
+      "similarSources": [
+        {
+          "source": "FreeNodes-clashnode",
+          "intersection": 331,
+          "union": 2622,
+          "jaccard": 0.1262
+        }
+      ],
+      "strongSimilarityCount": 0,
+      "independenceWeight": 1
+    },
+    "mfuu-FreeProxies": {
+      "nodes": 701,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -25,8 +38,8 @@
         {
           "source": "FreeNodes-freeclashnode",
           "intersection": 206,
-          "union": 420,
-          "jaccard": 0.4905
+          "union": 385,
+          "jaccard": 0.5351
         },
         {
           "source": "FreeNodes-yudou",
@@ -39,29 +52,16 @@
           "intersection": 153,
           "union": 404,
           "jaccard": 0.3787
+        },
+        {
+          "source": "FreeNodes-clashmeta",
+          "intersection": 331,
+          "union": 2622,
+          "jaccard": 0.1262
         }
       ],
       "strongSimilarityCount": 3,
-      "independenceWeight": 0.7401
-    },
-    "FreeNodes-freeclashnode": {
-      "nodes": 244,
-      "similarSources": [
-        {
-          "source": "FreeNodes-nodev2ray",
-          "intersection": 153,
-          "union": 266,
-          "jaccard": 0.5752
-        },
-        {
-          "source": "FreeNodes-clashnode",
-          "intersection": 206,
-          "union": 420,
-          "jaccard": 0.4905
-        }
-      ],
-      "strongSimilarityCount": 2,
-      "independenceWeight": 0.6823
+      "independenceWeight": 0.7165
     },
     "FreeNodes-yudou": {
       "nodes": 215,
@@ -76,14 +76,33 @@
       "strongSimilarityCount": 1,
       "independenceWeight": 0.9243
     },
+    "FreeNodes-freeclashnode": {
+      "nodes": 209,
+      "similarSources": [
+        {
+          "source": "FreeNodes-nodev2ray",
+          "intersection": 153,
+          "union": 231,
+          "jaccard": 0.6623
+        },
+        {
+          "source": "FreeNodes-clashnode",
+          "intersection": 206,
+          "union": 385,
+          "jaccard": 0.5351
+        }
+      ],
+      "strongSimilarityCount": 2,
+      "independenceWeight": 0.626
+    },
     "FreeNodes-nodev2ray": {
       "nodes": 175,
       "similarSources": [
         {
           "source": "FreeNodes-freeclashnode",
           "intersection": 153,
-          "union": 266,
-          "jaccard": 0.5752
+          "union": 231,
+          "jaccard": 0.6623
         },
         {
           "source": "FreeNodes-clashnode",
@@ -93,22 +112,22 @@
         }
       ],
       "strongSimilarityCount": 2,
-      "independenceWeight": 0.7386
-    },
-    "FreeNodes-oneclash": {
-      "nodes": 79,
-      "similarSources": [],
-      "strongSimilarityCount": 0,
-      "independenceWeight": 1
+      "independenceWeight": 0.694
     },
     "FreeNodes-cfmem": {
-      "nodes": 49,
+      "nodes": 47,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
     },
     "FreeNodes-clashstair": {
-      "nodes": 35,
+      "nodes": 28,
+      "similarSources": [],
+      "strongSimilarityCount": 0,
+      "independenceWeight": 1
+    },
+    "FreeNodes-oneclash": {
+      "nodes": 26,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -119,14 +138,14 @@
       "strongSimilarityCount": 0,
       "independenceWeight": 1
     },
-    "FreeNodes-jichangx": {
-      "nodes": 18,
+    "FreeNodes-datiya": {
+      "nodes": 14,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
     },
-    "FreeNodes-datiya": {
-      "nodes": 14,
+    "FreeNodes-jichangx": {
+      "nodes": 11,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -137,15 +156,15 @@
       "a": "FreeNodes-freeclashnode",
       "b": "FreeNodes-nodev2ray",
       "intersection": 153,
-      "union": 266,
-      "jaccard": 0.5752
+      "union": 231,
+      "jaccard": 0.6623
     },
     {
       "a": "FreeNodes-clashnode",
       "b": "FreeNodes-freeclashnode",
       "intersection": 206,
-      "union": 420,
-      "jaccard": 0.4905
+      "union": 385,
+      "jaccard": 0.5351
     },
     {
       "a": "FreeNodes-clashnode",
@@ -160,6 +179,13 @@
       "intersection": 153,
       "union": 404,
       "jaccard": 0.3787
+    },
+    {
+      "a": "FreeNodes-clashmeta",
+      "b": "FreeNodes-clashnode",
+      "intersection": 331,
+      "union": 2622,
+      "jaccard": 0.1262
     }
   ]
 }
