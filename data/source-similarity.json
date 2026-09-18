@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T06:19:06.542Z",
+  "generatedAt": "2026-09-18T08:00:03.064Z",
   "method": {
     "description": "Endpoint-overlap graph for source similarity; similarity is an independence signal, not a source-quality penalty.",
     "minSourceNodes": 5,
