@@ -32,7 +32,7 @@ const eligible=[...sourceNodes.entries()]
 
 const intersection=new Map();
 
-function pairKey(a,b){return a<b?\`${a}\n${b}\`:\`${b}\n${a}\`;}
+function pairKey(a,b){return a<b?a+'\n'+b:b+'\n'+a;}
 function pairMap(key){
   let m=intersection.get(key);
   if(!m){m={a:key.split('\n')[0],b:key.split('\n')[1],intersection:0};intersection.set(key,m)}
