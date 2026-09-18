@@ -5,9 +5,11 @@ const fs=require('fs'),path=require('path'),yaml=require('js-yaml');
 const seedSources=yaml.load(fs.readFileSync(path.resolve('sources/sources.yaml'),'utf8')).sources||[];
 const dynamicState=(()=>{try{return JSON.parse(fs.readFileSync('data/sources.json','utf8'))}catch{return {sources:[]}}})();
 const seedUrls=new Set(seedSources.map(s=>s.url));
+
 const dynamicSources=(dynamicState.sources||[])
   .filter(s=>s.url&&!seedUrls.has(s.url))
   .filter(s=>s.status!=='dead')
+  .slice(0,25)
   .map((s,i)=>({
     name:'dynamic-'+String(i+1).padStart(3,'0'),
     url:s.url,
