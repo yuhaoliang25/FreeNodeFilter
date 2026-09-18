@@ -8,6 +8,8 @@ const ROUNDS=Number(process.env.TEST_ROUNDS||3), TIMEOUT=Number(process.env.TEST
 async function json(url){const r=await fetch(url);const t=await r.text();if(!r.ok)throw new Error('HTTP '+r.status+' '+t.slice(0,300));return JSON.parse(t)}
 async function main(){
  const all={};
+ const candidates=JSON.parse(fs.readFileSync('data/candidates.json','utf8'));
+ const ids=new Map(candidates.map(x=>[x.name,x._id]));
  for(let round=1;round<=ROUNDS;round++){
   const q=new URLSearchParams({url:TARGET,timeout:String(TIMEOUT),expected:EXPECTED});
   const result=await json(API+'/group/'+encodeURIComponent(GROUP)+'/delay?'+q);
@@ -17,7 +19,7 @@ async function main(){
  }
  const rows=Object.entries(all).map(([name,delays])=>{
   const ok=delays.filter(x=>x>0),sorted=[...ok].sort((a,b)=>a-b),pct=p=>ok.length?sorted[Math.min(sorted.length-1,Math.ceil(sorted.length*p)-1)]:null;
-  return {name,rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,delays};
+  return {name,fingerprint:ids.get(name)||null,rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,delays};
  }).sort((a,b)=>(b.successRate-a.successRate)||(a.avgLatency??1e9)-(b.avgLatency??1e9));
  const report={generatedAt:new Date().toISOString(),target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,results:rows};
  fs.mkdirSync('data',{recursive:true});
