@@ -12,19 +12,21 @@ function looksLikeUris(t){return /(?:vless|vmess|trojan|ss|ssr):\/\//i.test(t)}
 async function main(){
  fs.mkdirSync('data',{recursive:true});
  const out=[];
- for(const s of sources){
-  try{
-   const r=await fetch(s.url,{redirect:'follow',headers:{'user-agent':'FreeNodeFilter/0.1'}});
-   if(!r.ok)throw new Error('HTTP '+r.status);
-   const text=await r.text();
-   const decoded=decodeBase64(text);
-   let payload=text,format='yaml';
-   if(!looksLikeYaml(payload)&&decoded&&(looksLikeYaml(decoded)||looksLikeUris(decoded))){payload=decoded;format='base64'}
-   else if(!looksLikeYaml(payload)&&looksLikeUris(payload))format='uri';
-   out.push({name:s.name,url:s.url,format,text:payload,fetchedAt:new Date().toISOString()});
-   console.log('✓',s.name,format,payload.length,'bytes');
-  }catch(e){console.error('✗',s.name,e.message)}
- }
+ const results=await Promise.allSettled(sources.map(async s=>{
+  const r=await fetch(s.url,{redirect:'follow',headers:{'user-agent':'FreeNodeFilter/0.1'}});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const text=await r.text();
+  const decoded=decodeBase64(text);
+  let payload=text,format='yaml';
+  if(!looksLikeYaml(payload)&&decoded&&(looksLikeYaml(decoded)||looksLikeUris(decoded))){payload=decoded;format='base64'}
+  else if(!looksLikeYaml(payload)&&looksLikeUris(payload))format='uri';
+  return {name:s.name,url:s.url,format,text:payload,fetchedAt:new Date().toISOString()};
+ }));
+ results.forEach((r,i)=>{
+  const s=sources[i];
+  if(r.status==='fulfilled'){out.push(r.value);console.log('✓',s.name,r.value.format,r.value.text.length,'bytes')}
+  else console.error('✗',s.name,r.reason?.message||r.reason)
+ });
  fs.writeFileSync('data/raw-sources.json',JSON.stringify(out));
  if(!out.length)throw new Error('没有成功获取任何节点源');
 }
