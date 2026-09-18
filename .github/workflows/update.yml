@@ -110,7 +110,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add subscriptions mihomo/*.yaml data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json data/scores.json data/source-history.json data/source-reputation.json data/source-similarity.json data/sources.json data/raw-sources.json
+          git add subscriptions mihomo/*.yaml data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json data/scores.json data/source-history.json data/source-reputation.json data/source-similarity.json data/country-pool.json data/sources.json data/raw-sources.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh node candidates"
           git push
