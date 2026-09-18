@@ -60,7 +60,7 @@ jobs:
           TEST_ROUNDS: '3'
           TEST_TIMEOUT: '8000'
           FAST_TIMEOUT: '5000'
-          STAGE1_LIMIT: '1500'
+          STAGE1_LIMIT: '100000'
           STAGE2_LIMIT: '300'
           STAGE3_LIMIT: '100'
           TEST_BATCH_SIZE: '250'
