@@ -107,7 +107,7 @@ try{
    const s=[...x.latencies].sort((a,b)=>a-b), p=q=>s.length?s[Math.min(s.length-1,Math.ceil(s.length*q)-1)]:null;
    return [id,{longRate:x.tests?x.successes/x.tests:0,avg:s.length?Math.round(s.reduce((a,b)=>a+b,0)/s.length):null,p95:p(.95),tests:x.tests}];
  }));
- const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x]));
+ const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x])); const sourceReputation=(()=>{try{return JSON.parse(fs.readFileSync('data/source-reputation.json','utf8'))}catch{return {sources:{}}}})();
 
  const histStats=new Map(Object.entries(hist).map(([id,x])=>{
    const observations=[];
@@ -152,7 +152,10 @@ try{
   const latency=m?.avg?Math.max(0,1-Math.min(1,m.avg/5000)):0;
   const p95=m?.p95?Math.max(0,1-Math.min(1,m.p95/10000)):0;
   const sourceList=Array.isArray(r.sources)?r.sources:[r.source].filter(Boolean);
-  const sourceRates=sourceList.map(s=>Number(sourceQuality.get(s)?.nodeSuccessRate));
+  const sourceRates=sourceList.map(s=>{
+    const historical=sourceReputation.sources?.[s]?.weightedNodeSuccessRate;
+    return Number.isFinite(Number(historical))?Number(historical):Number(sourceQuality.get(s)?.nodeSuccessRate);
+  });
   const validSourceRates=sourceRates.filter(Number.isFinite);
   const sourceQualityScore=validSourceRates.length?validSourceRates.reduce((a,b)=>a+b,0)/validSourceRates.length:0;
   // Provenance is only a small confidence signal: multiple public sources
@@ -169,7 +172,43 @@ try{
  const sourceHistory=[];
  try{sourceHistory.push(...JSON.parse(fs.readFileSync('data/source-history.json','utf8')))}catch{}
  sourceHistory.push({generatedAt:new Date().toISOString(),sources:Object.fromEntries(sourceQuality)});
- fs.writeFileSync('data/source-history.json',JSON.stringify(sourceHistory.slice(-30),null,2));
+ const sourceRuns=sourceHistory.slice(-30);
+ const sourceReputation={generatedAt:new Date().toISOString(),sources:{}};
+ const sourceNames=new Set(sourceRuns.flatMap(run=>Object.keys(run.sources||{})));
+ for(const source of sourceNames){
+   const observations=sourceRuns.flatMap(run=>{
+     const x=run.sources?.[source];
+     if(!x)return [];
+     return [{
+       successRate:Number(x.successRate||0),
+       nodeSuccessRate:Number(x.nodeSuccessRate||0),
+       avgLatency:x.avgLatency==null?null:Number(x.avgLatency),
+       nodes:Number(x.nodes||0)
+     }];
+   });
+   const recent=observations.slice(-12);
+   const weights=recent.map((_,i)=>i+1), total=weights.reduce((a,b)=>a+b,0);
+   const weightedNodeSuccess=total?recent.reduce((s,x,i)=>s+x.nodeSuccessRate*weights[i],0)/total:0;
+   const weightedTestSuccess=total?recent.reduce((s,x,i)=>s+x.successRate*weights[i],0)/total:0;
+   const usable=recent.filter(x=>x.avgLatency!=null);
+   const avgLatency=usable.length?Math.round(usable.reduce((s,x)=>s+x.avgLatency,0)/usable.length):null;
+   const last=recent.at(-1);
+   const status=recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1)?'degraded':
+     (weightedNodeSuccess<0.35?'weak':
+     (weightedNodeSuccess>=0.75?'trusted':'normal'));
+   sourceReputation.sources[source]={
+     runs:observations.length,
+     weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),
+     weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),
+     avgLatency,
+     currentNodeSuccessRate:last?.nodeSuccessRate??0,
+     currentSuccessRate:last?.successRate??0,
+     currentNodes:last?.nodes??0,
+     status
+   };
+ }
+ fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
+ fs.writeFileSync('data/source-reputation.json',JSON.stringify(sourceReputation,null,2));
  console.log('google/stable/best:',google.size,stable.size,best.size);
 }catch(e){console.log('health data unavailable; only all.yaml generated:',e.message)}
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
