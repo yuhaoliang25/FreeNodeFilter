@@ -173,7 +173,7 @@ try{
  try{sourceHistory.push(...JSON.parse(fs.readFileSync('data/source-history.json','utf8')))}catch{}
  sourceHistory.push({generatedAt:new Date().toISOString(),sources:Object.fromEntries(sourceQuality)});
  const sourceRuns=sourceHistory.slice(-30);
- const sourceReputation={generatedAt:new Date().toISOString(),sources:{}};
+ const sourceReputationOut={generatedAt:new Date().toISOString(),sources:{}};
  const sourceNames=new Set(sourceRuns.flatMap(run=>Object.keys(run.sources||{})));
  for(const source of sourceNames){
    const observations=sourceRuns.flatMap(run=>{
@@ -215,7 +215,7 @@ try{
    const status=recent.length>=6&&recent.slice(-6).every(x=>x.nodeSuccessRate<0.1)?'degraded':
      (posteriorN>=10&&wilsonLower<0.35?'weak':
      (posteriorN>=20&&wilsonLower>=0.70?'trusted':'normal'));
-   sourceReputation.sources[source]={
+   sourceReputationOut.sources[source]={
      runs:observations.length,
      weightedNodeSuccessRate:Number(weightedNodeSuccess.toFixed(4)),
      weightedTestSuccessRate:Number(weightedTestSuccess.toFixed(4)),
@@ -231,7 +231,7 @@ try{
    };
  }
  fs.writeFileSync('data/source-history.json',JSON.stringify(sourceRuns,null,2));
- fs.writeFileSync('data/source-reputation.json',JSON.stringify(sourceReputation,null,2));
+ fs.writeFileSync('data/source-reputation.json',JSON.stringify(sourceReputationOut,null,2));
 
  // Feed source reputation back into the dynamic source registry.
  // Seeds remain controlled by sources/sources.yaml; only discovered sources
