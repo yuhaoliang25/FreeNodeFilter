@@ -85,13 +85,14 @@ Source 可能主动淘汰旧节点、寻找更好的节点。
 - data/ip-geolocation.json：节点服务器 IP 地理信息
 - data/country-pool.json：国家池选择记录
 
-## 本次准备实施
+## 本次已实施
 
 增加持久化节点池：
-- data/node-pool.json
+- data/node-pool.json（首次 Workflow 运行时生成）
+- data/source-evolution.json（首次 Workflow 运行时生成）
 - scripts/update-node-pool.js
 
-节点池不再因为一次 Source 抓取结果消失就丢弃节点。
+节点池不再因为一次 Source 抓取结果消失就丢弃节点。已将持久化 Node Pool 合并回候选集，因此历史节点会继续进入下一轮健康检测。
 
 每轮运行：
 1. 当前 Source 产生新候选；
@@ -103,7 +104,7 @@ Source 可能主动淘汰旧节点、寻找更好的节点。
 7. 新节点仍然保留探索机会；
 8. Source 轮换产生的新节点继续进入观察体系。
 
-同时记录 Source 的节点集合变化，为以后判断“坏轮换”还是“主动优化轮换”提供时间序列数据。
+同时记录 Source 的节点集合变化，为以后判断“坏轮换”还是“主动优化轮换”提供时间序列数据。已实现 data/source-evolution.json，当前只记录，不直接惩罚 Source。
 
 ## 当前不要做
 
@@ -118,4 +119,4 @@ Source 可能主动淘汰旧节点、寻找更好的节点。
 
 从最新 main 分支继续。
 
-下一阶段重点是让 NodeProbe 真正拥有“节点记忆”，而不是每轮重新从 Source 开始。
+下一阶段重点是让 NodeProbe 真正拥有“节点记忆”，而不是每轮重新从 Source 开始。代码已完成首次接入，等待下一次 GitHub Actions 实际运行验证。
