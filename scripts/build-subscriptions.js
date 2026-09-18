@@ -94,18 +94,28 @@ try{
  const idsByName=new Map(h.results.map(x=>[x.name,x.fingerprint]));
  const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x]));
 
- const google=new Set(h.results.filter(x=>x.successRate>0).map(x=>x.name));
- const stable=new Set(h.results.filter(x=>{
-   const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
-   return m.tests>=6 && m.longRate>=0.8 && x.successRate>=0.8 && x.p95Latency<=8000;
- }).map(x=>x.name));
+ const currentById=new Map(h.results.filter(x=>x.fingerprint).map(x=>[x.fingerprint,x]));
+ const histStats=new Map(Object.entries(hist).map(([id,x])=>[id,{...x}]));
+ function currentRate(r){return Number(r.successRate||0)}
+ function currentLatency(r){return r.avgLatency==null?Infinity:Number(r.avgLatency)}
+ function historyMetric(id){return histStats.get(id)||{tests:0,successes:0,latencies:[]}}
+ function stableEligible(r){
+   const m=historyMetric(r.fingerprint);
+   return m.tests>=6 && m.successes/m.tests>=0.8 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
+ }
+ function bestEligible(r){
+   const m=historyMetric(r.fingerprint);
+   const repNode=reputation.nodes?.[r.fingerprint];
+   return repNode?.status!=='quarantine' &&
+     m.tests>=9 && m.successes/m.tests>=0.9 &&
+     currentRate(r)>=0.9 && currentLatency(r)<=2500 &&
+     Number(r.p95Latency||Infinity)<=5000;
+ }
+ const google=new Set(h.results.filter(r=>currentRate(r)>0).map(r=>r.name));
+ const stable=new Set(h.results.filter(stableEligible).map(r=>r.name));
  let reputation={nodes:{}};
  try{reputation=JSON.parse(fs.readFileSync('data/reputation.json','utf8'))}catch{}
- const quarantined=new Set(Object.entries(reputation.nodes||{}).filter(([,x])=>x.status==='quarantine').map(([id])=>id));
- const best=new Set(h.results.filter(x=>{
-   const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
-   return !quarantined.has(x.fingerprint) && m.tests>=9 && m.longRate>=0.9 && x.successRate>=0.9 && x.p95Latency<=5000 && x.avgLatency<=2500;
- }).map(x=>x.name));
+ const best=new Set(h.results.filter(bestEligible).map(r=>r.name));
  function qualityScore(r,m){
   const success=Math.max(0,Math.min(1,r.successRate||0));
   const long=Math.max(0,Math.min(1,m?.longRate||0));
