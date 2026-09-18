@@ -77,7 +77,7 @@ jobs:
         run: node scripts/diagnose-failures.js
       - name: Rebuild filtered subscriptions
         env:
-          MAX_CANDIDATES: '1500'
+          MAX_CANDIDATES: '100000'
         run: node scripts/build-subscriptions.js
       - name: Commit generated subscriptions
         run: |
