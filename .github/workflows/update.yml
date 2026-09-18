@@ -64,6 +64,8 @@ jobs:
           STAGE1_LIMIT: '1500'
           STAGE2_LIMIT: '300'
           STAGE3_LIMIT: '100'
+          TEST_BATCH_SIZE: '250'
+          TEST_BATCH_PAUSE_MS: '500'
           TEST_EXPECTED: '204'
           GOOGLE_TEST_URL: https://www.google.com/generate_204
         run: node scripts/test-google.js
