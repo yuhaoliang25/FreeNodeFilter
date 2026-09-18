@@ -20,7 +20,7 @@ function canonical(url){
 }
 function isCandidatePath(p){
   const x=p.toLowerCase();
-  return /\\.(ya?ml|json|txt|conf|list)$/.test(x)&&/(sub|node|proxy|clash|sing|v2ray|vless|vmess|trojan|ssr|ss|free)/.test(x);
+  return /\.(ya?ml|json|txt|conf|list)$/.test(x)&&/(sub|node|proxy|clash|sing|v2ray|vless|vmess|trojan|ssr|ss|free)/.test(x);
 }
 async function api(url){
   const r=await fetch(url,{headers:{accept:'application/vnd.github+json','user-agent':UA,...(TOKEN?{authorization:'Bearer '+TOKEN}:{})}});
@@ -32,7 +32,7 @@ async function looksLikeSource(url){
     const r=await fetch(url,{redirect:'follow',headers:{'user-agent':UA}});
     if(!r.ok)return false;
     const text=(await r.text()).slice(0,200000);
-    return /(^|\\n)\\s*proxies\\s*:/m.test(text)||/(?:vless|vmess|trojan|ss|ssr):\\/\\//i.test(text);
+    return /(^|\n)\s*proxies\s*:/m.test(text)||/(?:vless|vmess|trojan|ss|ssr):\/\//i.test(text);
   }catch{return false}
 }
 async function fetchText(url,limit=200000){
@@ -62,7 +62,7 @@ function candidateUrl(url){
 }
 function extractSourceUrls(text){
   const found=new Set();
-  const re=/https?:\\/\\/[^\\s"'<>\\])}]+/gi;
+  const re=/https?:\/\/[^\s"'<>\])}]+/gi;
   for(const m of text.matchAll(re)){
     const u=candidateUrl(m[0].replace(/[.,;:]+$/,''));
     if(u)found.add(u);
@@ -175,7 +175,7 @@ async function main(){
 
   state.updatedAt=new Date().toISOString();
   state.version=1;
-  fs.writeFileSync(stateFile,JSON.stringify(state,null,2)+'\\n');
+  fs.writeFileSync(stateFile,JSON.stringify(state,null,2)+'\n');
   console.log('discovered:',added,'total dynamic:',state.sources.length);
 }
 
