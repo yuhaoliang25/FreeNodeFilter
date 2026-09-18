@@ -136,4 +136,4 @@ try{
  console.log('google/stable/best:',google.size,stable.size,best.size);
 }catch(e){console.log('health data unavailable; only all.yaml generated:',e.message)}
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
-console.log('candidate nodes:',clean.length,'limit:',MAX_CANDIDATES);
+console.log('candidate nodes:',clean.length);
