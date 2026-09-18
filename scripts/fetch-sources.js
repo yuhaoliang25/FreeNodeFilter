@@ -1,7 +1,21 @@
 #!/usr/bin/env node
 'use strict';
 const fs=require('fs'),path=require('path'),yaml=require('js-yaml');
-const sources=yaml.load(fs.readFileSync(path.resolve('sources/sources.yaml'),'utf8')).sources||[];
+
+const seedSources=yaml.load(fs.readFileSync(path.resolve('sources/sources.yaml'),'utf8')).sources||[];
+const dynamicState=(()=>{try{return JSON.parse(fs.readFileSync('data/sources.json','utf8'))}catch{return {sources:[]}}})();
+const seedUrls=new Set(seedSources.map(s=>s.url));
+const dynamicSources=(dynamicState.sources||[])
+  .filter(s=>s.url&&!seedUrls.has(s.url))
+  .filter(s=>s.status!=='dead')
+  .map((s,i)=>({
+    name:'dynamic-'+String(i+1).padStart(3,'0'),
+    url:s.url,
+    discoveredFrom:s.discoveredFrom||null
+  }));
+
+const sources=[...seedSources,...dynamicSources];
+
 function decodeBase64(text){
   const s=text.trim().replace(/\s+/g,'');
   if(!/^[A-Za-z0-9+/=_-]+$/.test(s)||s.length<16)return null;
@@ -9,6 +23,7 @@ function decodeBase64(text){
 }
 function looksLikeYaml(t){return /(^|\n)\s*proxies\s*:/m.test(t)}
 function looksLikeUris(t){return /(?:vless|vmess|trojan|ss|ssr):\/\//i.test(t)}
+
 async function main(){
  fs.mkdirSync('data',{recursive:true});
  const out=[];
@@ -20,12 +35,20 @@ async function main(){
   let payload=text,format='yaml';
   if(!looksLikeYaml(payload)&&decoded&&(looksLikeYaml(decoded)||looksLikeUris(decoded))){payload=decoded;format='base64'}
   else if(!looksLikeYaml(payload)&&looksLikeUris(payload))format='uri';
-  return {name:s.name,url:s.url,format,text:payload,fetchedAt:new Date().toISOString()};
+  else if(!looksLikeYaml(payload))throw new Error('unrecognized source format');
+  return {
+    name:s.name,url:s.url,format,text:payload,fetchedAt:new Date().toISOString(),
+    discoveredFrom:s.discoveredFrom||null
+  };
  }));
  results.forEach((r,i)=>{
   const s=sources[i];
-  if(r.status==='fulfilled'){out.push(r.value);console.log('✓',s.name,r.value.format,r.value.text.length,'bytes')}
-  else console.error('✗',s.name,r.reason?.message||r.reason)
+  if(r.status==='fulfilled'){
+    out.push(r.value);
+    console.log('✓',s.name,r.value.format,r.value.text.length,'bytes');
+  } else {
+    console.error('✗',s.name,r.reason?.message||r.reason);
+  }
  });
  fs.writeFileSync('data/raw-sources.json',JSON.stringify(out));
  if(!out.length)throw new Error('没有成功获取任何节点源');
