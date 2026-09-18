@@ -2,7 +2,7 @@
 'use strict';
 const fs=require('fs'),yaml=require('js-yaml'),crypto=require('crypto');
 const raw=JSON.parse(fs.readFileSync('data/raw-sources.json','utf8'));
-const proxies=[],seen=new Set(),usedNames=new Set();
+const proxies=[],seen=new Set(),usedNames=new Set(),sourcesById=new Map();
 function valid(p){
   if(!p||typeof p!=='object'||!p.name||!p.server||!p.port||!p.type)return false;
   const port=Number(p.port); if(!Number.isInteger(port)||port<1||port>65535)return false;
@@ -36,12 +36,19 @@ function add(p,source){
   // tls: true because their URI uses security=reality; normalize that here.
   if(p && p['reality-opts'])p.tls=true;
   if(!valid(p))return;
-  const key=fingerprint(p); if(seen.has(key))return; seen.add(key);
+  const key=fingerprint(p);
+  if(seen.has(key)){
+    const meta=sourcesById.get(key);
+    if(meta&&!meta.includes(source))meta.push(source);
+    return;
+  }
+  seen.add(key);
+  sourcesById.set(key,[source]);
   p['endpoint-id']=key;
   let name=String(p.name).trim()||String(p.server);
   if(usedNames.has(name))name=name+'-'+key;
   usedNames.add(name);
-  proxies.push({...p,name,_source:source,_id:key});
+  proxies.push({...p,name,_source:source,_sources:[source],_id:key});
 }
 function decodeB64Json(s){try{return JSON.parse(Buffer.from(s.replace(/-/g,'+').replace(/_/g,'/'),'base64').toString('utf8'))}catch{return null}}
 function vmessProxy(u,source){
@@ -81,7 +88,11 @@ for(const s of raw){
    for(const line of s.text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean))uriProxy(line,s.name);
  }
 }
-const clean=proxies.map(({_source,_id,...p})=>{delete p['endpoint-id'];return p;});
+for(const p of proxies){
+  const list=sourcesById.get(p._id)||[p._source];
+  p._sources=[...new Set(list)];
+}
+const clean=proxies.map(({_source,_sources,_id,...p})=>{delete p['endpoint-id'];return p;});
 fs.mkdirSync('subscriptions',{recursive:true});
 fs.writeFileSync('subscriptions/all.yaml',yaml.dump({proxies:clean},{lineWidth:-1,noRefs:true}));
 try{
