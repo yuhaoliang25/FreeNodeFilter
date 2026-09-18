@@ -35,7 +35,23 @@ async function main(){
   return 3;
  }
  const ranked=[...candidates].sort((a,b)=>score(b)-score(a));
- const names=ranked.slice(0,STAGE1_LIMIT).map(x=>x.name);
+ const known=ranked.filter(p=>rep[p._id] && rep[p._id].status!=='quarantine');
+ const fresh=ranked.filter(p=>!rep[p._id]);
+ const degraded=ranked.filter(p=>rep[p._id]?.status==='degraded');
+ const exploitLimit=Math.floor(STAGE1_LIMIT*0.7);
+ const exploreLimit=Math.floor(STAGE1_LIMIT*0.2);
+ const recoveryLimit=STAGE1_LIMIT-exploitLimit-exploreLimit;
+ function takeUnique(arr,n,used){
+  const out=[];
+  for(const p of arr)if(!used.has(p.name)&&out.length<n){used.add(p.name);out.push(p.name)}
+  return out;
+ }
+ const used=new Set();
+ const names=[
+   ...takeUnique(known,exploitLimit,used),
+   ...takeUnique(fresh,exploreLimit,used),
+   ...takeUnique(degraded,recoveryLimit,used)
+ ];
  async function testGroup(selected,timeout){
   if(!selected.length)return {};
   const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
