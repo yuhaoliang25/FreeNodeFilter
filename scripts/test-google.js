@@ -16,17 +16,26 @@ async function main(){
  const ids=new Map(candidates.map(x=>[x.name,x._id]));
  const rep=(()=>{try{return JSON.parse(fs.readFileSync('data/reputation.json','utf8')).nodes||{}}catch{return {}}})();
  const now=Date.now();
- function priority(p){
+ function score(p){
   const r=rep[p._id];
   if(!r)return 50;
+  const rate=Math.max(0,Math.min(1,Number(r.longTermSuccessRate||0)));
+  const recent=Math.max(0,Math.min(1,1-(Number(r.recentFailures||0)/6)));
   const age=Math.max(0,now-Date.parse(r.lastSeen||0));
-  const rate=Number(r.longTermSuccessRate||0);
+  const freshness=age<=86400000?1:age<=604800000?.7:.4;
   if(r.status==='quarantine')return -100;
-  if(r.status==='degraded')return 10+rate*20;
-  return 60+rate*40+(age>86400000?5:0);
+  if(r.status==='degraded')return 15+rate*25+recent*10;
+  return 40+rate*35+recent*15+freshness*10;
  }
- const ordered=[...candidates].sort((a,b)=>priority(b)-priority(a));
- const names=ordered.slice(0,STAGE1_LIMIT).map(x=>x.name);
+ function budget(p){
+  const s=score(p);
+  if(s<0)return 0;
+  if(s<35)return 1;
+  if(s<65)return 2;
+  return 3;
+ }
+ const ranked=[...candidates].sort((a,b)=>score(b)-score(a));
+ const names=ranked.slice(0,STAGE1_LIMIT).map(x=>x.name);
  async function testGroup(selected,timeout){
   if(!selected.length)return {};
   const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
@@ -34,6 +43,7 @@ async function main(){
   for(const [name,delay] of Object.entries(result)){const d=Number(delay);(all[name]??=[]).push(Number.isFinite(d)&&d>0?d:0)}
   return result;
  }
+ const budgets=new Map(candidates.map(p=>[p.name,budget(p)]));
  const r1=await testGroup(names,FAST_TIMEOUT);
  const survivors1=Object.entries(r1).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE2_LIMIT).map(([n])=>n);
  console.log('stage1:',names.length,'->',survivors1.length);
@@ -42,7 +52,8 @@ async function main(){
  console.log('stage2:',survivors1.length,'->',survivors2.length);
  for(let round=1;round<=ROUNDS;round++){
   if(round===1)continue;
-  const result=await testGroup(survivors2,TIMEOUT);
+  const eligible=survivors2.filter(name=>(budgets.get(name)||3)>=round);
+  const result=await testGroup(eligible,TIMEOUT);
   console.log('deep round',round,'tested',Object.keys(result).length);
   if(round<ROUNDS)await new Promise(r=>setTimeout(r,1500));
  }
