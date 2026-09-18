@@ -4,6 +4,7 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
+    "discover": "node scripts/discover-sources.js",
     "fetch": "node scripts/fetch-sources.js",
     "build": "node scripts/build-subscriptions.js"
   },
