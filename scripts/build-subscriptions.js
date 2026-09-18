@@ -89,8 +89,9 @@ try{
    const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
    return m.tests>=6 && m.longRate>=0.8 && x.successRate>=0.8 && x.p95Latency<=8000;
  }).map(x=>x.name));
- const reputation=JSON.parse(fs.readFileSync('data/reputation.json','utf8'));
- const quarantined=new Set(Object.entries(reputation.nodes).filter(([,x])=>x.status==='quarantine').map(([id])=>id));
+ let reputation={nodes:{}};
+ try{reputation=JSON.parse(fs.readFileSync('data/reputation.json','utf8'))}catch{}
+ const quarantined=new Set(Object.entries(reputation.nodes||{}).filter(([,x])=>x.status==='quarantine').map(([id])=>id));
  const best=new Set(h.results.filter(x=>{
    const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
    return !quarantined.has(x.fingerprint) && m.tests>=9 && m.longRate>=0.9 && x.successRate>=0.9 && x.p95Latency<=5000 && x.avgLatency<=2500;
