@@ -96,10 +96,19 @@ try{
    const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
    return !quarantined.has(x.fingerprint) && m.tests>=9 && m.longRate>=0.9 && x.successRate>=0.9 && x.p95Latency<=5000 && x.avgLatency<=2500;
  }).map(x=>x.name));
+ function qualityScore(r,m){
+  const success=Math.max(0,Math.min(1,r.successRate||0));
+  const long=Math.max(0,Math.min(1,m?.longRate||0));
+  const latency=m?.avg?Math.max(0,1-Math.min(1,m.avg/5000)):0;
+  const p95=m?.p95?Math.max(0,1-Math.min(1,m.p95/10000)):0;
+  return Math.round(100*(0.4*success+0.3*long+0.2*latency+0.1*p95));
+ }
  const pick=set=>clean.filter(p=>set.has(p.name));
  fs.writeFileSync('subscriptions/google.yaml',yaml.dump({proxies:pick(google)},{lineWidth:-1,noRefs:true}));
  fs.writeFileSync('subscriptions/stable.yaml',yaml.dump({proxies:pick(stable)},{lineWidth:-1,noRefs:true}));
  fs.writeFileSync('subscriptions/best.yaml',yaml.dump({proxies:pick(best)},{lineWidth:-1,noRefs:true}));
+ const scored=h.results.map(r=>{const m=metrics.get(r.fingerprint)||{};return {...r,qualityScore:qualityScore(r,m)}}).sort((a,b)=>b.qualityScore-a.qualityScore);
+ fs.writeFileSync('data/scores.json',JSON.stringify({generatedAt:new Date().toISOString(),results:scored},null,2));
  console.log('google/stable/best:',google.size,stable.size,best.size);
 }catch(e){console.log('health data unavailable; only all.yaml generated:',e.message)}
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
