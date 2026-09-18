@@ -93,6 +93,8 @@ try{
    return [id,{longRate:x.tests?x.successes/x.tests:0,avg:s.length?Math.round(s.reduce((a,b)=>a+b,0)/s.length):null,p95:p(.95),tests:x.tests}];
  }));
  const idsByName=new Map(h.results.map(x=>[x.name,x.fingerprint]));
+ const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x]));
+
  const google=new Set(h.results.filter(x=>x.successRate>0).map(x=>x.name));
  const stable=new Set(h.results.filter(x=>{
    const m=metrics.get(x.fingerprint)||{longRate:0,avg:null,p95:null,tests:0};
@@ -117,7 +119,11 @@ try{
  fs.writeFileSync('subscriptions/stable.yaml',yaml.dump({proxies:pick(stable)},{lineWidth:-1,noRefs:true}));
  fs.writeFileSync('subscriptions/best.yaml',yaml.dump({proxies:pick(best)},{lineWidth:-1,noRefs:true}));
  const scored=h.results.map(r=>{const m=metrics.get(r.fingerprint)||{};return {...r,qualityScore:qualityScore(r,m)}}).sort((a,b)=>b.qualityScore-a.qualityScore);
- fs.writeFileSync('data/scores.json',JSON.stringify({generatedAt:new Date().toISOString(),results:scored},null,2));
+ fs.writeFileSync('data/scores.json',JSON.stringify({generatedAt:new Date().toISOString(),results:scored,sourceQuality:Object.fromEntries(sourceQuality)},null,2));
+ const sourceHistory=[];
+ try{sourceHistory.push(...JSON.parse(fs.readFileSync('data/source-history.json','utf8')))}catch{}
+ sourceHistory.push({generatedAt:new Date().toISOString(),sources:Object.fromEntries(sourceQuality)});
+ fs.writeFileSync('data/source-history.json',JSON.stringify(sourceHistory.slice(-30),null,2));
  console.log('google/stable/best:',google.size,stable.size,best.size);
 }catch(e){console.log('health data unavailable; only all.yaml generated:',e.message)}
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
