@@ -2,10 +2,8 @@
 'use strict';
 const fs=require('fs');
 const API=process.env.MIHOMO_API||'http://127.0.0.1:9090';
-const GROUP=process.env.MIHOMO_GROUP||'FREE_NODE_POOL';
 const TARGET=process.env.GOOGLE_TEST_URL||'https://www.google.com/generate_204';
 const ROUNDS=Number(process.env.TEST_ROUNDS||3), TIMEOUT=Number(process.env.TEST_TIMEOUT||8000), EXPECTED=process.env.TEST_EXPECTED||'204';
-const STAGE1_LIMIT=Number(process.env.STAGE1_LIMIT||1500);
 const STAGE2_LIMIT=Number(process.env.STAGE2_LIMIT||300);
 const STAGE3_LIMIT=Number(process.env.STAGE3_LIMIT||100);
 const FAST_TIMEOUT=Number(process.env.FAST_TIMEOUT||5000);
@@ -87,8 +85,9 @@ async function main(){
   if(r.status==='degraded')return [p.name,1];
   return [p.name,rate>=0.9?3:2];
  }));
- for(let round=2;round<=ROUNDS;round++){
-  const eligible=survivors2.filter(name=>(budgets.get(name)||0)>=round);
+ const deepCandidates=survivors2.slice(0,STAGE3_LIMIT);
+ for(let round=3;round<=ROUNDS;round++){
+  const eligible=deepCandidates.filter(name=>(budgets.get(name)||0)>=round);
   const result=await testGroup(eligible,TIMEOUT);
   console.log('deep round',round,'tested',Object.keys(result).length);
   if(round<ROUNDS)await new Promise(r=>setTimeout(r,1500));
@@ -98,7 +97,7 @@ async function main(){
   const ok=delays.filter(x=>x>0),sorted=[...ok].sort((a,b)=>a-b),pct=p=>ok.length?sorted[Math.min(sorted.length-1,Math.ceil(sorted.length*p)-1)]:null;
   return {name,fingerprint:ids.get(name)||null,source:sourceByName.get(name)||'unknown',rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,delays};
  }).sort((a,b)=>(b.successRate-a.successRate)||(a.avgLatency??1e9)-(b.avgLatency??1e9));
- const report={generatedAt:new Date().toISOString(),identity:'endpoint-id-v1',target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,staging:{stage1:STAGE1_LIMIT,stage2:STAGE2_LIMIT,stage3:STAGE3_LIMIT,fastTimeout:FAST_TIMEOUT},results:rows};
+ const report={generatedAt:new Date().toISOString(),identity:'endpoint-id-v1',target:TARGET,rounds:ROUNDS,timeout:TIMEOUT,expectedStatus:EXPECTED,staging:{stage1:'all',stage2:STAGE2_LIMIT,stage3:STAGE3_LIMIT,fastTimeout:FAST_TIMEOUT},results:rows};
  fs.mkdirSync('data',{recursive:true});
  report.sourceStats={};
  for(const r of rows){
@@ -120,11 +119,13 @@ async function main(){
  history.push(report); history=history.slice(-30);
  fs.writeFileSync('data/history.json',JSON.stringify(history,null,2));
  const reputation={generatedAt:new Date().toISOString(),nodes:{}};
- for(const [id,r] of current){
+ for(const [id,r] of new Map(rows.filter(x=>x.fingerprint).map(x=>[x.fingerprint,x]))){
    const past=history.flatMap(b=>b.results||[]).filter(x=>x.fingerprint===id);
    const tests=past.reduce((n,x)=>n+x.rounds,0), successes=past.reduce((n,x)=>n+x.successes,0);
-   const failures=tests-successes, recent=past.slice(-6), recentFailures=recent.reduce((n,x)=>n+(x.rounds-x.successes),0);
-   const status=recentFailures>=6?'quarantine':(recentFailures>=3?'degraded':'active');
+   const failures=tests-successes;
+   const recentDelays=past.flatMap(x=>Array.isArray(x.delays)?x.delays:[]).slice(-6);
+   const recentFailures=recentDelays.filter(x=>!(Number(x)>0)).length;
+   const status=recentDelays.length>=6&&recentFailures===6?'quarantine':(recentFailures>=3?'degraded':'active');
    reputation.nodes[id]={name:r.name,longTermSuccessRate:tests?successes/tests:0,totalTests:tests,totalFailures:failures,recentFailures,status,lastSeen:new Date().toISOString()};
  }
  fs.writeFileSync('data/reputation.json',JSON.stringify(reputation,null,2));
