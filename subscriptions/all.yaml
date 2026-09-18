@@ -68,19 +68,6 @@ proxies:
     port: 443
     password: p78naCf2EfOlRSLTX0wFVx
     cipher: chacha20-ietf-poly1305
-  - name: VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-38.92.10.226:45979
-    type: vmess
-    server: 38.92.10.226
-    port: 45979
-    uuid: 23bdf6df-c482-46d0-c0f4-5a98d534ea11
-    alterId: 0
-    cipher: auto
-    network: ws
-    http-opts: {}
-    h2-opts: {}
-    skip-cert-verify: true
-    ws-opts:
-      path: /test
   - name: SS-美国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-23.95.76.59:990
     type: ss
     server: 23.95.76.59
@@ -240,23 +227,6 @@ proxies:
       path: /
       headers:
         Host: sy4.620720.xyz
-  - name: VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-hgtrojan.zabc.net:2083
-    type: vmess
-    server: hgtrojan.zabc.net
-    port: 2083
-    uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
-    alterId: 0
-    cipher: auto
-    network: ws
-    servername: hgtrojan.zabc.net
-    http-opts: {}
-    h2-opts: {}
-    tls: true
-    skip-cert-verify: true
-    ws-opts:
-      path: /e6395c20
-      headers:
-        HOST: hgtrojan.zabc.net
   - name: SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.175.87.207:10011
     type: ss
     server: 107.175.87.207
@@ -359,19 +329,6 @@ proxies:
     ws-opts:
       headers:
         Host: vms.lifetime50.workers.dev
-    skip-cert-verify: false
-    udp: true
-  - name: 🇫🇷法國丨yoyapai.com
-    type: vless
-    server: 94.140.0.100
-    port: 8880
-    uuid: 78e6619e-e82a-cd8d-b482-0973d8498305
-    network: ws
-    tls: false
-    ws-opts:
-      path: /sync
-      headers:
-        Host: silent-pine-a674.jfadwkglaugul.workers.dev
     skip-cert-verify: false
     udp: true
   - name: 🇫🇷FR法國丨yoyapai.com
@@ -1414,53 +1371,6 @@ proxies:
       short-id: 364994a6f61fc955
     skip-cert-verify: false
     udp: true
-  - name: 🇺🇦烏克蘭丨yoyapai.com
-    type: vless
-    server: 104.245.242.7
-    port: 443
-    uuid: e3e876aa-589e-1dcb-e55f-6ff56d8d80f4
-    network: http
-    servername: cdn.steamstatic.com
-    tls: true
-    client-fingerprint: chrome
-    http-opts:
-      path:
-        - /
-    reality-opts:
-      public-key: 3DYkxUg9fBA6cONioJOPrsklcMQEImEsurR6air4swo
-    skip-cert-verify: false
-    udp: true
-  - name: 🇩🇪德國丨yoyapai.com_1
-    type: vless
-    server: 170.168.97.3
-    port: 443
-    uuid: 5e243126-4a2a-84b6-782a-73b14797fb5f
-    network: http
-    servername: download.nvidia.com
-    tls: true
-    client-fingerprint: chrome
-    http-opts:
-      path:
-        - /
-    reality-opts:
-      public-key: D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs
-    skip-cert-verify: false
-    udp: true
-  - name: 🇹🇷土耳其丨yoyapai.com
-    type: vless
-    server: 170.168.97.3
-    port: 8443
-    uuid: 5e243126-4a2a-84b6-782a-73b14797fb5f
-    network: grpc
-    servername: download.nvidia.com
-    tls: true
-    client-fingerprint: chrome
-    grpc-opts:
-      grpc-service-name: TunService
-    reality-opts:
-      public-key: D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs
-    skip-cert-verify: false
-    udp: true
   - name: 🇮🇷_IR_伊朗
     type: vmess
     server: 94.182.88.61
@@ -1492,19 +1402,6 @@ proxies:
       path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
       headers:
         Host: pan11.global.ssl.fastly.net
-    skip-cert-verify: false
-    udp: true
-  - name: 🇬🇷 希腊丨yoyapai.com
-    type: vless
-    server: 88.218.44.4
-    port: 993
-    uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
-    servername: dl.google.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Rt2wltCWOxIroFggNWMudZDBJXls8DsF4icaWqxKDk8
     skip-cert-verify: false
     udp: true
   - name: 🇷🇺_RU俄羅斯丨yoyapai.com_1
@@ -1590,30 +1487,6 @@ proxies:
       short-id: 825d392c67e4
     skip-cert-verify: false
     udp: true
-  - name: 🇮🇷 伊朗丨yoyapai.com
-    type: vless
-    server: fn.fifapes.monster
-    port: 2090
-    uuid: eab915bc-d2df-73d1-47d0-6eb240497055
-    tls: false
-    client-fingerprint: chrome
-    skip-cert-verify: false
-    udp: true
-  - name: 🇳🇱 荷蘭丨yoyapai.com
-    type: vless
-    server: 88.218.44.4
-    port: 8443
-    uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
-    network: grpc
-    servername: download.nvidia.com
-    tls: true
-    client-fingerprint: chrome
-    grpc-opts:
-      grpc-service-name: TunService
-    reality-opts:
-      public-key: EG3y7UktGRlzSZZ2oXT_YaO2gVP4ca3Xe6AQ0u9A5DQ
-    skip-cert-verify: false
-    udp: true
   - name: 🇳🇱 荷蘭丨yoyapai.com_1
     type: vless
     server: 94.102.51.218
@@ -1625,51 +1498,6 @@ proxies:
     client-fingerprint: random
     reality-opts:
       public-key: SHDdd617KLHHb0qlQFOHepeHFl_Ch2i-K7o891uyo2M
-    skip-cert-verify: false
-    udp: true
-  - name: 美國丨yoyapai.com_3
-    type: vless
-    server: 88.218.44.4
-    port: 993
-    uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
-    servername: download.nvidia.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: EG3y7UktGRlzSZZ2oXT_YaO2gVP4ca3Xe6AQ0u9A5DQ
-    skip-cert-verify: false
-    udp: true
-  - name: 🇩🇪德國丨yoyapai.com_5
-    type: vless
-    server: 88.218.44.4
-    port: 443
-    uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
-    network: http
-    servername: dl.google.com
-    tls: true
-    client-fingerprint: chrome
-    http-opts:
-      path:
-        - /
-    reality-opts:
-      public-key: Rt2wltCWOxIroFggNWMudZDBJXls8DsF4icaWqxKDk8
-    skip-cert-verify: false
-    udp: true
-  - name: 🇩🇪德國丨yoyapai.com_6
-    type: vless
-    server: 88.218.44.4
-    port: 443
-    uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
-    network: http
-    servername: download.nvidia.com
-    tls: true
-    client-fingerprint: chrome
-    http-opts:
-      path:
-        - /
-    reality-opts:
-      public-key: EG3y7UktGRlzSZZ2oXT_YaO2gVP4ca3Xe6AQ0u9A5DQ
     skip-cert-verify: false
     udp: true
   - name: 🇨🇦CA加拿大丨yoyapai.com_9
@@ -1747,40 +1575,12 @@ proxies:
           - svn-panel-team.lorqino.ir
     skip-cert-verify: false
     udp: true
-  - name: 土耳其丨yoyapai.com
-    type: vless
-    server: 170.168.97.3
-    port: 993
-    uuid: e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d
-    servername: download.nvidia.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: D2SXHZRRYM0WcFChGWd57XB-U73aIsGfMpe2-Gq5XSs
-    skip-cert-verify: false
-    udp: true
   - name: 🇨🇴CO哥倫比亞丨yoyapai.com
     type: vless
     server: 149.130.176.140
     port: 62145
     uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
     tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 🇺🇸 美國丨yoyapai.com_1
-    type: vless
-    server: 88.218.44.4
-    port: 8443
-    uuid: 7c74b0e4-f132-5583-4692-622a7d6b71a4
-    network: grpc
-    servername: dl.google.com
-    tls: true
-    client-fingerprint: chrome
-    grpc-opts:
-      grpc-service-name: TunService
-    reality-opts:
-      public-key: Rt2wltCWOxIroFggNWMudZDBJXls8DsF4icaWqxKDk8
     skip-cert-verify: false
     udp: true
   - name: 🇹🇭TH泰國丨yoyapai.com
@@ -3014,21 +2814,6 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: false
-    udp: true
-  - name: 🇭🇰HK香港丨yoyapai.com_9
-    type: vmess
-    server: u2frxj0g13vdi0wo.v.3dns.vip
-    port: 443
-    uuid: f23bb427c1f94373876c2f43e9f790f3
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /ws-vmess
-      headers:
-        Host: U2FRxj0G13vDI0Wo.v.3dns.vip
     udp: true
   - name: 🇮🇳IN印度丨yoyapai.com
     type: vless
@@ -5670,27 +5455,6 @@ proxies:
     sub_tag: A004-260618
     type: trojan
     udp: true
-  - alpn:
-      - ''
-    alterId: '0'
-    cipher: auto
-    name: 🇭🇰 香港 10
-    network: ws
-    port: 443
-    server: nycqg19zkwacpm1b.v.3dns.vip
-    skip-cert-verify: false
-    sub_tag: M003-260806
-    tls: true
-    type: vmess
-    udp: true
-    uuid: f23bb427c1f94373876c2f43e9f790f3
-    ws-opts:
-      headers:
-        Host: nycqg19zkwacpm1b.v.3dns.vip
-      path: /ws-vmess
-    xudp: true
-    packet-encoding: xudp
-    servername: nycqg19zkwacpm1b.v.3dns.vip
   - alterId: 0
     cipher: auto
     name: 🇭🇰 香港 11
@@ -6677,24 +6441,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_42|451KB/s 01
-    network: ws
-    port: 443
-    server: www.speedtest.net
-    tls: true
-    type: vless
-    udp: true
-    uuid: a88e61a0-2b38-f6df-c5c7-d20600000000
-    ws-opts:
-      headers:
-        Host: netlivpn5002.whwbbb.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5002.whwbbb.workers.dev
   - name: 🇫🇷FR_43|554KB/s 01
     network: ws
     port: 8880
@@ -6913,23 +6659,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_58|2.9MB/s 01
-    network: ws
-    port: 2087
-    server: www.shopify.com
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_59|937KB/s 01
     network: ws
     port: 8880
@@ -7638,24 +7367,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
   - client-fingerprint: chrome
-    name: 🇫🇷FR_84|2.0MB/s|C002-260622 01
-    network: ws
-    port: 2087
-    server: cf.9999669.xyz
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇫🇷FR_85|1.6MB/s|C002-260622 01
     network: ws
     password: humanity
@@ -7686,25 +7397,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
   - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_87|689KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: 104.24.212.83
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 52322144-50c7-9d9f-6ba9-fdb600000005
-    ws-opts:
-      headers:
-        Host: broad-wind-e1ca.salmanmahigir9508.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: broad-wind-e1ca.salmanmahigir9508.workers.dev
-  - client-fingerprint: chrome
     name: 🇫🇷FR_88|678KB/s|C002-260622 01
     network: ws
     password: humanity
@@ -7731,20 +7423,6 @@ proxies:
     type: vmess
     udp: true
     uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-    xudp: true
-    packet-encoding: xudp
-  - alterId: '0'
-    cipher: auto
-    name: 🇺🇸US_24|223KB/s|C002-260622 01
-    network: raw
-    port: 443
-    server: 165.140.216.142
-    skip-cert-verify: false
-    sub_tag: C002-260622
-    tls: false
-    type: vmess
-    udp: true
-    uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
     xudp: true
     packet-encoding: xudp
   - encryption: none
@@ -10753,48 +10431,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: orange-darkness-749f.phantomnettest1-65d.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_237|1.1MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.18.42.163
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_238|1.6MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.144.66
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇷🇴RO_34|1.2MB/s|R002-260618 01
     password: None
     port: 9002
@@ -10841,24 +10477,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: socks5.revil-time3.workers.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_239|1.8MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 104.18.42.54
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.1.1; CPH1723 Build/N6F26Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.98 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - cipher: chacha20-ietf-poly1305
     name: ❓Other_10|288KB/s 01
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -11368,44 +10986,6 @@ proxies:
     packet-encoding: xudp
   - client-fingerprint: chrome
     encryption: none
-    name: 🇫🇷FR_259|1.3MB/s|B007-260618 01
-    network: ws
-    port: 2053
-    server: one-for-all.levikogjgfdd.ir
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-6f51879c0594
-    ws-opts:
-      headers:
-        Host: levikoconfig.levikogjgfdd.ir
-        User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: levikoconfig.levikogjgfdd.ir
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_260|2.0MB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: one-for-all.levikogjgfdd.ir
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-6f51879c0594
-    ws-opts:
-      headers:
-        Host: levikoconfig.levikogjgfdd.ir
-        User-Agent: Mozilla/5.0 (Linux; Android 5.1.1; SM-J111M Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: levikoconfig.levikogjgfdd.ir
-  - client-fingerprint: chrome
-    encryption: none
     name: 🇫🇷FR_261|1.9MB/s|B007-260618 01
     network: ws
     port: 8443
@@ -11423,22 +11003,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: whitecreeper.pages.dev
-  - name: 🇫🇷FR_262|455KB/s|T001-260618 01
-    network: ws
-    port: 80
-    server: 172.67.250.163
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 234c52f2-0d7b-dc4a-0d6b-b0b30000002e
-    ws-opts:
-      headers:
-        Host: billowing-surf-d251.netizo06.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: billowing-surf-d251.netizo06.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -11510,69 +11074,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_267|250KB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.194
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_268|2.2MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.140
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_269|3.2MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.16.150.130
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_270|503KB/s|C002-260622 01
     network: ws
     port: 8880
@@ -11603,27 +11104,6 @@ proxies:
       path: /pyip=proxyip.sg.cmliussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_272|3.8MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.145.166
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇳🇱NL_93|5.0MB/s|P002-260618 01
     password: None
     port: 9002
@@ -11633,27 +11113,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_273|1.5MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.19.214.98
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - cipher: chacha20-ietf-poly1305
     name: 🇳🇱NL_94|2.7MB/s|S004-260618 01
     password: oZIoA69Q8yhcQV8ka3Pa3A
@@ -11829,24 +11288,6 @@ proxies:
     type: http
     username: 'null'
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_280|1.6MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.146.211
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_137|721KB/s|P002-260618 01
     password: None
     port: 9002
@@ -11864,27 +11305,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_281|2.7MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.74
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇳🇱NL_100|2.4MB/s|P002-260618 01
     password: None
     port: 9002
@@ -12017,48 +11437,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_286|2.7MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.16.150.246
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_287|1.4MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.16.151.21
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alpn:
       - h3
       - h2
@@ -12078,27 +11456,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
       path: /assignment
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_289|3.5MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.30
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_145|825KB/s|R002-260618 01
     password: 'null'
     port: 9002
@@ -12269,27 +11626,6 @@ proxies:
       path: /pyip=ProxyIP.US.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_299|3.8MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.19.215.97
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇷🇴RO_40|1.2MB/s|P002-260618 01
     password: None
     port: 9002
@@ -12330,27 +11666,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_302|1.7MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.173
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 5.1.1; SM-J111M Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇳🇱NL_102|1.1MB/s|R002-260618 01
     port: 443
     server: 103.97.88.154
@@ -12371,27 +11686,6 @@ proxies:
     type: http
     username: testuser1
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_303|1.4MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.18.40.152
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇲🇽MX_1|323KB/s|R002-260618 01
     port: 443
     server: 45.134.9.41
@@ -12537,27 +11831,6 @@ proxies:
         User-Agent: Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
       path: /sync
   - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_313|2.6MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.97
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇫🇷FR_314|1.3MB/s|B007-260618 01
     network: ws
     password: humanity
@@ -12639,24 +11912,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_318|5.7MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.240
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - cipher: chacha20-ietf-poly1305
     name: 🇳🇱NL_103|700KB/s|A004-260618 01
     password: QCXDxuDlTTMD7jtgHUjIoj
@@ -12665,27 +11920,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_319|1.3MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.42
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_150|733KB/s 01
     password: 'null'
     port: 9002
@@ -12825,42 +12059,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_321|1.3MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.16.150.108
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - alpn:
-      - ''
-    alterId: '0'
-    cipher: auto
-    name: 🇺🇸US_167|869KB/s 01
-    network: tcp
-    port: 443
-    server: 165.140.216.142
-    skip-cert-verify: false
-    tls: false
-    type: vmess
-    udp: true
-    uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
-    xudp: true
-    packet-encoding: xudp
   - cipher: chacha20-ietf-poly1305
     name: ❓Other_12|196KB/s 01
     password: RSo52SbxW40r
@@ -13005,24 +12203,6 @@ proxies:
     type: http
     username: testuser1
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_324|1.5MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.215
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.99 Safari/533.4
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇳🇱NL_107|3.5MB/s|R002-260618 01
     port: 443
     server: 5.255.118.82
@@ -13048,48 +12228,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_325|2.5MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.18.38.47
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_326|2.5MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.230
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G610F Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇸🇬SG_10|691KB/s|R002-260618 01
     password: e4b72b531a2d10900519
     port: 443
@@ -13584,22 +12722,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - name: 🇫🇷FR_357|378KB/s|C002-260622 01
-    network: ws
-    port: 80
-    server: 188.114.98.66
-    sub_tag: C002-260622
-    type: vless
-    udp: true
-    uuid: b4025216-e996-7591-2608-e19e00000001
-    ws-opts:
-      headers:
-        Host: nahan-core.netizo09.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; BLL-L22 Build/HUAWEIBLL-L22) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: nahan-core.netizo09.workers.dev
   - name: 🇫🇷FR_358|353KB/s|C002-260622 01
     network: ws
     port: 8880
@@ -13693,23 +12815,6 @@ proxies:
       path: /pyip=ProxyIP.US.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_365|459KB/s|C002-260622 01
-    network: ws
-    port: 80
-    server: 104.27.2.172
-    sub_tag: C002-260622
-    type: vless
-    udp: true
-    uuid: 234c52f2-0d7b-dc4a-0d6b-b0b300000025
-    ws-opts:
-      headers:
-        Host: billowing-surf-d251.netizo06.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: billowing-surf-d251.netizo06.workers.dev
   - encryption: none
     name: 🇫🇷FR_367|398KB/s|B007-260618 01
     network: ws
@@ -14058,45 +13163,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_385|223KB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.19.214.97
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_386|1.6MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.149.209
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_387|467KB/s 01
     network: ws
     port: 8880
@@ -14236,23 +13302,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: telegram4.freepersianland8.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_396|700KB/s|V010-260618 01
-    network: ws
-    port: 80
-    server: 104.16.72.101
-    sub_tag: V010-260618
-    type: vless
-    udp: true
-    uuid: d5598622-46b8-b017-3af3-232500000001
-    ws-opts:
-      headers:
-        Host: nahan-core.netizo09.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: nahan-core.netizo09.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -14378,27 +13427,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_405|2.6MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.24
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.17 (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_406|538KB/s|A004-260618 01
     network: ws
     port: 8880
@@ -14664,27 +13692,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: z8Z7LoVOPd53iz6ivD2m.FixinG00PonviP.woRkers.DEV
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_420|275KB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.149.209
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_421|283KB/s|C002-260622 01
     network: ws
     port: 8880
@@ -14765,27 +13772,6 @@ proxies:
       path: /assignment
   - client-fingerprint: chrome
     encryption: none
-    name: 🇫🇷FR_425|2.7MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.19.214.146
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
     name: 🇫🇷FR_426|535KB/s|B007-260618 01
     network: ws
     port: 2087
@@ -14803,27 +13789,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: orange-darkness-749f.phantomnettest1-65d.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_427|1.0MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.145.202
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/533.4 (KHTML, like Gecko) Chrome/5.0.375.99 Safari/533.4
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_428|373KB/s|A004-260618 01
     network: ws
     port: 8880
@@ -14936,24 +13901,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_431|1.0MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.227
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - encryption: none
     name: 🇫🇷FR_432|1.3MB/s|B007-260618 01
     network: ws
@@ -15120,27 +14067,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: patient-moon-c61f.ggfsa55.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_438|6.2MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.175
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_198|734KB/s|R002-260618 01
     port: 443
     server: mmgr.club
@@ -15150,45 +14076,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_439|1.6MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.145.93
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G610M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_440|2.3MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.18.38.47
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
   - encryption: none
     name: 🇫🇷FR_442|490KB/s|M003-260806 01
     network: ws
@@ -15350,48 +14237,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_454|1.4MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.145.93
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: qq
-    encryption: none
-    name: 🇫🇷FR_455|5.6MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 8.6.112.6
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; FIG-LX3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
   - name: 🇷🇴RO_48|1.7MB/s 01
     port: 9002
     server: 193.176.84.22
@@ -15587,24 +14432,6 @@ proxies:
     sub_tag: B007-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_459|2.2MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.60
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - cipher: chacha20-ietf-poly1305
     name: 🇨🇦CA_15|1.3MB/s|A004-260618 01
     password: FD3rCuOsxOay
@@ -15613,25 +14440,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_460|2.9MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.182
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - encryption: none
     name: 🇫🇷FR_461|471KB/s 01
     network: ws
@@ -15770,25 +14578,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_470|428KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: summer-meadow-af5b.woowoorrrkk.workers.dev
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
-    ws-opts:
-      headers:
-        Host: summer-meadow-af5b.woowoorrrkk.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: summer-meadow-af5b.woowoorrrkk.workers.dev
   - client-fingerprint: chrome
     name: 🇫🇷FR_471|817KB/s|T001-260618 01
     network: ws
@@ -15970,25 +14759,6 @@ proxies:
       path: /tr/W3Ei3SdcW9sRVMLIbEd8sB1lm
       early-data-header-name: Sec-WebSocket-Protocol
       max-early-data: 2560
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_481|664KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.17.148.22
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: a88e61a0-2b38-f6df-c5c7-d20600000000
-    ws-opts:
-      headers:
-        Host: netlivpn5002.whwbbb.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; FIG-LX3 Build/HUAWEIFIG-LX3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5002.whwbbb.workers.dev
   - name: 🇫🇷FR_482|502KB/s|A004-260618 01
     network: ws
     port: 8880
@@ -16046,25 +14816,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; WAS-LX3 Build/HUAWEIWAS-LX3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
       path: /assignment
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_484|340KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.17.147.22
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: a88e61a0-2b38-f6df-c5c7-d20600000000
-    ws-opts:
-      headers:
-        Host: netlivpn5002.whwbbb.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.1.2; Redmi Note 5A Build/N2G47H; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5002.whwbbb.workers.dev
   - name: 🇺🇸US_251|296KB/s|P002-260618 01
     password: None
     port: 443
@@ -16489,27 +15240,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_510|4.5MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.87
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alterId: 0
     cipher: auto
     name: 🇰🇷KR_13|438KB/s|A004-260618 01
@@ -16558,25 +15288,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: vlso5.1d.mom
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_516|856KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.64.80.1
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
-    ws-opts:
-      headers:
-        Host: summer-meadow-af5b.woowoorrrkk.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: summer-meadow-af5b.woowoorrrkk.workers.dev
   - name: 🇳🇱NL_130|5.6MB/s|P002-260618 01
     password: None
     port: 9002
@@ -17915,25 +16626,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_570|812KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: soskeynets-meadow-af5b.woowoorrrkk.workers.dev
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
-    ws-opts:
-      headers:
-        Host: summer-meadow-af5b.woowoorrrkk.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: summer-meadow-af5b.woowoorrrkk.workers.dev
   - encryption: none
     name: 🇫🇷FR_571|332KB/s|C002-260622 01
     network: ws
@@ -18695,25 +17387,6 @@ proxies:
       path: /pyip=ProxyIP.US.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_607|439KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: empty-water-a05b.gfbghfbfngbdgbghngf.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: f6a92fa2-5685-3c70-16d5-ba38b388dbbf
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: empty-water-a05b.gfbghfbfngbdgbghngf.workers.dev
   - name: 🇫🇷FR_608|697KB/s|F003-260618 01
     network: ws
     port: 8880
@@ -18860,41 +17533,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: baZYepC.AMINRAZAvI1384.WoRkERS.dEv
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_616|1.5MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: ez-30c541.aliminaie277.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-d536262105ae
-    ws-opts:
-      headers:
-        Host: ez-30c541.aliminaie277.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 5.1; A1601 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/d536262105ae
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-30c541.aliminaie277.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_617|3.9MB/s|B007-260618 01
-    network: ws
-    port: 80
-    server: ez-30c541.aliminaie277.workers.dev
-    sub_tag: B007-260618
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-d536262105ae
-    ws-opts:
-      headers:
-        Host: ez-30c541.aliminaie277.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; SM-G7102 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/d536262105ae
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - http/1.1
     client-fingerprint: ios
@@ -19176,24 +17814,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: qq
-    name: 🇫🇷FR_627|3.0MB/s|M003-260806 01
-    network: ws
-    port: 2087
-    server: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇻🇪VE_1|572KB/s|R002-260618 01
     port: 999
     server: 181.233.89.128
@@ -19384,26 +18004,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: unsafe
-    name: 🇫🇷FR_636|1.1MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
   - name: 🇫🇷FR_637|711KB/s|M003-260806 01
     network: ws
     port: 8080
@@ -19545,20 +18145,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - alterId: 0
-    cipher: auto
-    name: 🇯🇵JP_13|322KB/s|A004-260618 01
-    network: raw
-    port: 55216
-    server: 155.248.176.44
-    skip-cert-verify: false
-    sub_tag: A004-260618
-    tls: false
-    type: vmess
-    udp: true
-    uuid: 154dbc39-0921-cf11-29bd-156c5000d763
-    xudp: true
-    packet-encoding: xudp
   - encryption: none
     name: 🇫🇷FR_641|463KB/s|B007-260618 01
     network: ws
@@ -20124,24 +18710,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_670|2.5MB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 104.19.214.97
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; CAM-L21 Build/HUAWEICAM-L21; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - encryption: none
     name: 🇫🇷FR_671|575KB/s|B007-260618 01
     network: ws
@@ -20279,24 +18847,6 @@ proxies:
       max-early-data: 2560
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_678|1.4MB/s|M003-260806 01
-    network: ws
-    port: 2087
-    server: ez-abcc2c.igunsjgjnfgn.workers.dev
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-9b0ee99e36dd
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G570M Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-abcc2c.igunsjgjnfgn.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -20741,23 +19291,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
   - encryption: none
-    name: 🇫🇷FR_700|854KB/s|T001-260618 01
-    network: ws
-    port: 80
-    server: 45.130.125.201
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: dc8a9493-c54a-459e-d060-81a700000001
-    ws-opts:
-      headers:
-        Host: nahan-core.netizo09.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; CPH1607 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/63.0.3239.111 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: nahan-core.netizo09.workers.dev
-  - encryption: none
     name: 🇫🇷FR_701|370KB/s|T001-260618 01
     network: ws
     port: 8080
@@ -20773,22 +19306,6 @@ proxies:
         User-Agent: Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36
       max-early-data: 2560
       path: /eyJqdW5rIjoid2JBOTRVclNMOVdBSVQiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
-    xudp: true
-    packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_702|820KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: a88e61a0-2b38-f6df-c5c7-d20600000000
-    ws-opts:
-      headers:
-        Host: netlivpn5002.whwbbb.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
     xudp: true
     packet-encoding: xudp
   - cipher: chacha20-ietf-poly1305
@@ -21152,20 +19669,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - alterId: '0'
-    cipher: auto
-    name: 🇯🇵JP_17|306KB/s|K001-260618 01
-    network: tcp
-    port: 55216
-    server: 155.248.176.44
-    skip-cert-verify: false
-    sub_tag: K001-260618
-    tls: false
-    type: vmess
-    udp: true
-    uuid: 154dbc39-0921-cf11-29bd-156c5000d763
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - h2
     client-fingerprint: ios
@@ -21515,25 +20018,6 @@ proxies:
     sub_tag: R002-260618
     type: socks5
     udp: true
-  - client-fingerprint: ios
-    encryption: none
-    name: 🇫🇷FR_710|1.7MB/s|T001-260618 01
-    network: ws
-    port: 8443
-    server: 104.21.98.146
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-48493148ec15
-    ws-opts:
-      headers:
-        Host: cgzdynepurqs.mercury061.workers.dev
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
-      path: /stream/PANEL_ZEUS/48493148ec15
-    xudp: true
-    packet-encoding: xudp
-    servername: cgzdynepurqs.mercury061.workers.dev
   - alterId: 0
     cipher: auto
     name: 🇺🇸US_414|173KB/s|A004-260618 01
@@ -21887,21 +20371,6 @@ proxies:
       path: /?https://t.me/YouTube@小青科学网🇨🇳
       early-data-header-name: Sec-WebSocket-Protocol
       max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-  - name: 🇫🇷FR_731|608KB/s|C002-260622 01
-    network: ws
-    port: 8080
-    server: 104.21.19.53
-    sub_tag: C002-260622
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000003
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
-      path: /sync
     xudp: true
     packet-encoding: xudp
   - encryption: none
@@ -22595,25 +21064,6 @@ proxies:
       max-early-data: 2560
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_773|637KB/s|C002-260622 01
-    network: ws
-    port: 2053
-    server: 0406.infinityconfig7.workers.dev
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000001
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: 0406.infinityconfig7.workers.dev
   - encryption: none
     name: 🇫🇷FR_774|467KB/s|C002-260622 01
     network: ws
@@ -22732,24 +21182,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: BItter-CreDIT-61b8.b76EbA0aBb.wORkerS.dEv
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_780|550KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: 0406.infinityconfig7.workers.dev
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000000
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.3 Safari/534.24
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: 0406.infinityconfig7.workers.dev
   - encryption: none
     name: 🇫🇷FR_781|400KB/s|C002-260622 01
     network: ws
@@ -22951,25 +21383,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: pubb.clnahanpnln.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_792|415KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.18.28.234
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: f6b5a6a3-f3e1-63ca-bb68-bdc400000000
-    ws-opts:
-      headers:
-        Host: netlivpn5505.ffffdsaaa.workers.dev
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5505.ffffdsaaa.workers.dev
   - name: 🇫🇷FR_793|328KB/s|A004-260618 01
     network: ws
     port: 8880
@@ -23474,25 +21887,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_823|251KB/s|B007-260618 01
-    network: ws
-    port: 2053
-    server: 104.21.200.243
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 7074b9d7-2183-8919-fc11-ca5e00000000
-    ws-opts:
-      headers:
-        Host: netlivpn2584.vjvdgbc.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn2584.vjvdgbc.workers.dev
   - encryption: none
     name: 🇫🇷FR_824|618KB/s|C002-260622 01
     network: ws
@@ -23835,25 +22229,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_845|741KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: www.speedtest.net
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: f6b5a6a3-f3e1-63ca-bb68-bdc400000000
-    ws-opts:
-      headers:
-        Host: netlivpn5505.ffffdsaaa.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-J500M Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5505.ffffdsaaa.workers.dev
   - cipher: chacha20-ietf-poly1305
     name: 🇳🇱NL_202|252KB/s|B007-260618 01
     password: eVC634QvVk5l
@@ -23880,21 +22255,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: shanxp.dpdns.org
-  - name: 🇫🇷FR_847|310KB/s|C002-260622 01
-    network: ws
-    port: 8080
-    server: 172.67.185.65
-    sub_tag: C002-260622
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000003
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
   - name: 🇫🇷FR_848|363KB/s 01
     network: ws
     port: 8880
@@ -23926,24 +22286,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
   - client-fingerprint: chrome
-    name: 🇫🇷FR_850|346KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.64.80.1
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: a5b1d1ec-327c-f1c5-5856-b34600000000
-    ws-opts:
-      headers:
-        Host: ez-541f9d.ezaccess1d3db24.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-541f9d.ezaccess1d3db24.workers.dev
-  - client-fingerprint: chrome
     name: 🇺🇸US_415|837KB/s|B007-260618 01
     network: ws
     port: 443
@@ -23961,24 +22303,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: 129.121.95.159
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_851|444KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.219.50
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: a5b1d1ec-327c-f1c5-5856-b34600000000
-    ws-opts:
-      headers:
-        Host: ez-541f9d.ezaccess1d3db24.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; vivo 1713 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.124 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-541f9d.ezaccess1d3db24.workers.dev
   - name: 🇫🇷FR_852|351KB/s 01
     network: ws
     port: 8880
@@ -24128,24 +22452,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: node-8966333989-b9acc5.dsjvhbsdcjy.workers.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_862|592KB/s|V010-260618 01
-    network: ws
-    port: 443
-    server: ez-541f9d.ezaccess1d3db24.workers.dev
-    sub_tag: V010-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: a5b1d1ec-327c-f1c5-5856-b34600000000
-    ws-opts:
-      headers:
-        Host: ez-541f9d.ezaccess1d3db24.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-541f9d.ezaccess1d3db24.workers.dev
   - name: 🇫🇷FR_863|424KB/s|A001-260618 01
     network: ws
     port: 8880
@@ -25896,23 +24202,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_956|355KB/s|C002-260622 01
-    network: ws
-    port: 80
-    server: 172.67.96.178
-    sub_tag: C002-260622
-    type: vless
-    udp: true
-    uuid: 234c52f2-0d7b-dc4a-0d6b-b0b300000023
-    ws-opts:
-      headers:
-        Host: billowing-surf-d251.netizo06.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; CAM-L21 Build/HUAWEICAM-L21; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: billowing-surf-d251.netizo06.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_957|367KB/s|C002-260622 01
@@ -26308,25 +24597,6 @@ proxies:
       path: /tr/XDSHbKWRTEyuEeUs4isq9LG
       early-data-header-name: Sec-WebSocket-Protocol
       max-early-data: 2560
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_968|286KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: netlivpn5505.ffffdsaaa.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: f6b5a6a3-f3e1-63ca-bb68-bdc400000000
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5505.ffffdsaaa.workers.dev
   - encryption: none
     http-opts:
       headers:
@@ -26467,22 +24737,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
       path: /assignment
-  - encryption: none
-    name: 🇫🇷FR_974|4.8MB/s|M003-260806 01
-    network: ws
-    port: 80
-    server: 104.21.81.114
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-d536262105ae
-    ws-opts:
-      headers:
-        Host: ez-30c541.aliminaie277.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
-      path: /stream/PANEL_ZEUS/d536262105ae
-    xudp: true
-    packet-encoding: xudp
   - encryption: none
     name: 🇩🇪DE_48|832KB/s|M003-260806 01
     network: ws
@@ -27125,24 +25379,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
   - client-fingerprint: chrome
-    name: 🇫🇷FR_1003|1.0MB/s|M002-260618 01
-    network: ws
-    port: 2053
-    server: 104.16.228.202
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
-    ws-opts:
-      headers:
-        Host: xoz60debusrs.lezuwaeiunjs.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; MYA-L22 Build/HUAWEIMYA-L22) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/e0dfede8abc0
-    xudp: true
-    packet-encoding: xudp
-    servername: xoz60debusrs.lezuwaeiunjs.workers.dev
-  - client-fingerprint: chrome
     name: 🇺🇸US_447|565KB/s|F003-260618 01
     network: ws
     port: 443
@@ -27339,22 +25575,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1004|487KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 7074b9d7-2183-8919-fc11-ca5e00000000
-    ws-opts:
-      headers:
-        Host: netlivpn2584.vjvdgbc.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -27393,25 +25613,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: node-8966333989-b9acc5.dsjvhbsdcjy.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1007|409KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.67.214.106
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
-    ws-opts:
-      headers:
-        Host: summer-meadow-af5b.woowoorrrkk.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: summer-meadow-af5b.woowoorrrkk.workers.dev
   - client-fingerprint: chrome
     name: 🇫🇷FR_1009|119KB/s|M003-260806 01
     network: ws
@@ -28096,24 +26297,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: crimson-king-301d.nexoxnet.workers.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1048|1014KB/s|M002-260618 01
-    network: ws
-    port: 443
-    server: 104.18.42.54
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.1; Mi A1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_453|767KB/s|P002-260618 01
     password: None
     port: 443
@@ -28437,44 +26620,6 @@ proxies:
     type: http
     udp: true
   - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1051|2.5MB/s|V005-260618 01
-    network: ws
-    port: 443
-    server: 172.64.52.97
-    sub_tag: V005-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1052|4.0MB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.52.97
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇺🇸US_468|336KB/s|F003-260618 01
     network: ws
     port: 443
@@ -28621,80 +26766,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: srv-21bac9.vless.monster
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1054|2.1MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.16.151.21
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; Moto C Build/NRD90M.059) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1055|5.5MB/s|B007-260618 01
-    network: ws
-    port: 2053
-    server: 172.64.52.97
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1056|1.4MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.64.53.194
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1057|682KB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.53.74
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇺🇸US_474|276KB/s|F003-260618 01
     network: ws
@@ -29185,25 +27256,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1069|1.0MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.27.66.130
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
-    ws-opts:
-      headers:
-        Host: xoz60debusrs.lezuwaeiunjs.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; vivo 1610 Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.124 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/e0dfede8abc0
-    xudp: true
-    packet-encoding: xudp
-    servername: xoz60debusrs.lezuwaeiunjs.workers.dev
   - encryption: none
     name: 🇫🇷FR_1070|330KB/s|M003-260806 01
     network: ws
@@ -29449,62 +27501,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1085|5.4MB/s|M002-260618 01
-    network: ws
-    port: 2053
-    server: 172.64.147.104
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1086|2.0MB/s|S004-260618 01
-    network: ws
-    port: 2083
-    server: 172.64.53.60
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G570M Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1087|1.3MB/s|S004-260618 01
-    network: ws
-    port: 2053
-    server: 172.64.53.42
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -29617,64 +27613,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1088|3.6MB/s|B007-260618 01
-    network: ws
-    port: 2083
-    server: 172.64.146.211
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1089|1.6MB/s|B007-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.146.211
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: unsafe
-    name: 🇫🇷FR_1090|2.4MB/s|B007-260618 01
-    network: ws
-    port: 2087
-    server: 188.114.97.6
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
   - name: 🇯🇵JP_31|174KB/s|A004-260618 01
     network: raw
     port: 443
@@ -30012,44 +27950,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: srv-21bac9.vless.monster
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1109|1.6MB/s|B007-260618 01
-    network: ws
-    port: 2083
-    server: 104.18.40.152
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1110|1.1MB/s|B007-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.52.175
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alterId: '0'
     cipher: auto
     name: 🇲🇽MX_5|372KB/s|M002-260618 01
@@ -30099,80 +27999,6 @@ proxies:
     sub_tag: R002-260618
     type: http
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1111|1.2MB/s|B007-260618 01
-    network: ws
-    port: 2083
-    server: 172.64.53.194
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1112|2.0MB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.52.60
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; Redmi 4A Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.116 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1113|995KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.64.52.68
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 5.1; HUAWEI CUN-L22 Build/HUAWEICUN-L22; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇫🇷FR_1114|404KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 80.244.13.155
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 7a657573-124c-3e03-4890-10f4660c3706
-    ws-opts:
-      headers:
-        Host: 38zroke4ue9s.f4zhs8emuzgs.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /stream/PANEL_ZEUS/10f4660c3706
-    xudp: true
-    packet-encoding: xudp
-    servername: 38zroke4ue9s.f4zhs8emuzgs.workers.dev
   - name: 🇫🇷FR_1115|364KB/s|F003-260618 01
     network: ws
     port: 8080
@@ -30190,23 +28016,6 @@ proxies:
       max-early-data: 2560
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1116|616KB/s|M003-260806 01
-    network: ws
-    port: 80
-    server: 104.21.66.198
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 234c52f2-0d7b-dc4a-0d6b-b0b30000001c
-    ws-opts:
-      headers:
-        Host: billowing-surf-d251.netizo06.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: billowing-surf-d251.netizo06.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_1118|382KB/s|M003-260806 01
@@ -30558,24 +28367,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
       path: /assignment
-  - client-fingerprint: chrome
-    name: ❓Other_36|385KB/s|C002-260622 01
-    network: ws
-    port: 2087
-    server: mfa.gov.ua
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
   - alpn:
       - h3
       - h2
@@ -30661,27 +28452,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1135|1.7MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.52.68
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G570M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alterId: 0
     cipher: auto
     name: 🇺🇸US_510|750KB/s|B007-260618 01
@@ -30778,27 +28548,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: usejh2.neobo-tooth.ru
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1138|1.1MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 104.18.42.163
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
   - cipher: aes-256-gcm
     name: 🇩🇪DE_62|2.1MB/s|A004-260618 01
     password: kKEd0rBrd56Furjz
@@ -30807,24 +28556,6 @@ proxies:
     sub_tag: A004-260618
     type: ss
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1139|4.1MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 104.16.150.7
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇬🇧GB_91|592KB/s|P002-260618 01
     password: None
     port: 443
@@ -31840,24 +29571,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1153|1.6MB/s|B007-260618 01
-    network: ws
-    port: 2083
-    server: 172.64.53.215
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇨🇴CO_4|361KB/s|R002-260618 01
     port: 999
     server: 190.131.206.154
@@ -32735,98 +30448,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.17 (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
       path: /assignment
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1163|1.1MB/s|B007-260618 01
-    network: ws
-    port: 2083
-    server: 172.64.52.173
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1164|561KB/s|B007-260618 01
-    network: ws
-    port: 2087
-    server: 172.67.118.45
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1165|2.3MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.18.42.163
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1166|1.9MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.64.52.60
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G610M Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1167|1.9MB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 104.19.215.97
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - encryption: none
     name: 🇫🇷FR_1168|759KB/s 01
     network: ws
@@ -33353,25 +30974,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net@https://t.me/QiangLieTuiJian
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1197|738KB/s|X001-260618 01
-    network: ws
-    port: 443
-    server: nameless-moon-7c4d.shafmrhjlos23.workers.dev
-    sub_tag: X001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 9e65fe63-b771-c63d-5272-fdd700000000
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /vasl
-    xudp: true
-    packet-encoding: xudp
-    servername: nameless-moon-7c4d.shafmrhjlos23.workers.dev
   - encryption: none
     name: 🇫🇷FR_1198|474KB/s|X001-260618 01
     network: ws
@@ -33631,25 +31233,6 @@ proxies:
     servername: empty-band-d17d.raana2710.workers.dev
   - client-fingerprint: chrome
     encryption: none
-    name: 🇫🇷FR_1210|338KB/s|M002-260618 01
-    network: ws
-    port: 443
-    server: ez-1bc8ab.sekiro-c18.workers.dev
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 7da33b25-cdd6-e481-afcf-c5d532361a70
-    ws-opts:
-      headers:
-        Host: ez-1bc8ab.sekiro-c18.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-1bc8ab.sekiro-c18.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
     name: 🇫🇷FR_1211|388KB/s|M003-260806 01
     network: ws
     port: 443
@@ -33689,48 +31272,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: app-q0zc4t.user-4gfyh5.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1213|3.6MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.24.22.81
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-b138b248da68
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-      path: /stream/PANEL_ZEUS/b138b248da68
-    xudp: true
-    packet-encoding: xudp
-    servername: r5zenrelur2s.pqzdileiu8es.workers.dev
-  - alpn:
-      - h3
-      - h2
-      - http/1.1
-    client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1214|364KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.67.173.138
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 813cd228-ebf6-0e21-481a-ba4af8f85b82
-    ws-opts:
-      headers:
-        Host: odd-disk-98c5.assassincreed4048.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: odd-disk-98c5.assassincreed4048.workers.dev
   - name: 🇫🇷FR_1215|457KB/s 01
     network: ws
     port: 8880
@@ -33912,25 +31453,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1225|1.2MB/s|C002-260622 01
-    network: ws
-    port: 2087
-    server: 104.18.32.47
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 5a0028f9-c656-cec9-4b61-54678477a408
-    ws-opts:
-      headers:
-        Host: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.143 Safari/537.36
-      path: /game
-    xudp: true
-    packet-encoding: xudp
-    servername: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -34006,25 +31528,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: misaka.cndyw.ggff.net
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1230|880KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.175.23
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
-    servername: trex-panel-nubj0s.samifakor.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇵🇱PL_21|653KB/s|M003-260806 01
@@ -34203,25 +31706,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: vp58.cc.cd
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1237|1.4MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.202.235
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 566c0473-382e-aabb-c62a-f5bb00000000
-    ws-opts:
-      headers:
-        Host: ez-4b5fd4.appelidmymat.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-4b5fd4.appelidmymat.workers.dev
   - name: 🇫🇷FR_1238|325KB/s|F003-260618 01
     network: ws
     port: 8880
@@ -34408,24 +31892,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: o.SERVeR3PeEkConFIG.WOrKerS.dEv
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1247|466KB/s 01
-    network: ws
-    port: 8443
-    server: 188.114.96.7
-    tls: true
-    type: vless
-    udp: true
-    uuid: 362a79a2-ce89-8d2d-355c-f1f5071a445f
-    ws-opts:
-      headers:
-        Host: fragrant-unit-d662.mmammatrix770088.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G570M Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: fragrant-unit-d662.mmammatrix770088.workers.dev
   - name: 🇪🇸ES_21|370KB/s 01
     network: ws
     port: 8880
@@ -34567,24 +32033,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1256|497KB/s 01
-    network: ws
-    port: 443
-    server: ez-4b5fd4.appelidmymat.workers.dev
-    tls: true
-    type: vless
-    udp: true
-    uuid: 566c0473-382e-aabb-c62a-f5bb00000000
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-4b5fd4.appelidmymat.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇩🇪DE_70|500KB/s 01
@@ -35246,25 +32694,6 @@ proxies:
       path: /pyip=ProxyIP.US.CMLiussss.net@https://t.me/QiangLieTuiJian
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1295|370KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.21.14.116
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 566c0473-382e-aabb-c62a-f5bb00000000
-    ws-opts:
-      headers:
-        Host: ez-4b5fd4.appelidmymat.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-4b5fd4.appelidmymat.workers.dev
   - encryption: none
     name: ❓Other_41|407KB/s|R002-260618 01
     network: ws
@@ -35367,25 +32796,6 @@ proxies:
     packet-encoding: xudp
   - client-fingerprint: chrome
     encryption: none
-    name: 🇧🇬BG_13|359KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: 108.165.233.223
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 2388e166-3890-33ae-f77e-efac00000003
-    ws-opts:
-      headers:
-        Host: netlivpn4813.ddhshhshs.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn4813.ddhshhshs.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
     name: 🇫🇷FR_1300|597KB/s 01
     network: ws
     port: 2083
@@ -35437,25 +32847,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1302|497KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.21.78.9
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: a8890c1b-3622-3106-c4be-d8671be32d2b
-    ws-opts:
-      headers:
-        Host: summer-meadow-af5b.woowoorrrkk.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: summer-meadow-af5b.woowoorrrkk.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_1303|353KB/s|M003-260806 01
@@ -36569,25 +33960,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1363|460KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: fancy-wind-799d.cloudneryacc.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 9fa6d846-5961-8e0e-ce27-77de00000000
-    ws-opts:
-      headers:
-        Host: fancy-wind-799d.cloudneryacc.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: fancy-wind-799d.cloudneryacc.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -36811,25 +34183,6 @@ proxies:
         Host: blackshadow.dpdns.org
       path: /%2F195.123.218.174-443
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1376|895KB/s|M002-260618 01
-    network: ws
-    port: 443
-    server: 104.21.50.18
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 9fa6d846-5961-8e0e-ce27-77de00000000
-    ws-opts:
-      headers:
-        Host: fancy-wind-799d.cloudneryacc.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: fancy-wind-799d.cloudneryacc.workers.dev
   - encryption: none
     name: 🇫🇷FR_1377|688KB/s|M003-260806 01
     network: ws
@@ -36883,25 +34236,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1380|584KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.20.17.127
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
-    servername: trex-panel-nubj0s.samifakor.workers.dev
   - encryption: none
     name: 🇫🇷FR_1381|816KB/s|C002-260622 01
     network: ws
@@ -36918,25 +34252,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net@https://t.me/QiangLieTuiJian
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1382|421KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.17.147.22
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: f6b5a6a3-f3e1-63ca-bb68-bdc400000000
-    ws-opts:
-      headers:
-        Host: netlivpn5505.ffffdsaaa.workers.dev
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn5505.ffffdsaaa.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇩🇪DE_77|464KB/s|M003-260806 01
@@ -36972,24 +34287,6 @@ proxies:
         User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
       path: /cmh
   - client-fingerprint: chrome
-    name: 🇫🇷FR_1384|775KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.199.62
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 9fa6d846-5961-8e0e-ce27-77de00000000
-    ws-opts:
-      headers:
-        Host: fancy-wind-799d.cloudneryacc.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: fancy-wind-799d.cloudneryacc.workers.dev
-  - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_1385|729KB/s|M003-260806 01
     network: ws
@@ -37008,25 +34305,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: courses.mftplus.qzz.io
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇺🇿UZ_1|666KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.210.146
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-J710F Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/4eef5adc237a/loc-1
-    xudp: true
-    packet-encoding: xudp
-    servername: r5zenrelur2s.pqzdileiu8es.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇸🇬SG_53|348KB/s|M003-260806 01
@@ -37061,25 +34339,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1387|1012KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: downloadk1.11gig.ir
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-b138b248da68
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/b138b248da68
-    xudp: true
-    packet-encoding: xudp
-    servername: r5zenrelur2s.pqzdileiu8es.workers.dev
   - encryption: none
     name: 🇫🇷FR_1388|476KB/s|M003-260806 01
     network: ws
@@ -37111,61 +34370,6 @@ proxies:
       path: /pyip=ProxyIP.JP.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1390|2.1MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.27.110.37
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-ji3j1z.app-wuuhuw.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_1391|3.3MB/s|B007-260618 01
-    network: ws
-    port: 80
-    server: aslanbilit.ir
-    sub_tag: B007-260618
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-ji3j1z.app-wuuhuw.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1392|1.2MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: aslanbilit.ir
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-ji3j1z.app-wuuhuw.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_1393|545KB/s|M003-260806 01
@@ -37351,25 +34555,6 @@ proxies:
       path: /tr/8vQPIrFg42fBSCLIHOgLi
       early-data-header-name: Sec-WebSocket-Protocol
       max-early-data: 2560
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇺🇿UZ_2|902KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.24.143.217
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G610F Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/4eef5adc237a/loc-1
-    xudp: true
-    packet-encoding: xudp
-    servername: r5zenrelur2s.pqzdileiu8es.workers.dev
   - client-fingerprint: chrome
     name: 🇫🇷FR_1402|1.7MB/s|A004-260618 01
     network: ws
@@ -37663,25 +34848,6 @@ proxies:
       path: /tr/VKQiUREJ9PL5qHi1r4bkL9Rm8
       early-data-header-name: Sec-WebSocket-Protocol
       max-early-data: 2560
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1420|574KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: 104.21.8.176
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 7da33b25-cdd6-e481-afcf-c5d532361a70
-    ws-opts:
-      headers:
-        Host: ez-1bc8ab.sekiro-c18.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-1bc8ab.sekiro-c18.workers.dev
   - name: 🇫🇷FR_1421|616KB/s|A004-260618 01
     network: ws
     port: 8080
@@ -38011,25 +35177,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1433|920KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: user.akbarihelia.ir
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
-    servername: trex-panel-nubj0s.samifakor.workers.dev
   - client-fingerprint: chrome
     name: 🇫🇷FR_1434|4.2MB/s|F003-260618 01
     network: ws
@@ -38633,25 +35780,6 @@ proxies:
       path: /eyJqdW5rIjoiV3NqWVRNQlpFSVVwWmsiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1456|510KB/s|X001-260618 01
-    network: ws
-    port: 443
-    server: 104.21.117.9
-    sub_tag: X001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 0926b50d-3a90-18dd-7c8e-0cf100000000
-    ws-opts:
-      headers:
-        Host: netlivpn4024.bgfjhd.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.1805 Safari/537.36 MVisionPlayer/1.0.0.0
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn4024.bgfjhd.workers.dev
   - alpn:
       - ''
     alterId: '0'
@@ -38804,22 +35932,6 @@ proxies:
       path: /eyJqdW5rIjoiYmNCdUhCVkFEIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIiwiWzI2MDI6ZmM1OTpiMDo2NDo6XSIsIlsyNjAyOmZjNTk6MTE6NjQ6Ol0iXX0=
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1464|839KB/s|M003-260806 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
   - client-fingerprint: unsafe
     name: 🇫🇷FR_1465|580KB/s|M003-260806 01
     network: ws
@@ -38944,23 +36056,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: sie704.pages.dev
-  - encryption: none
-    name: 🇫🇷FR_1470|621KB/s|M003-260806 01
-    network: ws
-    port: 80
-    server: 104.27.110.37
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-ji3j1z.app-wuuhuw.workers.dev
   - client-fingerprint: unsafe
     name: 🇫🇷FR_1471|485KB/s|M003-260806 01
     network: ws
@@ -39235,38 +36330,6 @@ proxies:
       path: /eyJqdW5rIjoiNDIxWGNPNW5CQXYiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OmIwOjY0OjpdIiwiWzI2MDI6ZmM1OToxMTo2NDo6XSJdfQ==
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇺🇿UZ_3|331KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
-      path: /stream/PANEL_ZEUS/4eef5adc237a/loc-1
-    xudp: true
-    packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1486|556KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 813cd228-ebf6-0e21-481a-ba4af8f85b82
-    ws-opts:
-      headers:
-        Host: odd-disk-98c5.assassincreed4048.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - http/1.1
     client-fingerprint: unsafe
@@ -39422,24 +36485,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: restless-base-fe24.alirezahabibi20009.workers.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1495|1.7MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.145.14
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-ji3j1z.app-wuuhuw.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_1496|103KB/s|M003-260806 01
@@ -40190,25 +37235,6 @@ proxies:
       path: /pyip=ProxyIP.US.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1524|382KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: nameless-moon-7c4d.shafmrhjlos23.workers.dev
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 89c5493f-9485-85e5-c43f-df0600000000
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.1805 Safari/537.36 MVisionPlayer/1.0.0.0
-      path: /vasl
-    xudp: true
-    packet-encoding: xudp
-    servername: nameless-moon-7c4d.shafmrhjlos23.workers.dev
   - encryption: none
     name: 🇫🇷FR_1525|326KB/s|C002-260622 01
     network: ws
@@ -40289,25 +37315,6 @@ proxies:
       path: /pyip=ProxyIP.US.CMLiussss.net@https://t.me/QiangLieTuiJian
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1529|430KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: 104.21.117.9
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: bd9ff08b-d042-3650-48e4-c4b400000000
-    ws-opts:
-      headers:
-        Host: netlivpn2950.bbxff.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn2950.bbxff.workers.dev
   - encryption: none
     name: 🇫🇷FR_1530|450KB/s|C002-260622 01
     network: ws
@@ -40389,25 +37396,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: odd-violet-5440.asdgrweeee13.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1535|4.2MB/s|B007-260618 01
-    network: ws
-    port: 2087
-    server: one-for-all.levikogjgfdd.ir
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-6f51879c0594
-    ws-opts:
-      headers:
-        Host: levikoconfig.levikogjgfdd.ir
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: levikoconfig.levikogjgfdd.ir
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -40626,25 +37614,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1547|3.9MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.27.124.133
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-ji3j1z.app-wuuhuw.workers.dev
   - encryption: none
     name: 🇫🇷FR_1548|1.1MB/s|M003-260806 01
     network: ws
@@ -40661,24 +37630,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1549|726KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.130.144
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 7da33b25-cdd6-e481-afcf-c5d532361a70
-    ws-opts:
-      headers:
-        Host: ez-1bc8ab.sekiro-c18.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-1bc8ab.sekiro-c18.workers.dev
   - encryption: none
     name: 🇫🇷FR_1550|670KB/s|B007-260618 01
     network: ws
@@ -40768,24 +37719,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1552|388KB/s 01
-    network: ws
-    port: 443
-    server: 188.114.97.6
-    tls: true
-    type: vless
-    udp: true
-    uuid: 813cd228-ebf6-0e21-481a-ba4af8f85b82
-    ws-opts:
-      headers:
-        Host: odd-disk-98c5.assassincreed4048.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: odd-disk-98c5.assassincreed4048.workers.dev
   - name: 🇫🇷FR_1554|514KB/s|M003-260806 01
     network: ws
     port: 2086
@@ -41391,37 +38324,6 @@ proxies:
         Host: d2127A49-flAT-wooD-C4B5.mILia-AkbARpOor.WorkERs.dEV
         User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
       path: /8eaZJhRwB5zzDy81
-    xudp: true
-    packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1584|1.6MB/s|M003-260806 01
-    network: ws
-    port: 80
-    server: 104.21.73.135
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-7bac159e3b40
-    ws-opts:
-      headers:
-        Host: web-app-ji3j1z.app-wuuhuw.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; SM-G610F Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-  - name: 🇺🇸US_710|524KB/s|M003-260806 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-9568000eed47
-    ws-opts:
-      headers:
-        Host: urzpn8e9ub5s.shoameni2.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      path: /stream/PANEL_ZEUS/9568000eed47/loc-1
     xudp: true
     packet-encoding: xudp
   - alpn:
@@ -42106,25 +39008,6 @@ proxies:
       path: /sg-amz
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇺🇿UZ_4|932KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.25.155.45
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-4eef5adc237a
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /stream/PANEL_ZEUS/4eef5adc237a/loc-1
-    xudp: true
-    packet-encoding: xudp
-    servername: r5zenrelur2s.pqzdileiu8es.workers.dev
   - name: 🇹🇭TH_4|657KB/s|R002-260618 01
     port: 8888
     server: 47.81.56.193
@@ -42175,25 +39058,6 @@ proxies:
     udp: true
   - client-fingerprint: chrome
     encryption: none
-    name: 🇫🇷FR_1609|2.1MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.64.146.19
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-b138b248da68
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 5.1.1; SM-J111M Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/b138b248da68
-    xudp: true
-    packet-encoding: xudp
-    servername: r5zenrelur2s.pqzdileiu8es.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
     name: 🇮🇹IT_41|444KB/s 01
     network: ws
     port: 444
@@ -42210,25 +39074,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: bapj1qapjk4.0sds0li1bwcz0i76it0gjxv1.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇧🇬BG_14|386KB/s|C002-260622 01
-    network: ws
-    port: 443
-    server: 108.165.233.223
-    sub_tag: C002-260622
-    tls: true
-    type: vless
-    udp: true
-    uuid: 2388e166-3890-33ae-f77e-efac00000001
-    ws-opts:
-      headers:
-        Host: netlivpn4813.ddhshhshs.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn4813.ddhshhshs.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -42643,25 +39488,6 @@ proxies:
       path: /sync
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1630|411KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 0406.infinityconfig7.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000000
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: 0406.infinityconfig7.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -42824,21 +39650,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: d2127A49-flAT-wooD-C4B5.mILia-AkbARpOor.WorkERs.dEV
-  - name: 🇫🇷FR_1640|480KB/s|M003-260806 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 0926b50d-3a90-18dd-7c8e-0cf100000000
-    ws-opts:
-      headers:
-        Host: netlivpn4024.bgfjhd.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - h3
       - h2
@@ -42876,22 +39687,6 @@ proxies:
         Host: refighehosein.salamdadash123.workers.dev
         User-Agent: Mozilla/5.0 (Linux; Android 7.1.2; Redmi 4X Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
       path: /
-    xudp: true
-    packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1643|487KB/s|M003-260806 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 5a0028f9-c656-cec9-4b61-54678477a408
-    ws-opts:
-      headers:
-        Host: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /game
     xudp: true
     packet-encoding: xudp
   - alpn:
@@ -43760,22 +40555,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: koq90g5av4kdxunfa.liliane-hilpert.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_1683|781KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-4d64f1370eeb
-    ws-opts:
-      headers:
-        Host: r5zenrelur2s.pqzdileiu8es.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; SM-G7102 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/4d64f1370eeb/loc-0
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -44430,25 +41209,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: odd-violet-5440.asdgrweeee13.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇺🇸US_724|2.6MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.17.154.178
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-9568000eed47
-    ws-opts:
-      headers:
-        Host: urzpn8e9ub5s.shoameni2.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-      path: /stream/PANEL_ZEUS/9568000eed47/loc-1
-    xudp: true
-    packet-encoding: xudp
-    servername: urzpn8e9ub5s.shoameni2.workers.dev
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -44970,25 +41730,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: 5iv93opy8jus9z.bjo5si35c9i9ud4242fado49188obkoiermjuxj7zgxu.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1742|514KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: nameless-moon-7c4d.shafmrhjlos23.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 9e65fe63-b771-c63d-5272-fdd700000000
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: nameless-moon-7c4d.shafmrhjlos23.workers.dev
   - client-fingerprint: unsafe
     name: 🇫🇷FR_1743|806KB/s|M003-260806 01
     network: ws
@@ -45505,25 +42246,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
   - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1762|371KB/s|M003-260806 01
-    network: ws
-    port: 2053
-    server: 172.67.185.65
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000001
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: 0406.infinityconfig7.workers.dev
-  - client-fingerprint: chrome
     name: 🇫🇷FR_1763|808KB/s|R002-260618 01
     network: ws
     password: trojan
@@ -45537,22 +42259,6 @@ proxies:
         User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36
       path: /
     udp: true
-  - encryption: none
-    name: 🇫🇷FR_1764|781KB/s|B007-260618 01
-    network: ws
-    port: 80
-    server: 172.67.185.65
-    sub_tag: B007-260618
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000002
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -45621,25 +42327,6 @@ proxies:
       path: /
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1767|401KB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: o5zmxbeoutis.o7zluiebuo8s.workers.dev
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-05920b4f8f35
-    ws-opts:
-      headers:
-        Host: o5zmxbeoutis.o7zluiebuo8s.workers.dev
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.17 (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
-      path: /stream/PANEL_ZEUS/05920b4f8f35
-    xudp: true
-    packet-encoding: xudp
-    servername: o5zmxbeoutis.o7zluiebuo8s.workers.dev
   - client-fingerprint: chrome
     name: 🇫🇷FR_1768|505KB/s|M003-260806 01
     network: ws
@@ -46240,29 +42927,6 @@ proxies:
     sub_tag: R002-260618
     type: http
     udp: true
-  - alpn:
-      - h3
-      - h2
-      - http/1.1
-    client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1799|417KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.18.1.1
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 813cd228-ebf6-0e21-481a-ba4af8f85b82
-    ws-opts:
-      headers:
-        Host: odd-disk-98c5.assassincreed4048.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.1; Mi A1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: odd-disk-98c5.assassincreed4048.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇩🇪DE_95|694KB/s 01
@@ -47169,60 +43833,6 @@ proxies:
     type: ss
     udp: true
   - client-fingerprint: chrome
-    name: 🇫🇷FR_1828|1.3MB/s|B007-260618 01
-    network: ws
-    port: 2087
-    server: 104.19.45.195
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1829|1.2MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.64.53.215
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.67 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1830|1.8MB/s|B007-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.53.215
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇺🇸US_759|1.1MB/s|F003-260618 01
     network: ws
     port: 443
@@ -47284,83 +43894,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: 9-M16.Chian-MaI-5.KDns.fr
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1831|1.8MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.19.214.98
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1832|1.2MB/s|B007-260618 01
-    network: ws
-    port: 2053
-    server: 104.19.215.97
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1833|1.8MB/s|B007-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.144.66
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/7.0.517.44 Safari/534.7
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1834|3.8MB/s|B007-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.52.68
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - encryption: none
     name: 🇫🇷FR_1835|534KB/s 01
     network: ws
@@ -47724,25 +44257,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
       path: /cmh
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1856|522KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.193.182
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
-    servername: trex-panel-nubj0s.samifakor.workers.dev
   - client-fingerprint: chrome
     name: 🇫🇷FR_1857|526KB/s|M003-260806 01
     network: ws
@@ -48357,22 +44871,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: peekconfig.peekconf1.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_1889|357KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 362a79a2-ce89-8d2d-355c-f1f5071a445f
-    ws-opts:
-      headers:
-        Host: fragrant-unit-d662.mmammatrix770088.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
   - client-fingerprint: unsafe
     encryption: none
     name: 🇫🇷FR_1890|543KB/s|M003-260806 01
@@ -48411,24 +44909,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: small-scene-f215.amiralizarefast1.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1892|442KB/s 01
-    network: ws
-    port: 443
-    server: 104.21.45.213
-    tls: true
-    type: vless
-    udp: true
-    uuid: a5b1d1ec-327c-f1c5-5856-b34600000000
-    ws-opts:
-      headers:
-        Host: ez-541f9d.ezaccess1d3db24.workers.dev
-        User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.17 (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: ez-541f9d.ezaccess1d3db24.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇫🇷FR_1893|830KB/s|C002-260622 01
@@ -48515,22 +44995,6 @@ proxies:
         Host: summer-bonus-aa63.52-c03.workers.dev
         User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
       path: /pyip
-    xudp: true
-    packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_1898|704KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: bd9ff08b-d042-3650-48e4-c4b400000000
-    ws-opts:
-      headers:
-        Host: netlivpn2950.bbxff.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
     xudp: true
     packet-encoding: xudp
   - name: 🇫🇷FR_1899|1.2MB/s|C002-260622 01
@@ -48685,25 +45149,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev
-  - client-fingerprint: ios
-    encryption: none
-    name: 🇸🇬SG_57|275KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 45.130.125.73
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-cea58e4acf49
-    ws-opts:
-      headers:
-        Host: web-app-aug8yr.app-f1qsy1.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.65 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-aug8yr.app-f1qsy1.workers.dev
   - encryption: none
     name: ❓Other_57|243KB/s|M003-260806 01
     network: ws
@@ -49330,25 +45775,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: bPB-4dc4958B.hXjkcgHcHv.woRkeRs.deV
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇫🇷FR_1935|373KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 0926b50d-3a90-18dd-7c8e-0cf100000000
-    ws-opts:
-      headers:
-        Host: netlivpn4024.bgfjhd.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: netlivpn4024.bgfjhd.workers.dev
   - encryption: none
     name: 🇫🇷FR_1936|1001KB/s|M003-260806 01
     network: ws
@@ -49600,41 +46026,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: shiny-salad-e491.479.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_1950|3.8MB/s|M003-260806 01
-    network: ws
-    port: 8080
-    server: 104.21.70.21
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-e0dfede8abc0
-    ws-opts:
-      headers:
-        Host: xoz60debusrs.lezuwaeiunjs.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-      path: /stream/PANEL_ZEUS/e0dfede8abc0
-    xudp: true
-    packet-encoding: xudp
-    servername: xoz60debusrs.lezuwaeiunjs.workers.dev
-  - client-fingerprint: qq
-    name: 🇫🇷FR_1951|506KB/s|M003-260806 01
-    network: ws
-    port: 2087
-    server: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 5a0028f9-c656-cec9-4b61-54678477a408
-    ws-opts:
-      headers:
-        Host: ''
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
   - client-fingerprint: unsafe
     encryption: none
     name: 🇫🇷FR_1952|555KB/s|M003-260806 01
@@ -49756,25 +46147,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: shiny-mud-d9fa.466.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1959|456KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 172.67.155.222
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 82b279c6-5cba-3a96-f8bd-780a00000035
-    ws-opts:
-      headers:
-        Host: pi7ews-woj41w-7wx0gk.ho3ein13-3af.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; vivo 1610 Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.124 Mobile Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: pi7ews-woj41w-7wx0gk.ho3ein13-3af.workers.dev
   - name: 🇫🇷FR_1960|466KB/s|M003-260806 01
     network: ws
     port: 8880
@@ -50109,24 +46481,6 @@ proxies:
       path: /pyip=ProxyIP.KR.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    name: 🇺🇸US_766|584KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 43.133.110.81
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /?TELEGRAM-MARAMBASHI_MARAMBASHI?ed=512
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alterId: '0'
     cipher: auto
     name: 🇺🇸US_767|92KB/s|K001-260618 01
@@ -50165,43 +46519,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: cfvvv-ev1.pages.dev
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇺🇿UZ_5|385KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.18.80.149
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-4017ea8bea78
-    ws-opts:
-      headers:
-        Host: zeus-panel-mvtum1.mahdiharchegani.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.111 Mobile Safari/537.36
-      path: /stream/PANEL_ZEUS/4017ea8bea78/loc-4
-    xudp: true
-    packet-encoding: xudp
-    servername: zeus-panel-mvtum1.mahdiharchegani.workers.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_1981|1.6MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 104.25.248.101
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.3 Safari/534.24
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇬🇧GB_126|2.1MB/s|A004-260618 01
     network: raw
@@ -50304,82 +46621,6 @@ proxies:
       path: /ws
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1982|4.3MB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.146.211
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1983|2.0MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.64.149.209
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1984|2.9MB/s|M003-260806 01
-    network: ws
-    port: 2083
-    server: 104.19.215.97
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1985|940KB/s|M003-260806 01
-    network: ws
-    port: 8443
-    server: 172.64.149.209
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_773|733KB/s|P002-260618 01
     password: None
     port: 9002
@@ -50415,63 +46656,6 @@ proxies:
       path: /pyip=ProxyIP.SG.CMLiussss.net
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1988|513KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.17.147.22
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 5ef04ae8-8d7c-0a66-13f4-6e3f00000003
-    ws-opts:
-      headers:
-        Host: relay.lunetcloud.ir
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36
-      path: /lunetnetwork
-    xudp: true
-    packet-encoding: xudp
-    servername: relay.lunetcloud.ir
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1989|521KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.17.147.22
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 5ef04ae8-8d7c-0a66-13f4-6e3f00000004
-    ws-opts:
-      headers:
-        Host: relay.lunetcloud.ir
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36
-      path: /lunetnetwork
-    xudp: true
-    packet-encoding: xudp
-    servername: relay.lunetcloud.ir
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1990|598KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 104.17.147.22
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 5ef04ae8-8d7c-0a66-13f4-6e3f00000005
-    ws-opts:
-      headers:
-        Host: relay.lunetcloud.ir
-        User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /lunetnetwork
-    xudp: true
-    packet-encoding: xudp
-    servername: relay.lunetcloud.ir
   - client-fingerprint: chrome
     name: 🇫🇷FR_1991|1.4MB/s|F003-260618 01
     network: ws
@@ -50616,78 +46800,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: fq.jp188.dpdns.org
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_1999|2.4MB/s|M002-260618 01
-    network: ws
-    port: 2083
-    server: 172.64.145.93
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; TRT-LX3 Build/HUAWEITRT-LX3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  - client-fingerprint: unsafe
-    name: 🇫🇷FR_2001|2.7MB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 172.67.217.240
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2002|1.3MB/s|B007-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.147.104
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - alterId: 0
-    cipher: auto
-    name: 🇺🇸US_776|734KB/s|A004-260618 01
-    network: tcp
-    port: 443
-    server: 165.140.217.2
-    skip-cert-verify: false
-    sub_tag: A004-260618
-    tls: false
-    type: vmess
-    udp: true
-    uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
-    xudp: true
-    packet-encoding: xudp
   - cipher: chacha20-ietf-poly1305
     name: 🇨🇦CA_40|1.1MB/s|A004-260618 01
     password: 3ssumf2
@@ -50712,25 +46824,6 @@ proxies:
       path: /ws
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2003|1.7MB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: 104.16.150.108
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇫🇷FR_2004|1.9MB/s|F003-260618 01
     network: ws
@@ -50805,43 +46898,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: aio.eth0.dpdns.org
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2007|1.8MB/s|S004-260618 01
-    network: ws
-    port: 2053
-    server: 104.18.42.163
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3h2kf8xn.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3h2kf8xn.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_2008|5.1MB/s|S004-260618 01
-    network: ws
-    port: 2087
-    server: 104.17.3.81
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇫🇷FR_2009|1.6MB/s|T001-260618 01
     network: ws
@@ -51034,44 +47090,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: fq.jp188.dpdns.org
-  - client-fingerprint: unsafe
-    name: 🇫🇷FR_2017|2.2MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 104.21.33.59
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_2019|1.3MB/s|M003-260806 01
-    network: ws
-    port: 2096
-    server: 172.64.53.215
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇫🇷FR_2020|4.3MB/s|M003-260806 01
     network: ws
@@ -51219,138 +47237,6 @@ proxies:
     udp: true
     servername: fq.jp188.dpdns.org
   - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2026|2.0MB/s|S004-260618 01
-    network: ws
-    port: 2053
-    server: 104.19.214.97
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2027|2.0MB/s|T001-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.52.182
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2028|5.5MB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 172.64.145.202
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2029|1.9MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.64.52.30
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇫🇷FR_2030|1.4MB/s|B007-260618 01
-    network: ws
-    port: 2087
-    server: 188.114.97.6
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.1; Mi A1 Build/N2G47H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.83 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2031|2.1MB/s|M003-260806 01
-    network: ws
-    port: 8443
-    server: 172.64.53.227
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_2032|1.1MB/s|M003-260806 01
-    network: ws
-    port: 2087
-    server: 172.67.118.45
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇫🇷FR_2033|3.5MB/s|M003-260806 01
     network: ws
     port: 2053
@@ -51377,25 +47263,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2034|1.2MB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 172.64.147.104
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36 MVisionPlayer/1.0.0.0
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇫🇷FR_2035|2.8MB/s|T001-260618 01
     network: ws
@@ -51471,39 +47338,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: 3t1yvbyla-rj740g.28m7r63dttya6gazmhoo.workers.dev
-  - alterId: 0
-    cipher: auto
-    name: 🇺🇸US_782|697KB/s|A004-260618 01
-    network: raw
-    port: 443
-    server: 165.140.217.2
-    skip-cert-verify: false
-    sub_tag: A004-260618
-    tls: false
-    type: vmess
-    udp: true
-    uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
-    xudp: true
-    packet-encoding: xudp
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇫🇷FR_2037|375KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 4qzsz6e8u00s.tlzw8le6ubhs.workers.dev
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-5a26a30b00dc
-    ws-opts:
-      headers:
-        Host: 4qzsz6e8u00s.tlzw8le6ubhs.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
-      path: /stream/PANEL_ZEUS/5a26a30b00dc
-    xudp: true
-    packet-encoding: xudp
-    servername: 4qzsz6e8u00s.tlzw8le6ubhs.workers.dev
   - encryption: none
     http-opts:
       headers:
@@ -51521,23 +47355,6 @@ proxies:
     uuid: fd4b654f-9ae2-42c5-977b-6aa54e8e9a83
     xudp: true
     packet-encoding: xudp
-  - encryption: none
-    name: 🇫🇷FR_2038|303KB/s|M003-260806 01
-    network: ws
-    port: 2086
-    server: 104.20.5.15
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: b7e98669-e242-c129-5c6e-c6492f4bdd39
-    ws-opts:
-      headers:
-        Host: polished-dawn-da70.hihglo865yy.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36
-      path: /hamid
-    xudp: true
-    packet-encoding: xudp
-    servername: polished-dawn-da70.hihglo865yy.workers.dev
   - client-fingerprint: chrome
     encryption: none
     name: 🇯🇵JP_50|262KB/s|M002-260618 01
@@ -51566,25 +47383,6 @@ proxies:
     tls: true
     type: http
     udp: true
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2039|2.3MB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 172.64.53.42
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -51659,25 +47457,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: novantunnel.tech
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇫🇷FR_2043|1.3MB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 188.114.97.6
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-J700M Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
-    servername: trex-panel-nubj0s.samifakor.workers.dev
   - client-fingerprint: chrome
     name: 🇺🇸US_783|345KB/s|F003-260618 01
     network: ws
@@ -51842,21 +47621,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: c6dbx99g6stb418qeo.t3jmlj0r152zji4htdkm9.workers.dev
-  - name: 🇸🇬SG_64|206KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 188.114.97.6
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 2388e166-3890-33ae-f77e-efac00000002
-    ws-opts:
-      headers:
-        Host: netlivpn4813.ddhshhshs.workers.dev
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36
-      path: /NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN-NetliVPN
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - http/1.1
     client-fingerprint: chrome
@@ -51876,59 +47640,6 @@ proxies:
       path: /tr/mPZ7O1CUbIBPGNPZQ2HeV
       early-data-header-name: Sec-WebSocket-Protocol
       max-early-data: 2560
-  - encryption: none
-    name: ❓Other_63|330KB/s|T001-260618 01
-    network: ws
-    port: 80
-    server: 104.21.19.53
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: d682c8f4-e719-577e-cbe9-2e5b00000002
-    ws-opts:
-      headers:
-        Host: 0406.infinityconfig7.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: 0406.infinityconfig7.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2048|608KB/s|T001-260618 01
-    network: ws
-    port: 443
-    server: 104.21.37.9
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 89c5493f-9485-85e5-c43f-df0600000000
-    ws-opts:
-      headers:
-        Host: nameless-moon-7c4d.shafmrhjlos23.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36
-      path: /vasl
-    xudp: true
-    packet-encoding: xudp
-    servername: nameless-moon-7c4d.shafmrhjlos23.workers.dev
-  - encryption: none
-    name: 🇫🇷FR_2049|522KB/s|T001-260618 01
-    network: ws
-    port: 8080
-    server: 104.21.70.21
-    sub_tag: T001-260618
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-ef859652a80e
-    ws-opts:
-      headers:
-        Host: trex-panel-nubj0s.samifakor.workers.dev
-        User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; de-de; SAMSUNG GT-I9195 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36
-      path: /stream/TrexBridge/ef859652a80e
-    xudp: true
-    packet-encoding: xudp
-    servername: trex-panel-nubj0s.samifakor.workers.dev
   - encryption: none
     name: 🇫🇷FR_2050|510KB/s|T001-260618 01
     network: ws
@@ -52319,24 +48030,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: mianfei-73q.pages.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_2070|461KB/s|M003-260806 01
-    network: ws
-    port: 443
-    server: 188.114.96.6
-    sub_tag: M003-260806
-    tls: true
-    type: vless
-    udp: true
-    uuid: a592b4ac-e209-4a13-3cef-539600000005
-    ws-opts:
-      headers:
-        Host: 0404.infinityconfig5.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36
-      path: /sync
-    xudp: true
-    packet-encoding: xudp
-    servername: 0404.infinityconfig5.workers.dev
   - grpc-opts:
       grpc-service-name: vless
     name: 🇬🇧GB_135|2.0MB/s|A004-260618 01
@@ -52398,20 +48091,6 @@ proxies:
       path: /proxyip=154.17.22.207,69.63.210.157,134.195.211.13,172.236.245.153,209.146.115.209,64.186.224.194,149.28.94.52,107.151.188.57
     udp: true
     servername: fq.jp188.dpdns.org
-  - name: 🇫🇷FR_2073|3.5MB/s|R002-260618 01
-    network: ws
-    packet-encoding: xudp
-    port: 80
-    server: 104.25.199.149
-    sub_tag: R002-260618
-    type: vless
-    uuid: 50414e45-4c5f-5a45-5553-5dd075c8ae9b
-    ws-opts:
-      headers:
-        Host: web-app-gjn19f.z0zxy6ehuwgs.workers.dev
-      path: /api/ws
-    udp: true
-    servername: web-app-gjn19f.z0zxy6ehuwgs.workers.dev
   - name: 🇷🇴RO_103|1.8MB/s|R002-260618 01
     password: 'null'
     port: 9002
@@ -52626,24 +48305,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: d39333476.pages.dev
-  - client-fingerprint: qq
-    name: 🇫🇷FR_2093|479KB/s|A004-260618 01
-    network: ws
-    port: 2087
-    server: 172.67.223.101
-    sub_tag: A004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 5a0028f9-c656-cec9-4b61-54678477a408
-    ws-opts:
-      headers:
-        Host: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.75 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: green-credit-7e7b.vpnfreev2rayconfig-sale1.workers.dev
   - client-fingerprint: chrome
     name: 🇯🇵JP_54|301KB/s|A004-260618 01
     network: ws
@@ -52730,25 +48391,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: young-wind-3c58.240-2ce.workers.dev
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇹🇷TR_6|373KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 172.67.151.109
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-635698a6bb9c
-    ws-opts:
-      headers:
-        Host: jdzit4e4urks.xwzohsebujps.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36
-      path: /stream/PANEL_ZEUS/635698a6bb9c/loc-0
-    xudp: true
-    packet-encoding: xudp
-    servername: jdzit4e4urks.xwzohsebujps.workers.dev
   - encryption: none
     name: 🇫🇷FR_2099|683KB/s|B007-260618 01
     network: ws
@@ -53965,23 +49607,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: uk-01.letsgodance.site
-  - encryption: none
-    http-opts:
-      headers:
-        Host:
-          - play-apps-features.googleusercontent.com
-      path:
-        - /
-    name: 🇨🇭CH_7|3.6MB/s|S004-260618 01
-    network: http
-    port: 8443
-    server: it.kanzelo.ir
-    sub_tag: S004-260618
-    type: vless
-    udp: true
-    uuid: 0ecf2aa4-0ae7-1a4f-5455-b116c864542d
-    xudp: true
-    packet-encoding: xudp
   - alpn:
       - h2
       - http/1.1
@@ -54024,25 +49649,6 @@ proxies:
     uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2162|2.1MB/s|V007-260618 01
-    network: ws
-    port: 443
-    server: 104.18.38.47
-    sub_tag: V007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇨🇴CO_7|814KB/s|T001-260618 01
     network: tcp
     port: 62145
@@ -54053,25 +49659,6 @@ proxies:
     uuid: 8fb65472-5957-4f64-ba2d-b5812b2f155a
     xudp: true
     packet-encoding: xudp
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_2163|2.2MB/s|T001-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.52.30
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - client-fingerprint: chrome
     name: 🇫🇷FR_2164|1.3MB/s|T001-260618 01
     network: ws
@@ -54108,24 +49695,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: mianfei-73q.pages.dev
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_2166|1.7MB/s|T001-260618 01
-    network: ws
-    port: 2096
-    server: 104.16.151.21
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - alpn:
       - h2
     client-fingerprint: firefox
@@ -54992,25 +50561,6 @@ proxies:
     packet-encoding: xudp
     servername: peekconfig.peekconf1.workers.dev
   - client-fingerprint: chrome
-    encryption: none
-    name: 每天更新免费节点：v2rayclashfree.com-2075b5725223911c
-    network: ws
-    port: 2053
-    server: 104.18.42.54
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; TRT-LX2 Build/HUAWEITRT-LX2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.125 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇭🇰 香港 04-f60ec6cb9f71d37f
     network: tcp
     password: BxceQaOe
@@ -55123,27 +50673,6 @@ proxies:
         User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
       path: /assignment
   - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_18|3.9MB/s|M002-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.147.104
-    sub_tag: M002-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      early-data-header-name: Sec-WebSocket-Protocol
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 7.0; Moto C Build/NRD90M.059) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-      max-early-data: 2560
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-  - client-fingerprint: chrome
     name: 🇺🇸US_19|1.0MB/s|C002-260622 01
     network: tcp
     password: kkzh2prsyr2ik47as615
@@ -55164,24 +50693,6 @@ proxies:
     type: http
     username: 'null'
     udp: true
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_23|1.0MB/s|T001-260618 01
-    network: ws
-    port: 2087
-    server: 172.64.53.60
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Linux; Android 6.0; CAM-L21 Build/HUAWEICAM-L21; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇷🇴RO_14|1.7MB/s|R002-260618 01
     port: 9002
     server: 193.176.84.23
@@ -55462,25 +50973,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: neth.lckdwn.ru
-  - alpn:
-      - ''
-    alterId: '0'
-    cipher: auto
-    name: 🇯🇵JP_11|267KB/s|C002-260622 01
-    network: ws
-    port: 80
-    server: 168.138.43.75
-    skip-cert-verify: false
-    sub_tag: C002-260622
-    tls: false
-    type: vmess
-    udp: true
-    uuid: 11c3627f-31e8-4695-dfbd-34076e2f1f5d
-    ws-opts:
-      headers: {}
-      path: /cctv13.m3u8
-    xudp: true
-    packet-encoding: xudp
   - name: 🇨🇿CZ_2|1.2MB/s|P002-260618 01
     password: None
     port: 443
@@ -56252,27 +51744,6 @@ proxies:
     sub_tag: P002-260618
     type: http
     udp: true
-  - client-fingerprint: unsafe
-    encryption: none
-    name: 🇫🇷FR_191|3.6MB/s|S004-260618 01
-    network: ws
-    port: 443
-    server: 188.114.97.6
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36
-      path: /
-      early-data-header-name: Sec-WebSocket-Protocol
-      max-early-data: 2560
-    xudp: true
-    packet-encoding: xudp
-    servername: fx3l5i2wdfxln0.fx6hsv0.ccwu.cc
   - name: 🇵🇱PL_17|1.1MB/s|P002-260618 01
     password: None
     port: 443
@@ -57586,23 +53057,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: 9-m13.1b9390a5-6209-45Bd-bA0E-057eBB2641C3.KdnS.Fr
-  - encryption: none
-    name: 🇩🇪DE_69|2.5MB/s|M003-260806 01
-    network: ws
-    port: 80
-    server: 104.27.88.172
-    sub_tag: M003-260806
-    type: vless
-    udp: true
-    uuid: 50414e45-4c5f-5a45-5553-52108a2d5224
-    ws-opts:
-      headers:
-        Host: web-app-nr6wpa.app-tp57xz.workers.dev
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.162 Safari/537.36
-      path: /api/ws
-    xudp: true
-    packet-encoding: xudp
-    servername: web-app-nr6wpa.app-tp57xz.workers.dev
   - name: 🇫🇷FR_224|1.1MB/s|M001-260618 01
     network: ws
     password: 87d1bfd4-574e-4c96-ad42-0426f27461ff
@@ -57655,24 +53109,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: fq.jp188.dpdns.org
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_245|1.9MB/s|S004-260618 01
-    network: ws
-    port: 443
-    server: 172.64.52.173
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇺🇸US_685|757KB/s|P002-260618 01
     password: None
     port: 9002
@@ -57805,28 +53241,6 @@ proxies:
     type: http
     udp: true
     sni: fan.587475.xyz
-  - alpn:
-      - h3
-      - h2
-      - http/1.1
-    client-fingerprint: chrome
-    encryption: none
-    name: 🇳🇱NL_253|4.9MB/s|S004-260618 01
-    network: xhttp
-    port: 443
-    server: hcaptcha.com
-    sub_tag: S004-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: ae0658ee-4922-43df-c946-811f539e9cda
-    xhttp-opts:
-      host: meeeeeew.esmahdi9.com
-      mode: auto
-      path: /meww
-    xudp: true
-    packet-encoding: xudp
-    servername: meeeeeew.esmahdi9.com
   - client-fingerprint: chrome
     name: ❓Other_33|549KB/s|A001-260618 01
     network: ws
@@ -58198,27 +53612,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: speed.dulacloud.store
-  - alpn:
-      - h2
-    client-fingerprint: firefox
-    encryption: none
-    name: 🇫🇮FI_11|1.3MB/s|V009-260618 01
-    network: ws
-    port: 443
-    server: k2.cloud--vpn.site
-    sub_tag: V009-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 0d4fd99b-06ae-4ee2-fee2-fda93a9434f1
-    ws-opts:
-      headers:
-        Host: c12.com
-        User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: ssl.fastly.com
   - client-fingerprint: chrome
     name: 🇫🇷FR_284|1.8MB/s|A004-260618 01
     network: ws
@@ -58277,24 +53670,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: ssl.fastly.com
-  - client-fingerprint: chrome
-    name: 🇫🇷FR_287|4.1MB/s|B007-260618 01
-    network: ws
-    port: 2096
-    server: 172.64.53.240
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 🇸🇬SG_84|237KB/s|M002-260618 01
     network: ws
     port: 80
@@ -58407,48 +53782,6 @@ proxies:
     xudp: true
     packet-encoding: xudp
     servername: 1-m9.fa481bc3-db71-45d0-b251-3cd830fd1b94.kdns.fr
-  - alpn:
-      - h2
-    client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇮FI_13|667KB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: 151.101.56.6
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 0d4fd99b-06ae-4ee2-fee2-fda93a9434f1
-    ws-opts:
-      headers:
-        Host: c12.com
-        User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.63 Safari/537.36
-      path: /?TELEGRAM--BYA--CHANEL---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN---@JKVPN--@JKVPN---@JKVPN---@JKVPN---@JKVPN
-    xudp: true
-    packet-encoding: xudp
-    servername: ssl.fastly.com
-  - alpn:
-      - h2
-    client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇮FI_14|1.2MB/s|B007-260618 01
-    network: ws
-    port: 443
-    server: a2.arshia-nova.ir
-    sub_tag: B007-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 0d4fd99b-06ae-4ee2-fee2-fda93a9434f1
-    ws-opts:
-      headers:
-        Host: c12.com
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: ssl.fastly.com
   - client-fingerprint: chrome
     encryption: none
     name: 🇩🇪DE_91|1.1MB/s|B007-260618 01
@@ -58710,25 +54043,6 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Linux; Android 8.0.0; FIG-LX3 Build/HUAWEIFIG-LX3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
       path: /x7f9k2m4p8
-  - client-fingerprint: chrome
-    encryption: none
-    name: 🇫🇷FR_290|3.1MB/s|T001-260618 01
-    network: ws
-    port: 8443
-    server: 172.64.145.202
-    sub_tag: T001-260618
-    tls: true
-    type: vless
-    udp: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    ws-opts:
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-        User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.742.100 Safari/534.30
-      path: /
-    xudp: true
-    packet-encoding: xudp
-    servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 美国(yudou789.top 玉豆分享)_156
     type: trojan
     server: 104.18.9.83
@@ -59449,21 +54763,6 @@ proxies:
     reality-opts:
       public-key: cQVJVttx2AX4QVuhlGTk8kHCc_9caNPVikUpIoZZMzk
       short-id: 2534feee55b53de6
-    skip-cert-verify: true
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_54-1ff36f71d6805777
-    type: vless
-    server: 104.245.242.8
-    port: 8443
-    uuid: 4350213a-b4e7-262a-0bd7-bd16957cf71a
-    network: grpc
-    servername: download.nvidia.com
-    tls: true
-    client-fingerprint: firefox
-    grpc-opts:
-      grpc-service-name: TunService
-    reality-opts:
-      public-key: FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk
     skip-cert-verify: true
     udp: true
   - name: FR法国(mibei77.com 米贝节点分享)_5-c1de02fb30949a1f
@@ -60387,18 +55686,6 @@ proxies:
       path: /JRr6VGcSLFc034DC6sDbwyWJLbB
       headers:
         Host: 0-m16.ChIAng-Mai2032.kdnS.fR
-  - type: vless
-    name: 美国+CloudFlare节点-5cb3352cfb3ed33d
-    server: 172.64.146.211
-    port: 2087
-    tls: true
-    uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
-    network: ws
-    sni: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
-    ws-opts:
-      path: /
-      headers:
-        Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
   - name: 8元老牌专线机场：cczzuu.top
     server: 47.238.210.5
     port: 13779
@@ -60463,16 +55750,6 @@ proxies:
     client-fingerprint: chrome
     network: tcp
     udp: true
-  - name: 🇺🇸 美国_CE1VN0
-    server: 165.140.217.14
-    port: 443
-    type: vmess
-    udp: true
-    uuid: b65a2d69-5634-42a2-e4be-54e8a6176900
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
   - name: 🇯🇵 日本_6OQ3DM
     server: jp-1.gsafevpnapi.com
     port: 20270
