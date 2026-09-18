@@ -18,13 +18,22 @@ function valid(p){
   }
   return true;
 }
+function endpointIdentity(p){
+  const auth=p.uuid||p.password||[p.cipher,p.password].filter(Boolean).join(':')||'';
+  const transport=p.network||'tcp';
+  const tls=p.tls?'tls':'plain';
+  const sni=p.sni||'';
+  const reality=p['reality-opts']||{};
+  return crypto.createHash('sha256').update(JSON.stringify([String(p.type).toLowerCase(),String(p.server).toLowerCase(),Number(p.port),auth,transport,tls,sni,reality['public-key']||'',reality['short-id']||''])).digest('hex').slice(0,16);
+}
 function fingerprint(p){
-  return crypto.createHash('sha256').update(JSON.stringify([p.type,p.server,p.port,p.uuid,p.password,p.cipher,p.network,p.tls,p.sni,p['reality-opts']])).digest('hex').slice(0,8);
+  return endpointIdentity(p);
 }
 function add(p,source){
   if(proxies.length>=MAX_CANDIDATES)return;
   if(!valid(p))return;
   const key=fingerprint(p); if(seen.has(key))return; seen.add(key);
+  p['endpoint-id']=key;
   let name=String(p.name).trim()||String(p.server);
   if(usedNames.has(name))name=name+'-'+key;
   usedNames.add(name);
