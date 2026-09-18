@@ -98,10 +98,18 @@ try{
  }));
  const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x]));
 
- const histStats=new Map(Object.entries(hist).map(([id,x])=>[id,{...x}]));
+ const histStats=new Map(Object.entries(hist).map(([id,x])=>{
+   const observations=[];
+   for(const batch of history){
+     for(const r of batch.results||[])if(r.fingerprint===id&&Array.isArray(r.delays))observations.push(...r.delays);
+   }
+   const recent=observations.slice(-12), weights=recent.map((_,i)=>i+1), total=weights.reduce((a,b)=>a+b,0);
+   const weightedRate=total?recent.reduce((s,v,i)=>s+(Number(v)>0?weights[i]:0),0)/total:0;
+   return [id,{...x,recentTests:recent.length,weightedRate}];
+ }));
  function currentRate(r){return Number(r.successRate||0)}
  function currentLatency(r){return r.avgLatency==null?Infinity:Number(r.avgLatency)}
- function historyMetric(id){return histStats.get(id)||{tests:0,successes:0,latencies:[]}}
+ function historyMetric(id){return histStats.get(id)||{tests:0,successes:0,latencies:[],recentTests:0,weightedRate:0}}
  function stableEligible(r){
    const m=historyMetric(r.fingerprint);
    const currentOk=r.rounds>=2 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
@@ -109,7 +117,7 @@ try{
    // Cold start: before enough history exists, require two successful
    // observations in this run. Once history accumulates, use reputation.
    if(m.tests===0)return r.successes>=2;
-   return m.tests>=6 && m.successes/m.tests>=0.8;
+   return m.recentTests>=6 && m.weightedRate>=0.8;
  }
  function bestEligible(r){
    const m=historyMetric(r.fingerprint);
@@ -120,7 +128,7 @@ try{
    // Cold start: three successful observations are enough for a conservative
    // first-run best pool; historical reputation takes over afterwards.
    if(m.tests===0)return r.successes>=3;
-   return m.tests>=9 && m.successes/m.tests>=0.9;
+   return m.recentTests>=9 && m.weightedRate>=0.9;
  }
  const google=new Set(h.results.filter(r=>currentRate(r)>0).map(r=>r.name));
  const stable=new Set(h.results.filter(stableEligible).map(r=>r.name));
@@ -129,7 +137,7 @@ try{
  const best=new Set(h.results.filter(bestEligible).map(r=>r.name));
  function qualityScore(r,m){
   const success=Math.max(0,Math.min(1,r.successRate||0));
-  const long=Math.max(0,Math.min(1,m?.longRate||0));
+  const long=Math.max(0,Math.min(1,m?.weightedRate??m?.longRate??0));
   const latency=m?.avg?Math.max(0,1-Math.min(1,m.avg/5000)):0;
   const p95=m?.p95?Math.max(0,1-Math.min(1,m.p95/10000)):0;
   return Math.round(100*(0.4*success+0.3*long+0.2*latency+0.1*p95));
