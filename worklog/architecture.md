@@ -30,6 +30,34 @@ Subscriptions
 
 The project should gradually become an inventory-maintenance system with incremental discovery, rather than a one-shot source-ranking system.
 
+## 2. Discovery Memory
+
+NodeProbe's internet discovery is stateful. Discovery is not just a repeated search for the same top-ranked repositories.
+
+The persistent file `data/discovery-state.json` records three kinds of exploration memory:
+
+- **channels**: per GitHub query/sort channel, including a rotating page cursor and recent run information;
+- **repos**: repositories seen by discovery, including when they were last expanded;
+- **sources**: sources used as crawler parents, including expansion history.
+
+Current GitHub discovery uses multiple channels:
+
+- `updated` — recently active repositories;
+- `created` — newly created repositories;
+- `stars` — mature/high-attention repositories.
+
+Each channel advances through bounded search pages instead of repeatedly reading only page 1. Repositories are also given a revisit interval so a repository that has recently been expanded does not consume discovery capacity again immediately.
+
+This creates a distinction between:
+
+> **Search result freshness** — what GitHub currently ranks highly.
+>
+> **Discovery progress** — what NodeProbe has already explored.
+
+The system should preserve this distinction. Search ranking alone is not a sufficient exploration strategy.
+
+`data/discovery-state.json` is exploration memory, not source reputation. It must not be used to directly judge whether a proxy source or node is good.
+
 ## 2. Core Concepts
 
 There are three distinct objects that must not be conflated:
@@ -319,6 +347,7 @@ Important persistent data:
 | `data/source-history.json` | Historical source observations |
 | `data/source-reputation.json` | Source-level reputation |
 | `data/source-evolution.json` | Source node-set evolution |
+| `data/discovery-state.json` | Persistent internet/discovery exploration memory |
 | `data/ip-geolocation.json` | Cached node IP geolocation |
 | `data/country-pool.json` | Country-pool selection information |
 
@@ -386,7 +415,7 @@ Before changing an architectural rule, inspect:
 Major responsibilities currently include:
 
 - `scripts/discover-sources.js`
-  - source discovery and source probing schedule;
+  - stateful source discovery, GitHub exploration channels, source-link expansion and source probing schedule;
 - `scripts/fetch-sources.js`
   - fetching source contents;
 - `scripts/build-subscriptions.js`
@@ -438,7 +467,29 @@ The GitHub Actions workflow orchestrates these stages.
                          NodeProbe Subscriptions
 ```
 
-## 17. Future Direction
+## 17. Discovery Strategy
+
+Discovery should evolve as an exploration problem rather than a static ranking query. The preferred order is:
+
+```text
+GitHub / existing sources
+        ↓
+Discovery Memory
+        ↓
+New or insufficiently explored frontier
+        ↓
+Source candidates
+        ↓
+Source Registry
+        ↓
+Source Evolution / Reputation
+```
+
+Discovery memory answers **where NodeProbe has already looked**. Source reputation answers **whether a discovered source is useful**. Node reputation answers **whether an individual node is useful**. These three questions must remain separate.
+
+The current mechanism is intentionally conservative: bounded pages, bounded repository expansion, and bounded source-link expansion. The crawler should not become a general-purpose web spider.
+
+## 18. Future Direction
 
 The long-term direction is:
 
@@ -472,7 +523,7 @@ Eventually allow source probing, node testing, and pool construction to adapt to
 
 The order is intentional: **memory first, then interpretation, then optimization**.
 
-## 18. Engineering Philosophy
+## 19. Engineering Philosophy
 
 NodeProbe should favor:
 
@@ -489,3 +540,5 @@ When uncertain, preserve historical information and collect evidence before maki
 ---
 
 **Last architectural revision:** 2026-09-18
+
+Discovery memory revision: stateful multi-channel GitHub exploration added.
