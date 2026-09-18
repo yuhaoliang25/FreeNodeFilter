@@ -32,6 +32,9 @@ function fingerprint(p){
   return endpointIdentity(p);
 }
 function add(p,source){
+  // Mihomo requires REALITY to run over TLS. Some public sources omit
+  // tls: true because their URI uses security=reality; normalize that here.
+  if(p && p['reality-opts'])p.tls=true;
   if(!valid(p))return;
   const key=fingerprint(p); if(seen.has(key))return; seen.add(key);
   p['endpoint-id']=key;
