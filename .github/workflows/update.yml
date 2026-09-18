@@ -22,6 +22,8 @@ jobs:
       - name: Fetch public sources
         run: npm run fetch
       - name: Build candidate subscription
+        env:
+          MAX_CANDIDATES: '1500'
         run: npm run build
       - name: Install Mihomo
         env:
@@ -68,6 +70,8 @@ jobs:
           GOOGLE_TEST_URL: https://www.google.com/generate_204
         run: node scripts/diagnose-failures.js
       - name: Rebuild filtered subscriptions
+        env:
+          MAX_CANDIDATES: '1500'
         run: node scripts/build-subscriptions.js
       - name: Commit generated subscriptions
         run: |
