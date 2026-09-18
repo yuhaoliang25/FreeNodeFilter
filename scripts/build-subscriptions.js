@@ -27,5 +27,12 @@ for(const s of raw){
 const clean=proxies.map(({_source,...p})=>p);
 fs.mkdirSync('subscriptions',{recursive:true});
 fs.writeFileSync('subscriptions/all.yaml',yaml.dump({proxies:clean},{lineWidth:-1,noRefs:true}));
+try{
+  const h=JSON.parse(fs.readFileSync('data/health.json','utf8'));
+  const stable=new Set(h.results.filter(x=>x.successRate>=0.8).map(x=>x.name));
+  const google=new Set(h.results.filter(x=>x.successRate>0).map(x=>x.name));
+  fs.writeFileSync('subscriptions/google.yaml',yaml.dump({proxies:clean.filter(p=>google.has(p.name))},{lineWidth:-1,noRefs:true}));
+  fs.writeFileSync('subscriptions/stable.yaml',yaml.dump({proxies:clean.filter(p=>stable.has(p.name))},{lineWidth:-1,noRefs:true}));
+}catch(e){ console.log('health data unavailable; only all.yaml generated'); }
 fs.writeFileSync('data/candidates.json',JSON.stringify(proxies,null,2));
 console.log('candidate nodes:',clean.length);
