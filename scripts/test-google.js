@@ -55,10 +55,25 @@ async function main(){
  ];
  async function testGroup(selected,timeout){
   if(!selected.length)return {};
-  const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
-  const result=await json(API+'/group/'+encodeURIComponent(GROUP)+'/delay?'+q);
-  for(const [name,delay] of Object.entries(result)){const d=Number(delay);(all[name]??=[]).push(Number.isFinite(d)&&d>0?d:0)}
-  return result;
+  const merged={};
+  for(let i=0;i<selected.length;i+=BATCH_SIZE){
+   const batch=selected.slice(i,i+BATCH_SIZE);
+   for(const name of batch){
+    try{
+     const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
+     const result=await json('/proxies/'+encodeURIComponent(name)+'/delay?'+q);
+     const d=Number(result.delay);
+     merged[name]=Number.isFinite(d)&&d>0?d:0;
+     (all[name]??=[]).push(merged[name]);
+    }catch(e){
+     merged[name]=0;
+     (all[name]??=[]).push(0);
+    }
+   }
+   console.log(' batch',Math.floor(i/BATCH_SIZE)+1,'/',Math.ceil(selected.length/BATCH_SIZE),'tested',batch.length);
+   if(i+BATCH_SIZE<selected.length)await new Promise(r=>setTimeout(r,BATCH_PAUSE));
+  }
+  return merged;
  }
  const budgets=new Map(candidates.map(p=>[p.name,budget(p)]));
  const r1=await testGroup(names,FAST_TIMEOUT);
