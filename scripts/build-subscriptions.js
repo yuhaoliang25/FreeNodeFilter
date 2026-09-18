@@ -3,7 +3,6 @@
 const fs=require('fs'),yaml=require('js-yaml'),crypto=require('crypto');
 const raw=JSON.parse(fs.readFileSync('data/raw-sources.json','utf8'));
 const proxies=[],seen=new Set(),usedNames=new Set();
-const MAX_CANDIDATES=Number(process.env.MAX_CANDIDATES||100000);
 function valid(p){
   if(!p||typeof p!=='object'||!p.name||!p.server||!p.port||!p.type)return false;
   const port=Number(p.port); if(!Number.isInteger(port)||port<1||port>65535)return false;
@@ -19,12 +18,15 @@ function valid(p){
   return true;
 }
 function endpointIdentity(p){
-  const auth=p.uuid||p.password||[p.cipher,p.password].filter(Boolean).join(':')||'';
+  const t=String(p.type).toLowerCase();
+  const auth=t==='shadowsocks'?[p.cipher||'',p.password||'']:t==='vmess'||t==='vless'?[p.uuid||'']:[p.password||''];
   const transport=p.network||'tcp';
   const tls=p.tls?'tls':'plain';
   const sni=p.sni||'';
   const reality=p['reality-opts']||{};
-  return crypto.createHash('sha256').update(JSON.stringify([String(p.type).toLowerCase(),String(p.server).toLowerCase(),Number(p.port),auth,transport,tls,sni,reality['public-key']||'',reality['short-id']||''])).digest('hex').slice(0,16);
+  const ws=p['ws-opts']||{}, grpc=p['grpc-opts']||{};
+  const transportOpts={wsPath:ws.path||'',wsHost:ws.headers?.Host||'',grpcService:grpc['grpc-service-name']||''};
+  return crypto.createHash('sha256').update(JSON.stringify([t,String(p.server).toLowerCase(),Number(p.port),auth,transport,transportOpts,tls,sni,p.flow||'',reality['public-key']||'',reality['short-id']||''])).digest('hex').slice(0,16);
 }
 function fingerprint(p){
   return endpointIdentity(p);
@@ -76,7 +78,7 @@ for(const s of raw){
    for(const line of s.text.split(/\r?\n/).map(x=>x.trim()).filter(Boolean))uriProxy(line,s.name);
  }
 }
-const clean=proxies.map(({_source,_id,...p})=>p);
+const clean=proxies.map(({_source,_id,...p})=>{delete p['endpoint-id'];return p;});
 fs.mkdirSync('subscriptions',{recursive:true});
 fs.writeFileSync('subscriptions/all.yaml',yaml.dump({proxies:clean},{lineWidth:-1,noRefs:true}));
 try{
@@ -91,23 +93,21 @@ try{
    const s=[...x.latencies].sort((a,b)=>a-b), p=q=>s.length?s[Math.min(s.length-1,Math.ceil(s.length*q)-1)]:null;
    return [id,{longRate:x.tests?x.successes/x.tests:0,avg:s.length?Math.round(s.reduce((a,b)=>a+b,0)/s.length):null,p95:p(.95),tests:x.tests}];
  }));
- const idsByName=new Map(h.results.map(x=>[x.name,x.fingerprint]));
  const sourceQuality=new Map(Object.entries(h.sourceStats||{}).map(([name,x])=>[name,x]));
 
- const currentById=new Map(h.results.filter(x=>x.fingerprint).map(x=>[x.fingerprint,x]));
  const histStats=new Map(Object.entries(hist).map(([id,x])=>[id,{...x}]));
  function currentRate(r){return Number(r.successRate||0)}
  function currentLatency(r){return r.avgLatency==null?Infinity:Number(r.avgLatency)}
  function historyMetric(id){return histStats.get(id)||{tests:0,successes:0,latencies:[]}}
  function stableEligible(r){
    const m=historyMetric(r.fingerprint);
-   return m.tests>=6 && m.successes/m.tests>=0.8 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
+   return r.rounds>=2 && m.tests>=6 && m.successes/m.tests>=0.8 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
  }
  function bestEligible(r){
    const m=historyMetric(r.fingerprint);
    const repNode=reputation.nodes?.[r.fingerprint];
    return repNode?.status!=='quarantine' &&
-     m.tests>=9 && m.successes/m.tests>=0.9 &&
+     r.rounds>=3 && m.tests>=9 && m.successes/m.tests>=0.9 &&
      currentRate(r)>=0.9 && currentLatency(r)<=2500 &&
      Number(r.p95Latency||Infinity)<=5000;
  }
