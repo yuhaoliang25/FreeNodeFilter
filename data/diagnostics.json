@@ -1,18 +1,72 @@
 {
-  "generatedAt": "2026-09-18T03:25:49.444Z",
+  "generatedAt": "2026-09-18T03:57:25.099Z",
   "target": "https://www.google.com/generate_204",
   "results": {
+    "2411c72fdc30ffc9": {
+      "name": "🇫🇷FR_481|664KB/s|M003-260806 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "5ce74f338e2ea751": {
+      "name": "🇫🇷FR_484|340KB/s|M003-260806 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "d4d22446ce2ee462": {
+      "name": "🏴‍☠_1🇺🇸US²_6|3.9MB/s|5.0MB/s|X|History 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "906001ebf70f1d8e": {
+      "name": "🇩🇪DE_10|4.8MB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "a2c9730702485729": {
+      "name": "🇩🇪DE_11|7.3MB/s|P002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "4f7b047fbeb81b63": {
+      "name": "🇮🇹IT_3|884KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "1741cf464f2f7b4a": {
+      "name": "🇧🇬BG_2|1.6MB/s|A004-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "654be6f5bfba5571": {
+      "name": "🇦🇺AU_2|442KB/s|R002-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
+    "8618847e37988db6": {
+      "name": "🇲🇾MY_1|841KB/s|K001-260618 01",
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
+    },
     "3ad17876848385a5": {
       "name": "SS-加拿大>英国-NF解锁英国地区非自制剧-ChatGPT-144.217.164.29:12000",
-      "diagnostic": "tls",
-      "exitCode": 35,
-      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "3f246d8859cd44cb": {
       "name": "VMESS-未知>德国-NF解锁印度地区非自制剧-ChatGPT-TikTok-YouTube-547.rtxconfigz.shop:8080",
-      "diagnostic": "tls",
-      "exitCode": 35,
-      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "4aa545921011b5ba": {
       "name": "VMESS-美国>日本-NF解锁日本地区非自制剧-ChatGPT-YouTube-t1.620720.xyz:8443",
@@ -82,9 +136,9 @@
     },
     "e50578946c82df4d": {
       "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-pupas-shirting-unsung.freesocks.work:443",
-      "diagnostic": "tls",
-      "exitCode": 35,
-      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "0302b8744e7f6f1e": {
       "name": "SS-英国-NF解锁加拿大地区非自制剧-ChatGPT-TikTok-YouTube-79.127.233.170:990",
@@ -94,9 +148,9 @@
     },
     "01d4fc838e38f63d": {
       "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-v2ray.codefyinc.com:443",
-      "diagnostic": "http_or_transport",
-      "exitCode": 56,
-      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "62fc6f8c12b0ef6e": {
       "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-23.95.75.146:443",
@@ -130,9 +184,9 @@
     },
     "285fe95250136c90": {
       "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-209.126.84.189:443",
-      "diagnostic": "http_or_transport",
-      "exitCode": 56,
-      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "9c8ca477d9b4fd74": {
       "name": "VMESS-未知>澳大利亚-NF解锁澳大利亚自制剧-ChatGPT-TikTok-YouTube-sy4.620720.xyz:443",
@@ -148,9 +202,9 @@
     },
     "b5ca06569d61c454": {
       "name": "SS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-107.175.87.207:10011",
-      "diagnostic": "http_or_transport",
-      "exitCode": 56,
-      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "8eb2b46992c80daf": {
       "name": "VMESS-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-cg1c01.waimaojd.com:443",
@@ -160,9 +214,9 @@
     },
     "e3c320236c61a9fb": {
       "name": "VMESS-美国-ChatGPT-TikTok-YouTube-cg1c04.waimaojd.com:443",
-      "diagnostic": "http_or_transport",
-      "exitCode": 56,
-      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "07735b81bdd8819c": {
       "name": "VMESS-美国-ChatGPT-TikTok-YouTube-cg1c14.waimaojd.com:443",
@@ -280,9 +334,9 @@
     },
     "c27411bf8d5cb0ac": {
       "name": "🇫🇷法国丨yoyapai.com_2",
-      "diagnostic": "http_or_transport",
-      "exitCode": 56,
-      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "8172534fa7e28642": {
       "name": "❓未知丨yoyapai.com_6",
@@ -394,9 +448,9 @@
     },
     "c169068ee2943d07": {
       "name": "🇷🇺 RU俄羅斯丨yoyapai.com",
-      "diagnostic": "tls",
-      "exitCode": 35,
-      "stderr": "curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.google.com:443 \n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "6986bbba914477f7": {
       "name": "🇺🇸US美國丨yoyapai.com_4",
@@ -442,9 +496,9 @@
     },
     "425db4fba9d7f1f8": {
       "name": "🇺🇸US美國丨yoyapai.com_8",
-      "diagnostic": "http_or_transport",
-      "exitCode": 56,
-      "stderr": "curl: (56) Failure when receiving data from the peer\n"
+      "diagnostic": "http_success",
+      "exitCode": 0,
+      "stderr": ""
     },
     "3b9b03d670060c12": {
       "name": "🇺🇸US美國丨yoyapai.com_9",
@@ -530,12 +584,6 @@
       "exitCode": 0,
       "stderr": ""
     },
-    "0f7dd9ff2180858d": {
-      "name": "🇺🇸US美國丨yoyapai.com_13",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
     "9bda304469722ef2": {
       "name": "🇺🇸US美國丨yoyapai.com_14",
       "diagnostic": "http_success",
@@ -550,54 +598,6 @@
     },
     "a5a12b9a6e0e15f1": {
       "name": "🇯🇵JP日本丨yoyapai.com_2",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "14d2765bd44ed0ad": {
-      "name": "🇭🇰HK香港丨yoyapai.com",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "14b6dd093aa1e0c8": {
-      "name": "🇭🇰HK香港丨yoyapai.com_1",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "4f4925b7f372fc2a": {
-      "name": "🇭🇰HK香港丨yoyapai.com_2",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "ef98f0f283c81e22": {
-      "name": "🇭🇰HK香港丨yoyapai.com_3",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "4db4158c66471d17": {
-      "name": "🇭🇰HK香港丨yoyapai.com_4",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "b22c2cf8092d0461": {
-      "name": "🇺🇸 美國賓利大學丨yoyapai.com",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "6a696d0c42bbaeb1": {
-      "name": "🇯🇵JP日本節點丨yoyapai.com",
-      "diagnostic": "http_success",
-      "exitCode": 0,
-      "stderr": ""
-    },
-    "b48005e407feeabe": {
-      "name": "🇯🇵JP日本節點丨yoyapai.com_1",
       "diagnostic": "http_success",
       "exitCode": 0,
       "stderr": ""

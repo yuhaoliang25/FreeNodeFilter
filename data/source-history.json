@@ -21,5 +21,51 @@
         "avgLatency": null
       }
     }
+  },
+  {
+    "generatedAt": "2026-09-18T03:30:29.018Z",
+    "sources": {
+      "vxiaov-free-proxies": {
+        "nodes": 28,
+        "successful": 0,
+        "totalTests": 28,
+        "totalSuccesses": 0,
+        "successRate": 0,
+        "nodeSuccessRate": 0,
+        "avgLatency": null
+      },
+      "FreeNodes-clashmeta": {
+        "nodes": 272,
+        "successful": 0,
+        "totalTests": 272,
+        "totalSuccesses": 0,
+        "successRate": 0,
+        "nodeSuccessRate": 0,
+        "avgLatency": null
+      }
+    }
+  },
+  {
+    "generatedAt": "2026-09-18T03:57:33.985Z",
+    "sources": {
+      "FreeNodes-clashmeta": {
+        "nodes": 1472,
+        "successful": 1090,
+        "totalTests": 2758,
+        "totalSuccesses": 2367,
+        "successRate": 0.8582306018854242,
+        "nodeSuccessRate": 0.7404891304347826,
+        "avgLatency": 62
+      },
+      "vxiaov-free-proxies": {
+        "nodes": 28,
+        "successful": 0,
+        "totalTests": 28,
+        "totalSuccesses": 0,
+        "successRate": 0,
+        "nodeSuccessRate": 0,
+        "avgLatency": null
+      }
+    }
   }
 ]
