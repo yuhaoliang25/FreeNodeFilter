@@ -3,3 +3,5 @@ sources:
     url: https://raw.githubusercontent.com/mfuu/FreeProxies/master/sub.yaml
   - name: vxiaov-free-proxies
     url: https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml
+  - name: barabama
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.yaml
