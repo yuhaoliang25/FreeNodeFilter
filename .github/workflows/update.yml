@@ -81,7 +81,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add subscriptions data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json
+          git add subscriptions data/candidates.json data/health.json data/history.json data/reputation.json data/diagnostics.json data/scores.json
           git diff --cached --quiet && exit 0
           git commit -m "chore: refresh node candidates"
           git push
