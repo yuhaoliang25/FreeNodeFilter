@@ -16,7 +16,7 @@ const stateFile=path.resolve('data/sources.json');
 function readJson(file,fallback){try{return JSON.parse(fs.readFileSync(file,'utf8'))}catch{return fallback}}
 function sourceId(url){return 'dynamic-'+crypto.createHash('sha256').update(url).digest('hex').slice(0,12)}
 function canonical(url){
-  try{const u=new URL(url);u.hash='';u.search='';return u.toString().replace(/\\/$/,'')}catch{return null}
+  try{const u=new URL(url);u.hash='';return u.toString().replace(/\/$/,'')}catch{return null}
 }
 function isCandidatePath(p){
   const x=p.toLowerCase();
