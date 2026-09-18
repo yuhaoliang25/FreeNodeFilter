@@ -34,10 +34,35 @@ jobs:
           curl -fsSL --retry 3 "$asset" -o mihomo/mihomo.gz
           gunzip -f mihomo/mihomo.gz
           chmod +x mihomo/mihomo
-      - name: Test candidates
+      - name: Generate Mihomo config
         run: |
-          echo "Candidate generation complete."
-          echo "Next stage will run Mihomo and perform multi-round Google tests."
+          node - <<'NODE'
+          const fs=require('fs'),yaml=require('js-yaml');
+          const d=yaml.load(fs.readFileSync('subscriptions/all.yaml','utf8'));
+          const p=d.proxies||[];
+          const cfg=yaml.load(fs.readFileSync('mihomo/config-template.yaml','utf8'));
+          cfg.proxies=p;
+          cfg['proxy-groups'][0].proxies=p.map(x=>x.name);
+          fs.mkdirSync('mihomo',{recursive:true});
+          fs.writeFileSync('mihomo/config.yaml',yaml.dump(cfg,{lineWidth:-1,noRefs:true}));
+          console.log('nodes:',p.length);
+          NODE
+      - name: Start Mihomo
+        run: |
+          set -euo pipefail
+          mihomo/mihomo -d mihomo -f mihomo/config.yaml > mihomo/mihomo.log 2>&1 &
+          echo $! > mihomo/mihomo.pid
+          sleep 5
+          kill -0 $(cat mihomo/mihomo.pid)
+      - name: Multi-round Google health check
+        env:
+          TEST_ROUNDS: '3'
+          TEST_TIMEOUT: '8000'
+          TEST_EXPECTED: '204'
+          GOOGLE_TEST_URL: https://www.google.com/generate_204
+        run: node scripts/test-google.js
+      - name: Rebuild filtered subscriptions
+        run: node scripts/build-subscriptions.js
       - name: Commit generated subscriptions
         run: |
           git config user.name 'github-actions[bot]'
