@@ -35,6 +35,40 @@ async function looksLikeSource(url){
     return /(^|\\n)\\s*proxies\\s*:/m.test(text)||/(?:vless|vmess|trojan|ss|ssr):\\/\\//i.test(text);
   }catch{return false}
 }
+async function fetchText(url,limit=200000){
+  const r=await fetch(url,{redirect:'follow',headers:{'user-agent':UA}});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  return (await r.text()).slice(0,limit);
+}
+function candidateUrl(url){
+  try{
+    const u=new URL(url);
+    if(!/^https?:$/.test(u.protocol))return null;
+    const host=u.hostname.toLowerCase();
+    const pathAndQuery=(u.pathname+' '+u.search).toLowerCase();
+    const githubHost=host==='raw.githubusercontent.com'||host==='gist.githubusercontent.com'||host==='github.com';
+    const looksNamed=/(sub|subscription|node|proxy|clash|v2ray|vless|vmess|trojan|ssr|free|yaml|yml|txt|json)/.test(pathAndQuery);
+    if(!githubHost&&!looksNamed)return null;
+    if(host==='github.com'&&u.pathname.includes('/blob/')){
+      const parts=u.pathname.split('/').filter(Boolean);
+      if(parts.length>=4){
+        const branch=parts[2];
+        const file=parts.slice(3).join('/');
+        return canonical('https://raw.githubusercontent.com/'+parts[0]+'/'+parts[1]+'/'+branch+'/'+file);
+      }
+    }
+    return canonical(u.toString());
+  }catch{return null}
+}
+function extractSourceUrls(text){
+  const found=new Set();
+  const re=/https?:\\/\\/[^\\s"'<>\\])}]+/gi;
+  for(const m of text.matchAll(re)){
+    const u=candidateUrl(m[0].replace(/[.,;:]+$/,''));
+    if(u)found.add(u);
+  }
+  return [...found];
+}
 
 function nextProbe(status,reputation){
   const hours=status==='trusted'?24:status==='normal'?12:status==='weak'?72:status==='dead'?168:6;
@@ -72,6 +106,17 @@ async function main(){
   }
 
   let added=0;
+  const addCandidate=async(u,from,type='discovered_url')=>{
+    if(added>=MAX_NEW_SOURCES||!u||known.has(u))return false;
+    if(!(await looksLikeSource(u)))return false;
+    const now=new Date().toISOString();
+    const item={url:u,type,name:sourceId(u),discoveredFrom:from,firstSeen:now,lastSeen:now,status:'candidate',reputation:null,fetchFailures:0,nextProbeAt:now};
+    known.set(u,item);state.sources.push(item);added++;
+    console.log('NEW',u,'from',from);
+    return true;
+  };
+
+  // Frontier 1: repository files discovered through GitHub search.
   for(const repo of repos.values()){
     if(added>=MAX_NEW_SOURCES)break;
     try{
@@ -81,14 +126,38 @@ async function main(){
       for(const f of files){
         if(added>=MAX_NEW_SOURCES)break;
         const raw='https://raw.githubusercontent.com/'+repo.full_name+'/'+branch+'/'+f.path.split('/').map(encodeURIComponent).join('/');
-        const u=canonical(raw);
-        if(!u||known.has(u))continue;
-        if(!(await looksLikeSource(u)))continue;
-        const now=new Date().toISOString();
-        const item={url:u,type:'github_raw',name:sourceId(u),discoveredFrom:'github:'+repo.full_name,firstSeen:now,lastSeen:now,status:'candidate',reputation:null,fetchFailures:0,nextProbeAt:now};
-        known.set(u,item);state.sources.push(item);added++;console.log('NEW',u);
+        await addCandidate(canonical(raw),'github:'+repo.full_name,'github_raw');
+      }
+      // Also inspect README text: many repositories publish links to sources
+      // without putting the actual subscription in the repository tree.
+      if(added<MAX_NEW_SOURCES){
+        try{
+          const readme=await api(API+'/repos/'+repo.full_name+'/readme');
+          const text=Buffer.from(readme.content||'','base64').toString('utf8');
+          for(const u of extractSourceUrls(text)){
+            if(added>=MAX_NEW_SOURCES)break;
+            await addCandidate(u,'github:'+repo.full_name,'discovered_url');
+          }
+        }catch{}
       }
     }catch(e){console.error('repo scan failed:',repo.full_name,e.message)}
+  }
+
+  // Frontier 2: existing sources can discover additional sources. Only a
+  // bounded number of parents are expanded per run to prevent an unbounded
+  // crawler from turning the workflow into a general web spider.
+  const frontier=(state.sources||[])
+    .filter(s=>s.url&&!s.nextProbeAt||s.url&&Date.parse(s.nextProbeAt||0)<=Date.now())
+    .slice(0,20);
+  for(const parent of frontier){
+    if(added>=MAX_NEW_SOURCES)break;
+    try{
+      const text=await fetchText(parent.url,120000);
+      for(const u of extractSourceUrls(text)){
+        if(added>=MAX_NEW_SOURCES)break;
+        await addCandidate(u,parent.name||parent.url,'source_link');
+      }
+    }catch{}
   }
 
   for(const s of state.sources||[]){
