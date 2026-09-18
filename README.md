@@ -29,3 +29,7 @@ GitHub Actions 定期抓取、过滤、启动 Mihomo，并执行 Google 多轮�
 ## 长期信誉
 
 `data/reputation.json` 会根据历史测试批次维护节点状态。连续失败会进入 `degraded`，最近 6 次测试全部失败则进入 `quarantine`；被隔离的节点不会进入 `best.yaml`。这样可以避免节点偶尔恢复一次就立即回到高质量池。
+
+## 支持的订阅格式
+
+采集层支持 Clash/Mihomo YAML、Base64 包装的订阅，以及常见的 VLESS、VMess、Trojan、Shadowsocks URI；同时尽量保留 WebSocket、gRPC、TLS、SNI、Reality 等传输参数。所有节点仍需经过 Mihomo 实际连通性测试，格式支持不代表节点可用。
