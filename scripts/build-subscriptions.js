@@ -104,15 +104,23 @@ try{
  function historyMetric(id){return histStats.get(id)||{tests:0,successes:0,latencies:[]}}
  function stableEligible(r){
    const m=historyMetric(r.fingerprint);
-   return r.rounds>=2 && m.tests>=6 && m.successes/m.tests>=0.8 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
+   const currentOk=r.rounds>=2 && currentRate(r)>=0.8 && currentLatency(r)<=5000;
+   if(!currentOk)return false;
+   // Cold start: before enough history exists, require two successful
+   // observations in this run. Once history accumulates, use reputation.
+   if(m.tests===0)return r.successes>=2;
+   return m.tests>=6 && m.successes/m.tests>=0.8;
  }
  function bestEligible(r){
    const m=historyMetric(r.fingerprint);
    const repNode=reputation.nodes?.[r.fingerprint];
-   return repNode?.status!=='quarantine' &&
-     r.rounds>=3 && m.tests>=9 && m.successes/m.tests>=0.9 &&
-     currentRate(r)>=0.9 && currentLatency(r)<=2500 &&
-     Number(r.p95Latency||Infinity)<=5000;
+   const currentOk=r.rounds>=3 && currentRate(r)>=0.9 &&
+     currentLatency(r)<=2500 && Number(r.p95Latency||Infinity)<=5000;
+   if(!currentOk || repNode?.status==='quarantine')return false;
+   // Cold start: three successful observations are enough for a conservative
+   // first-run best pool; historical reputation takes over afterwards.
+   if(m.tests===0)return r.successes>=3;
+   return m.tests>=9 && m.successes/m.tests>=0.9;
  }
  const google=new Set(h.results.filter(r=>currentRate(r)>0).map(r=>r.name));
  const stable=new Set(h.results.filter(stableEligible).map(r=>r.name));
