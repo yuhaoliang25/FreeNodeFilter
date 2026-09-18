@@ -38,7 +38,6 @@ async function main(){
   if(s<65)return 2;
   return 3;
  }
- const ranked=[...candidates].sort((a,b)=>score(b)-score(a));
  // Every candidate gets a mandatory Stage 1 test. Historical reputation only
  // influences which Stage-1 survivors receive deeper testing later.
  const names=candidates.map(p=>p.name);
@@ -76,7 +75,7 @@ async function main(){
  console.log('stage1:',names.length,'->',survivors1.length);
 
  const r2=await testGroup(survivors1,TIMEOUT);
- const survivors2=Object.entries(r2).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE3_LIMIT).map(([n])=>n);
+ const survivors2=Object.entries(r2).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE2_LIMIT).map(([n])=>n);
  console.log('stage2:',survivors1.length,'->',survivors2.length);
 
  const budgets=new Map(candidates.map(p=>{
@@ -120,7 +119,6 @@ async function main(){
  let history=[]; try{history=JSON.parse(fs.readFileSync('data/history.json','utf8'))}catch{}
  history.push(report); history=history.slice(-30);
  fs.writeFileSync('data/history.json',JSON.stringify(history,null,2));
- const historyNow=Date.now(), current=new Map(rows.map(r=>[r.fingerprint,r]));
  const reputation={generatedAt:new Date().toISOString(),nodes:{}};
  for(const [id,r] of current){
    const past=history.flatMap(b=>b.results||[]).filter(x=>x.fingerprint===id);
