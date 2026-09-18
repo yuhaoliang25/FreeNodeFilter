@@ -5,18 +5,36 @@ const API=process.env.MIHOMO_API||'http://127.0.0.1:9090';
 const GROUP=process.env.MIHOMO_GROUP||'FREE_NODE_POOL';
 const TARGET=process.env.GOOGLE_TEST_URL||'https://www.google.com/generate_204';
 const ROUNDS=Number(process.env.TEST_ROUNDS||3), TIMEOUT=Number(process.env.TEST_TIMEOUT||8000), EXPECTED=process.env.TEST_EXPECTED||'204';
+const STAGE1_LIMIT=Number(process.env.STAGE1_LIMIT||1500);
+const STAGE2_LIMIT=Number(process.env.STAGE2_LIMIT||300);
+const STAGE3_LIMIT=Number(process.env.STAGE3_LIMIT||100);
+const FAST_TIMEOUT=Number(process.env.FAST_TIMEOUT||5000);
 async function json(url){const r=await fetch(url);const t=await r.text();if(!r.ok)throw new Error('HTTP '+r.status+' '+t.slice(0,300));return JSON.parse(t)}
 async function main(){
  const all={};
  const candidates=JSON.parse(fs.readFileSync('data/candidates.json','utf8'));
  const ids=new Map(candidates.map(x=>[x.name,x._id]));
- for(let round=1;round<=ROUNDS;round++){
-  const q=new URLSearchParams({url:TARGET,timeout:String(TIMEOUT),expected:EXPECTED});
+ const names=candidates.slice(0,STAGE1_LIMIT).map(x=>x.name);
+ async function testGroup(selected,timeout){
+  if(!selected.length)return {};
+  const q=new URLSearchParams({url:TARGET,timeout:String(timeout),expected:EXPECTED});
   const result=await json(API+'/group/'+encodeURIComponent(GROUP)+'/delay?'+q);
   for(const [name,delay] of Object.entries(result)){const d=Number(delay);(all[name]??=[]).push(Number.isFinite(d)&&d>0?d:0)}
-  console.log('round',round,'tested',Object.keys(result).length);
+  return result;
+ }
+ const r1=await testGroup(names,FAST_TIMEOUT);
+ const survivors1=Object.entries(r1).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE2_LIMIT).map(([n])=>n);
+ console.log('stage1:',names.length,'->',survivors1.length);
+ const r2=await testGroup(survivors1,TIMEOUT);
+ const survivors2=Object.entries(r2).filter(([,d])=>Number(d)>0).sort((a,b)=>Number(a[1])-Number(b[1])).slice(0,STAGE3_LIMIT).map(([n])=>n);
+ console.log('stage2:',survivors1.length,'->',survivors2.length);
+ for(let round=1;round<=ROUNDS;round++){
+  if(round===1)continue;
+  const result=await testGroup(survivors2,TIMEOUT);
+  console.log('deep round',round,'tested',Object.keys(result).length);
   if(round<ROUNDS)await new Promise(r=>setTimeout(r,1500));
  }
+ // Stage-1/2 failures are intentionally retained in the report with fewer rounds.
  const rows=Object.entries(all).map(([name,delays])=>{
   const ok=delays.filter(x=>x>0),sorted=[...ok].sort((a,b)=>a-b),pct=p=>ok.length?sorted[Math.min(sorted.length-1,Math.ceil(sorted.length*p)-1)]:null;
   return {name,fingerprint:ids.get(name)||null,rounds:delays.length,successes:ok.length,successRate:ok.length/delays.length,avgLatency:ok.length?Math.round(ok.reduce((a,b)=>a+b,0)/ok.length):null,p50Latency:pct(.5),p95Latency:pct(.95),maxLatency:ok.length?Math.max(...ok):null,delays};
