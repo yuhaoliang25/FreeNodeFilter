@@ -5,3 +5,23 @@ sources:
     url: https://raw.githubusercontent.com/vxiaov/free_proxies/main/clash/clash.provider.yaml
   - name: barabama
     url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/merged.yaml
+  - name: FreeNodes-clashmeta
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/clashmeta.yaml
+  - name: FreeNodes-nodev2ray
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/nodev2ray.yaml
+  - name: FreeNodes-freeclashnode
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/freeclashnode.yaml
+  - name: FreeNodes-clashnode
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/clashnode.yaml
+  - name: FreeNodes-oneclash
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/oneclash.yaml
+  - name: FreeNodes-cfmem
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/cfmem.yaml
+  - name: FreeNodes-jichangx
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/jichangx.txt
+  - name: FreeNodes-clashstair
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/clashstair.yaml
+  - name: FreeNodes-datiya
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/datiya.yaml
+  - name: FreeNodes-yudou
+    url: https://raw.githubusercontent.com/Barabama/FreeNodes/refs/heads/feat/ai-crawler-v2/nodes/yudou.yaml
