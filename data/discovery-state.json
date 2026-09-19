@@ -1,77 +1,77 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-19T04:37:07.743Z",
+  "updatedAt": "2026-09-19T12:30:10.309Z",
   "channels": {
     "updated::free proxy nodes clash": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:22.473Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:09.048Z",
       "lastCount": 0
     },
     "updated::free v2ray nodes": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:22.951Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:09.389Z",
       "lastCount": 8
     },
     "updated::free proxy subscription": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:23.385Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:10.811Z",
       "lastCount": 8
     },
     "updated::clash subscription nodes": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:23.894Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:11.207Z",
       "lastCount": 8
     },
     "created::free proxy nodes clash": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:24.094Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:11.415Z",
       "lastCount": 0
     },
     "created::free v2ray nodes": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:24.447Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:11.807Z",
       "lastCount": 8
     },
     "created::free proxy subscription": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:24.781Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:12.141Z",
       "lastCount": 8
     },
     "created::clash subscription nodes": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:25.225Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:12.539Z",
       "lastCount": 8
     },
     "stars::free proxy nodes clash": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:25.479Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:12.724Z",
       "lastCount": 0
     },
     "stars::free v2ray nodes": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:25.898Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:13.035Z",
       "lastCount": 8
     },
     "stars::free proxy subscription": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:26.300Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:13.350Z",
       "lastCount": 8
     },
     "stars::clash subscription nodes": {
-      "page": 6,
-      "runs": 5,
-      "lastRun": "2026-09-19T04:35:26.686Z",
+      "page": 7,
+      "runs": 6,
+      "lastRun": "2026-09-19T12:29:13.767Z",
       "lastCount": 8
     }
   },
@@ -125,8 +125,8 @@
       "lastExpandedAt": "2026-09-18T07:57:55.690Z"
     },
     "lizhenghost/sanl": {
-      "timesSeen": 3,
-      "lastSeenAt": "2026-09-19T04:36:51.896Z",
+      "timesSeen": 4,
+      "lastSeenAt": "2026-09-19T12:29:51.925Z",
       "stars": 4,
       "pushedAt": "2026-09-08T20:02:12Z",
       "createdAt": "2026-08-21T05:46:04Z",
@@ -141,8 +141,8 @@
       "lastExpandedAt": "2026-09-18T07:58:04.284Z"
     },
     "vincent20240707/free-v2ray-nodes": {
-      "timesSeen": 5,
-      "lastSeenAt": "2026-09-19T04:36:52.619Z",
+      "timesSeen": 6,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 0,
       "pushedAt": "2026-09-19T01:04:29Z",
       "createdAt": "2026-09-17T01:44:11Z",
@@ -229,8 +229,8 @@
       "lastExpandedAt": "2026-09-18T07:59:06.693Z"
     },
     "littlebais/free-proxy-nodes": {
-      "timesSeen": 3,
-      "lastSeenAt": "2026-09-18T16:24:34.319Z",
+      "timesSeen": 4,
+      "lastSeenAt": "2026-09-19T12:29:13.767Z",
       "stars": 118,
       "pushedAt": "2026-04-20T04:47:37Z",
       "createdAt": "2026-04-19T12:12:38Z",
@@ -253,8 +253,8 @@
       "lastExpandedAt": "2026-09-18T07:59:12.560Z"
     },
     "sharkDoor/vpn-free-nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T07:59:17.968Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:13.767Z",
       "stars": 729,
       "pushedAt": "2026-03-14T20:40:12Z",
       "createdAt": "2021-10-14T08:51:05Z",
@@ -333,24 +333,24 @@
       "lastExpandedAt": "2026-09-18T08:59:46.197Z"
     },
     "haonL-7/clash-nodes-app": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-19T04:36:52.619Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:34.022Z",
       "stars": 0,
       "pushedAt": "2026-07-10T01:48:03Z",
       "createdAt": "2026-07-05T04:21:09Z",
       "lastExpandedAt": "2026-09-18T08:59:48.299Z"
     },
     "mohammadghaffary/abc-configs-free-vpn-proxy-list": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T08:59:48.825Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:13.767Z",
       "stars": 0,
       "pushedAt": "2026-05-12T06:10:18Z",
       "createdAt": "2026-05-12T06:13:03Z",
       "lastExpandedAt": "2026-09-18T08:59:48.825Z"
     },
     "mylls-c/node-subscribe": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-19T04:36:35.960Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:49.085Z",
       "stars": 0,
       "pushedAt": "2026-04-06T10:37:55Z",
       "createdAt": "2026-04-06T10:35:29Z",
@@ -381,10 +381,10 @@
       "lastExpandedAt": "2026-09-18T08:59:55.292Z"
     },
     "worldmarketing02-design/proxy-master-list": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-18T16:23:09.532Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 1,
-      "pushedAt": "2026-09-18T04:04:23Z",
+      "pushedAt": "2026-09-19T04:01:12Z",
       "createdAt": "2026-05-01T01:38:01Z",
       "lastExpandedAt": "2026-09-18T08:59:56.696Z"
     },
@@ -429,10 +429,10 @@
       "lastExpandedAt": "2026-09-18T16:23:09.532Z"
     },
     "nostalume/FreeNodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T16:23:28.430Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:49.085Z",
       "stars": 0,
-      "pushedAt": "2026-09-17T21:28:34Z",
+      "pushedAt": "2026-09-18T20:58:12Z",
       "createdAt": "2026-08-29T06:04:55Z",
       "lastExpandedAt": "2026-09-18T16:23:28.430Z"
     },
@@ -493,16 +493,16 @@
       "lastExpandedAt": "2026-09-18T16:23:55.339Z"
     },
     "topv2raynode/topv2raynode.github.io": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-18T22:34:09.322Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 4,
       "pushedAt": "2026-09-15T03:28:46Z",
       "createdAt": "2025-09-10T04:57:29Z",
       "lastExpandedAt": "2026-09-18T16:24:13.879Z"
     },
     "kottregrossmeyer-lab/one-click-vps-deploy": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-18T22:35:55.327Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:51.925Z",
       "stars": 2,
       "pushedAt": "2026-09-14T15:55:53Z",
       "createdAt": "2026-08-27T15:26:15Z",
@@ -549,8 +549,8 @@
       "lastExpandedAt": "2026-09-18T16:24:33.803Z"
     },
     "theGreatPeter/v2rayNodes": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-19T04:36:44.761Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:14.250Z",
       "stars": 14,
       "pushedAt": "2025-08-14T06:20:45Z",
       "createdAt": "2024-01-22T07:13:14Z",
@@ -589,18 +589,18 @@
       "lastExpandedAt": "2026-09-18T22:34:08.053Z"
     },
     "dqqqqd1/yunxiang-free-node": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:34:09.322Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 4,
       "pushedAt": "2026-09-10T19:08:44Z",
       "createdAt": "2026-08-03T12:53:51Z",
       "lastExpandedAt": "2026-09-18T22:34:09.322Z"
     },
     "Nimku/Mtproxy-finder-app": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:34:11.875Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:52.979Z",
       "stars": 3,
-      "pushedAt": "2026-09-18T19:03:13Z",
+      "pushedAt": "2026-09-19T04:42:27Z",
       "createdAt": "2026-08-08T04:55:01Z",
       "lastExpandedAt": "2026-09-18T22:34:11.875Z"
     },
@@ -677,24 +677,24 @@
       "lastExpandedAt": "2026-09-18T22:34:37.652Z"
     },
     "Brett-Wilson001/mihomo-profile": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:34:39.875Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:51.925Z",
       "stars": 3,
       "pushedAt": "2026-08-28T09:03:55Z",
       "createdAt": "2026-08-28T08:52:01Z",
       "lastExpandedAt": "2026-09-18T22:34:39.875Z"
     },
     "charming0668/mihomo-tui": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:34:42.320Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:51.925Z",
       "stars": 0,
       "pushedAt": "2026-08-26T11:05:33Z",
       "createdAt": "2026-06-05T12:07:22Z",
       "lastExpandedAt": "2026-09-18T22:34:42.320Z"
     },
     "pop098/FreeNodesV2RayorTrojan_20201218": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:34:43.924Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:52.979Z",
       "stars": 1,
       "pushedAt": "2020-12-18T06:20:13Z",
       "createdAt": "2020-12-18T06:41:05Z",
@@ -749,8 +749,8 @@
       "lastExpandedAt": "2026-09-18T22:35:18.335Z"
     },
     "khaleel-git/K9-Web-Protection": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:35:21.301Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:34.022Z",
       "stars": 9,
       "pushedAt": "2026-06-23T19:43:19Z",
       "createdAt": "2024-02-04T20:16:57Z",
@@ -781,8 +781,8 @@
       "lastExpandedAt": "2026-09-18T22:35:25.578Z"
     },
     "wuyuxiangX/clash-for-raycast": {
-      "timesSeen": 2,
-      "lastSeenAt": "2026-09-19T04:36:52.619Z",
+      "timesSeen": 3,
+      "lastSeenAt": "2026-09-19T12:29:35.184Z",
       "stars": 0,
       "pushedAt": "2026-07-25T16:23:07Z",
       "createdAt": "2026-06-13T10:00:44Z",
@@ -821,8 +821,8 @@
       "lastExpandedAt": "2026-09-18T22:35:49.158Z"
     },
     "nisargpatel1906/free-claude-code-nvidia": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:35:53.694Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:34.022Z",
       "stars": 9,
       "pushedAt": "2026-06-22T13:44:20Z",
       "createdAt": "2026-06-22T13:42:16Z",
@@ -845,32 +845,32 @@
       "lastExpandedAt": "2026-09-18T22:35:55.327Z"
     },
     "gfw-killer/Free-v2Ray-Nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:35:58.776Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 1,
       "pushedAt": "2025-04-05T09:41:18Z",
       "createdAt": "2025-04-05T09:41:18Z",
       "lastExpandedAt": "2026-09-18T22:35:58.776Z"
     },
     "free-clashv2ray/free-clashv2ray.github.io": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-18T22:35:59.302Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:14.250Z",
       "stars": 1,
       "pushedAt": "2025-09-30T09:13:12Z",
       "createdAt": "2025-09-30T09:06:36Z",
       "lastExpandedAt": "2026-09-18T22:35:59.302Z"
     },
     "ycdit2025/freeNodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:35:26.686Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 0,
       "pushedAt": "2026-08-21T04:33:02Z",
       "createdAt": "2026-07-13T00:53:55Z",
       "lastExpandedAt": "2026-09-19T04:35:26.686Z"
     },
     "fenglinhuowu/FreeNodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:35:27.286Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
       "stars": 0,
       "pushedAt": "2026-09-04T09:43:05Z",
       "createdAt": "2026-08-01T04:12:05Z",
@@ -901,8 +901,8 @@
       "lastExpandedAt": "2026-09-19T04:35:52.870Z"
     },
     "needle-mirror/com.unity.collab-proxy": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:35:54.696Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:49.085Z",
       "stars": 3,
       "pushedAt": "2026-08-06T22:09:24Z",
       "createdAt": "2020-05-29T21:02:46Z",
@@ -933,8 +933,8 @@
       "lastExpandedAt": "2026-09-19T04:35:59.429Z"
     },
     "Jefter5549/mihomoctl": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:01.398Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:51.925Z",
       "stars": 4,
       "pushedAt": "2026-08-17T15:16:41Z",
       "createdAt": "2026-06-06T22:16:37Z",
@@ -957,16 +957,16 @@
       "lastExpandedAt": "2026-09-19T04:36:05.262Z"
     },
     "A1ca7raz/clashdash": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:16.317Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:53.768Z",
       "stars": 0,
       "pushedAt": "2026-08-15T05:47:20Z",
       "createdAt": "2026-07-25T17:13:32Z",
       "lastExpandedAt": "2026-09-19T04:36:16.317Z"
     },
     "Ilikeproton/free-v2ray-ssr-trojan-clash-nodes": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:16.992Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:14.250Z",
       "stars": 2,
       "pushedAt": "2026-03-09T01:00:44Z",
       "createdAt": "2026-03-08T00:35:42Z",
@@ -981,16 +981,16 @@
       "lastExpandedAt": "2026-09-19T04:36:18.479Z"
     },
     "free-node-share/freeNodesList": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:31.555Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:52.979Z",
       "stars": 4,
       "pushedAt": "2025-08-07T03:02:18Z",
       "createdAt": "2025-08-04T03:36:22Z",
       "lastExpandedAt": "2026-09-19T04:36:31.555Z"
     },
     "llIlIIlIlI/MMFNSS": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:34.056Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:52.979Z",
       "stars": 2,
       "pushedAt": "2022-05-05T08:06:31Z",
       "createdAt": "2022-03-30T06:12:04Z",
@@ -1005,56 +1005,56 @@
       "lastExpandedAt": "2026-09-19T04:36:34.592Z"
     },
     "BlazeAuraX/ProxyForFree": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:35.086Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:52.979Z",
       "stars": 1,
-      "pushedAt": "2026-09-19T02:13:16Z",
+      "pushedAt": "2026-09-19T07:13:39Z",
       "createdAt": "2026-01-29T08:50:51Z",
       "lastExpandedAt": "2026-09-19T04:36:35.086Z"
     },
     "youyli03/clash-ctrl": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:35.960Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:53.768Z",
       "stars": 0,
       "pushedAt": "2026-04-13T16:42:26Z",
       "createdAt": "2026-04-12T04:22:04Z",
       "lastExpandedAt": "2026-09-19T04:36:35.960Z"
     },
     "erencoding/clash-linux-skill": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:38.744Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:53.768Z",
       "stars": 0,
       "pushedAt": "2026-04-27T04:09:47Z",
       "createdAt": "2026-04-26T04:25:10Z",
       "lastExpandedAt": "2026-09-19T04:36:38.744Z"
     },
     "monochenx-creator/gist-node-manager-for-Clash": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:39.833Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:53.768Z",
       "stars": 0,
       "pushedAt": "2026-06-17T03:08:57Z",
       "createdAt": "2026-06-17T02:52:12Z",
       "lastExpandedAt": "2026-09-19T04:36:39.833Z"
     },
     "opriz/broom": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:40.872Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:53.768Z",
       "stars": 0,
       "pushedAt": "2026-04-03T14:47:02Z",
       "createdAt": "2026-03-10T18:43:22Z",
       "lastExpandedAt": "2026-09-19T04:36:40.872Z"
     },
     "lyy00702/clash-node-aggregator": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:42.210Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:53.768Z",
       "stars": 0,
-      "pushedAt": "2026-09-18T16:24:55Z",
+      "pushedAt": "2026-09-19T04:38:50Z",
       "createdAt": "2026-09-18T02:04:47Z",
       "lastExpandedAt": "2026-09-19T04:36:42.210Z"
     },
     "yms168/proxy-panel-v2": {
-      "timesSeen": 1,
-      "lastSeenAt": "2026-09-19T04:36:43.146Z",
+      "timesSeen": 2,
+      "lastSeenAt": "2026-09-19T12:29:42.075Z",
       "stars": 0,
       "pushedAt": "2026-07-07T14:56:25Z",
       "createdAt": "2026-07-07T14:44:04Z",
@@ -1075,6 +1075,150 @@
       "pushedAt": "2026-06-24T13:22:21Z",
       "createdAt": "2026-06-22T13:12:34Z",
       "lastExpandedAt": "2026-09-19T04:36:51.896Z"
+    },
+    "KhalDragonFeng/free-clash-v2ray-nodes": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:13.767Z",
+      "stars": 0,
+      "pushedAt": "2026-03-09T02:46:05Z",
+      "createdAt": "2026-03-06T03:24:06Z",
+      "lastExpandedAt": "2026-09-19T12:29:13.767Z"
+    },
+    "ssr-node/ssr-node.github.io": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:14.250Z",
+      "stars": 0,
+      "pushedAt": "2025-08-10T07:52:20Z",
+      "createdAt": "2025-08-10T07:46:23Z",
+      "lastExpandedAt": "2026-09-19T12:29:14.250Z"
+    },
+    "MrzAhmadi/PAVE": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:14.788Z",
+      "stars": 1,
+      "pushedAt": "2026-07-22T10:30:07Z",
+      "createdAt": "2026-06-21T09:32:15Z",
+      "lastExpandedAt": "2026-09-19T12:29:14.788Z"
+    },
+    "sadult/mulberry": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:16.631Z",
+      "stars": 2,
+      "pushedAt": "2026-07-21T20:37:44Z",
+      "createdAt": "2026-07-21T04:38:15Z",
+      "lastExpandedAt": "2026-09-19T12:29:16.631Z"
+    },
+    "diplole/proxy-pool": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:22.752Z",
+      "stars": 1,
+      "pushedAt": "2026-07-20T05:00:57Z",
+      "createdAt": "2026-07-18T10:39:39Z",
+      "lastExpandedAt": "2026-09-19T12:29:22.752Z"
+    },
+    "davisJq07/Sodium-App.ShereVpnFast": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:27.995Z",
+      "stars": 1,
+      "pushedAt": "2026-07-18T08:31:20Z",
+      "createdAt": "2026-07-16T21:01:59Z",
+      "lastExpandedAt": "2026-09-19T12:29:27.995Z"
+    },
+    "AAYUSH412/claude-code-free": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:30.744Z",
+      "stars": 0,
+      "pushedAt": "2026-07-16T12:15:09Z",
+      "createdAt": "2026-04-09T16:07:47Z",
+      "lastExpandedAt": "2026-09-19T12:29:30.744Z"
+    },
+    "tinymins/ohmywrt-toolbox": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:34.022Z",
+      "stars": 0,
+      "pushedAt": "2026-07-29T06:42:55Z",
+      "createdAt": "2026-01-31T04:52:09Z",
+      "lastExpandedAt": "2026-09-19T12:29:34.022Z"
+    },
+    "suiyuebaobao/raypilot-xray-panel": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:35.184Z",
+      "stars": 16,
+      "pushedAt": "2026-07-19T15:52:39Z",
+      "createdAt": "2026-04-30T01:35:21Z",
+      "lastExpandedAt": "2026-09-19T12:29:35.184Z"
+    },
+    "JimZhang168872/vpnkit": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:37.187Z",
+      "stars": 19,
+      "pushedAt": "2026-07-12T12:51:21Z",
+      "createdAt": "2026-05-16T03:37:10Z",
+      "lastExpandedAt": "2026-09-19T12:29:37.187Z"
+    },
+    "8577618/proxy-account-router": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:42.075Z",
+      "stars": 0,
+      "pushedAt": "2026-06-29T01:35:28Z",
+      "createdAt": "2026-06-29T01:27:05Z",
+      "lastExpandedAt": "2026-09-19T12:29:42.075Z"
+    },
+    "quin95/sublink-worker": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:42.624Z",
+      "stars": 16,
+      "pushedAt": "2026-06-25T07:12:23Z",
+      "createdAt": "2026-06-16T14:56:28Z",
+      "lastExpandedAt": "2026-09-19T12:29:42.624Z"
+    },
+    "jianlubuzou2021/vpn-free-nodes": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:44.794Z",
+      "stars": 3,
+      "pushedAt": "2021-10-26T03:24:32Z",
+      "createdAt": "2021-10-26T08:12:57Z",
+      "lastExpandedAt": "2026-09-19T12:29:44.794Z"
+    },
+    "kengerlwl/subhub": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:46.049Z",
+      "stars": 0,
+      "pushedAt": "2026-03-31T03:51:20Z",
+      "createdAt": "2026-03-29T15:21:12Z",
+      "lastExpandedAt": "2026-09-19T12:29:46.049Z"
+    },
+    "pushinspektor856/GitHub-Copilot-Free": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:49.085Z",
+      "stars": 2,
+      "pushedAt": "2026-03-21T13:06:55Z",
+      "createdAt": "2026-03-21T13:04:36Z",
+      "lastExpandedAt": "2026-09-19T12:29:49.085Z"
+    },
+    "wenma77/quality-node-forge": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:50.281Z",
+      "stars": 0,
+      "pushedAt": "2026-05-25T16:39:00Z",
+      "createdAt": "2026-05-23T14:54:50Z",
+      "lastExpandedAt": "2026-09-19T12:29:50.281Z"
+    },
+    "maker-pro/proxypool-web-manager": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:51.925Z",
+      "stars": 0,
+      "pushedAt": "2026-05-20T10:37:31Z",
+      "createdAt": "2026-05-20T10:36:05Z",
+      "lastExpandedAt": "2026-09-19T12:29:51.925Z"
+    },
+    "asek26823-cmd/free-jichang-clash-v2ray": {
+      "timesSeen": 1,
+      "lastSeenAt": "2026-09-19T12:29:52.979Z",
+      "stars": 1,
+      "pushedAt": "2026-04-14T15:40:13Z",
+      "createdAt": "2026-04-06T19:02:00Z",
+      "lastExpandedAt": "2026-09-19T12:29:52.979Z"
     }
   },
   "sources": {
@@ -1221,6 +1365,86 @@
     "dynamic-5e4ad506e78d": {
       "timesExpanded": 1,
       "lastExpandedAt": "2026-09-19T04:37:07.684Z"
+    },
+    "dynamic-61bfa3ddcb33": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:53.769Z"
+    },
+    "dynamic-6fd995a700a1": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:53.957Z"
+    },
+    "dynamic-37e4e2e22f7c": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:54.162Z"
+    },
+    "dynamic-773f6ee07fda": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:54.386Z"
+    },
+    "dynamic-7e2faf459c9f": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:54.613Z"
+    },
+    "dynamic-4fa49152928a": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:54.933Z"
+    },
+    "dynamic-e0c9ecc6627a": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:55.250Z"
+    },
+    "dynamic-a41c77d27542": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:55.542Z"
+    },
+    "dynamic-77cef3f18711": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:55.858Z"
+    },
+    "dynamic-f401a7a529ce": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:56.038Z"
+    },
+    "dynamic-0442256da522": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:56.269Z"
+    },
+    "dynamic-8f4cd80272d8": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:29:56.484Z"
+    },
+    "dynamic-bf46b66af438": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:08.878Z"
+    },
+    "dynamic-29756f45e149": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:08.983Z"
+    },
+    "dynamic-976a501a2501": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:09.078Z"
+    },
+    "dynamic-98644a9063a3": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:09.305Z"
+    },
+    "dynamic-f09c71a4e402": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:09.467Z"
+    },
+    "dynamic-7a9f83159e8b": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:09.548Z"
+    },
+    "dynamic-960c70e7e5c7": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:09.635Z"
+    },
+    "dynamic-f221c90e4bcb": {
+      "timesExpanded": 1,
+      "lastExpandedAt": "2026-09-19T12:30:10.026Z"
     }
   }
 }

@@ -18,48 +18,34 @@ proxies:
       short-id: 'c39cc7310a'
     skip-cert-verify: false
     udp: true
-  - cipher: 'aes-256-gcm'
-    name: '🇺🇸US_778|1.3MB/s|A004-260618 01'
-    password: 'pKEW8JPByTVTLtM'
-    port: 4444
-    server: '15.204.247.206'
-    sub_tag: 'A004-260618'
-    type: 'ss'
-    udp: true
-    _poolOnly: true
-  - alterId: 0
-    cipher: 'auto'
-    name: '🇺🇸US_42|719KB/s|M002-260618 01'
-    network: 'ws'
-    port: 39495
-    server: '129.146.77.248'
-    skip-cert-verify: false
-    sub_tag: 'M002-260618'
-    tls: false
-    type: 'vmess'
-    udp: true
-    uuid: 'f836c736-87fc-4fde-aabc-00857ecdff3e'
-    ws-opts:
-      headers:
-        Host: '129.146.77.248'
-      path: '/cctv13.m3u8'
-    xudp: true
-    packet-encoding: 'xudp'
-    servername: '129.146.77.248'
-    _poolOnly: true
   - cipher: 'aes-128-gcm'
-    name: '🇯🇵JP_5|735KB/s|A004-260618 01'
+    name: '🇺🇸US_2|297KB/s|A004-260618 01'
     password: 'shadowsocks'
     port: 443
-    server: '149.22.87.241'
+    server: '156.146.38.167'
     sub_tag: 'A004-260618'
     type: 'ss'
     udp: true
+  - client-fingerprint: 'chrome'
+    name: '🇫🇷FR_114|601KB/s|F003-260618 01'
+    network: 'ws'
+    password: '87d1bfd4-574e-4c96-ad42-0426f27461ff'
+    port: 443
+    server: 'join.my.telegram.channel.cmliussss.to.unlock.more.premium.nodes.cf.090227.xyz'
+    skip-cert-verify: false
+    sni: '_acme-challenge.sb.cloudns.biz'
+    sub_tag: 'F003-260618'
+    type: 'trojan'
+    udp: true
+    ws-opts:
+      headers:
+        User-Agent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36'
+      path: '/'
     _poolOnly: true
   - alterId: 0
     cipher: 'auto'
-    name: '🇯🇵JP_30|575KB/s|A004-260618 01'
-    network: 'tcp'
+    name: '🇯🇵JP_13|84KB/s|A004-260618 01'
+    network: 'tcp#🎡90@oneclickvpnkeys'
     port: 4433
     server: '45.32.57.118'
     skip-cert-verify: false
@@ -70,22 +56,28 @@ proxies:
     uuid: '35b89832-0a7c-48dd-8d1c-a2891b522195'
     xudp: true
     packet-encoding: 'xudp'
+  - cipher: 'aes-128-gcm'
+    name: '🇯🇵JP_7|636KB/s|A004-260618 01'
+    password: 'shadowsocks'
+    port: 443
+    server: '149.22.87.240'
+    sub_tag: 'A004-260618'
+    type: 'ss'
+    udp: true
     _poolOnly: true
-  - name: '🇯🇵JP_11|289KB/s|R002-260618 01'
-    password: 'null'
+  - name: '🇯🇵JP_20|118KB/s|R002-260618 01'
     port: 443
     server: 'fan.571589.xyz'
     sni: 'fan.571589.xyz'
     sub_tag: 'R002-260618'
     tls: true
     type: 'http'
-    username: 'null'
     udp: true
     _poolOnly: true
   - alterId: '0'
     cipher: 'auto'
-    name: '🇰🇷KR_14|612KB/s|C002-260622 01'
-    network: 'raw'
+    name: '🇰🇷KR_1|589KB/s|C002-260622 01'
+    network: 'tcp'
     port: 443
     server: '140.238.2.250'
     skip-cert-verify: false
@@ -106,19 +98,21 @@ proxies:
     type: 'ss'
     udp: true
     _poolOnly: true
-  - name: '🇰🇷KR²_1|0.7MB/s|GPT|X|History 01'
-    port: 1090
-    server: '121.169.46.116'
-    tls: false
-    type: 'socks5'
-    username: 'T2clM0QlM0Q6'
+  - name: '🇰🇷_KR_韩国-pool-5372b7046d6dc78a'
+    type: 'hysteria2'
+    server: '152-69-231-175.liao.kdns.fr'
+    port: 50160
+    password: '1beb216e3f60aea9555dae60d219a5ca'
+    sni: '152-69-231-175.liao.kdns.fr'
+    skip-cert-verify: true
+    udp: true
     _poolOnly: true
   - alterId: '0'
     cipher: 'auto'
-    name: '🇸🇬SG_7|1021KB/s|C002-260622 01'
+    name: '🇸🇬SG_2|298KB/s|C002-260622 01'
     network: 'tcp'
     port: 18000
-    server: '149.88.23.207'
+    server: '149.88.23.202'
     skip-cert-verify: false
     sub_tag: 'C002-260622'
     tls: false
@@ -127,7 +121,6 @@ proxies:
     uuid: 'f8c8dc3d-0d37-46b0-8b34-a7232882fcfe'
     xudp: true
     packet-encoding: 'xudp'
-    _poolOnly: true
   - name: '🇸🇬SG_10|691KB/s|R002-260618 01'
     password: 'e4b72b531a2d10900519'
     port: 443
@@ -139,32 +132,21 @@ proxies:
     username: 'testuser1'
     udp: true
     _poolOnly: true
-  - client-fingerprint: 'chrome'
-    name: '🇸🇬SG_77|714KB/s|A004-260618 01'
-    network: 'ws'
-    port: 8443
-    server: '141.193.213.20'
-    sub_tag: 'A004-260618'
-    tls: true
-    type: 'vless'
-    udp: true
-    uuid: '29c3dd6b-b164-40ca-a0d5-f06aca52a8b2'
-    ws-opts:
-      headers:
-        Host: 'u.srilankangrill.online'
-        User-Agent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36'
-      path: '/'
-    xudp: true
-    packet-encoding: 'xudp'
-    servername: 'u.srilankangrill.online'
-    _poolOnly: true
-  - cipher: 'rc4-md5'
-    name: '🇬🇧GB_149|3.8MB/s|A004-260618 01'
-    password: '14fFPrbezE3HDZzsMOr6'
-    port: 8080
-    server: '146.70.61.18'
+  - cipher: 'chacha20-ietf-poly1305'
+    name: '🇸🇬SG_36|831KB/s|A004-260618 01'
+    password: 'XV4bvaJIWoxl3IYEC1e6W7'
+    port: 2342
+    server: '194.233.74.160'
     sub_tag: 'A004-260618'
     type: 'ss'
+    udp: true
+  - name: '荷兰(yudou789.top 玉豆分享)_6'
+    type: 'ss'
+    server: '158.173.221.214'
+    port: 11001
+    cipher: 'chacha20-ietf-poly1305'
+    password: 'c58d16e593d44f42'
+    skip-cert-verify: true
     udp: true
     _poolOnly: true
   - name: '🇬🇧GB_79|2.3MB/s|R002-260618 01'
@@ -175,39 +157,45 @@ proxies:
     type: 'http'
     udp: true
     _poolOnly: true
-  - client-fingerprint: 'chrome'
-    name: '🇬🇧GB_126|2.1MB/s|A004-260618 01'
-    network: 'raw'
-    port: 8443
-    server: '31.76.76.28'
-    sub_tag: 'A004-260618'
-    tls: true
-    type: 'vless'
+  - alpn:
+      - ''
+    alterId: '0'
+    cipher: 'auto'
+    name: '🇬🇧GB_9|682KB/s|M003-260806 01'
+    network: 'tcp'
+    port: 22324
+    server: '66.163.117.58'
+    skip-cert-verify: false
+    sub_tag: 'M003-260806'
+    tls: false
+    type: 'vmess'
     udp: true
-    uuid: 'de5906f3-df38-4463-aa9d-2b01320cc6ea'
+    uuid: '04621bae-ab36-11ec-b909-0242ac120002'
     xudp: true
     packet-encoding: 'xudp'
-    servername: 'neth4.lckdwn.ru'
-    _poolOnly: true
-  - name: '🇩🇪DE_20|417KB/s|R002-260618 01'
-    password: 'udp-relay=true'
-    port: 11111
-    server: '103.237.102.191'
+    servername: '@VPNine1'
+  - name: '🇩🇪DE_12|601KB/s|R002-260618 01'
+    password: 'e4b72b531a2d10900519'
+    port: 443
+    server: '167.172.172.190'
+    skip-cert-verify: true
+    sni: 'a7acacbe.acsnet.co'
     sub_tag: 'R002-260618'
+    tls: true
     type: 'http'
-    username: 'None'
+    username: 'testuser1'
     udp: true
     _poolOnly: true
   - cipher: 'aes-256-gcm'
-    name: '🇩🇪DE_24|7.2MB/s 01'
-    password: 'XKFKl2rULjIp74'
-    port: 8008
-    server: '185.226.172.8'
+    name: '❓Other_162|406KB/s|A004-260618 01'
+    password: 'kKEd0rBrd56Furjz'
+    port: 443
+    server: '2.58.81.221'
+    sub_tag: 'A004-260618'
     type: 'ss'
     udp: true
-    _poolOnly: true
   - encryption: 'none'
-    name: '🇩🇪DE_45|1.6MB/s|B007-260618 01'
+    name: '🇩🇪DE_25|426KB/s|B007-260618 01'
     network: 'ws'
     port: 2087
     server: '82.24.203.20'
@@ -222,13 +210,12 @@ proxies:
       path: '/fd5ba98a3970'
     xudp: true
     packet-encoding: 'xudp'
-    _poolOnly: true
   - client-fingerprint: 'unsafe'
     encryption: 'none'
-    name: '🇫🇷FR_1980|655KB/s|B007-260618 01'
+    name: '🇫🇷FR_580|263KB/s|B007-260618 01'
     network: 'ws'
     port: 443
-    server: '104.21.33.59'
+    server: '104.17.117.137'
     sub_tag: 'B007-260618'
     tls: true
     type: 'vless'
@@ -237,27 +224,25 @@ proxies:
     ws-opts:
       headers:
         Host: 'cfvvv-ev1.pages.dev'
-        User-Agent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36'
+        User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
       path: '/'
     xudp: true
     packet-encoding: 'xudp'
     servername: 'cfvvv-ev1.pages.dev'
-    _poolOnly: true
-  - client-fingerprint: 'chrome'
-    name: '🇫🇷FR_99|1.5MB/s|M003-260806 01'
+  - name: '🇫🇷FR_224|1.1MB/s|M001-260618 01'
     network: 'ws'
     password: '87d1bfd4-574e-4c96-ad42-0426f27461ff'
     port: 443
-    server: '172.64.152.241'
+    server: '104.18.35.15'
     skip-cert-verify: false
     sni: '_acme-challenge.sb.cloudns.biz'
-    sub_tag: 'M003-260806'
+    sub_tag: 'M001-260618'
     type: 'trojan'
-    udp: true
     ws-opts:
       headers:
-        User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+        Host: '_acme-challenge.sb.cloudns.biz'
       path: '/'
+    udp: true
     _poolOnly: true
   - name: '🇫🇷FR_290|932KB/s|R002-260618 01'
     port: 443
@@ -269,49 +254,53 @@ proxies:
     type: 'http'
     udp: true
     _poolOnly: true
+  - name: '🇳🇱NL_139|2.5MB/s|P002-260618 01'
+    password: 'None'
+    port: 23856
+    server: '51.159.225.196'
+    skip-cert-verify: true
+    sub_tag: 'P002-260618'
+    tls: true
+    type: 'http'
+    udp: true
+    _poolOnly: true
+  - alpn:
+      - 'h2'
+      - 'http/1.1'
+    client-fingerprint: 'chrome'
+    name: '🇳🇱NL_102|233KB/s|A004-260618 01'
+    network: 'raw'
+    port: 8443
+    server: '192.145.31.5'
+    sub_tag: 'A004-260618'
+    tls: true
+    type: 'vless'
+    udp: true
+    uuid: '9f73cf9a-c68f-4e6d-90f0-e66b64f52f8a'
+    xudp: true
+    packet-encoding: 'xudp'
+    servername: 'neth9.lunariai.ru'
   - cipher: 'chacha20-ietf-poly1305'
-    name: '🇳🇱NL_105|2.4MB/s|A004-260618 01'
+    name: '🇳🇱NL_36|519KB/s|A004-260618 01'
     password: 'CJmTCCx7Ltud'
     port: 8388
     server: '108.181.58.239'
     sub_tag: 'A004-260618'
     type: 'ss'
     udp: true
-    _poolOnly: true
-  - encryption: 'none'
-    name: '🇳🇱NL_199|611KB/s|M002-260618 01'
-    network: 'ws'
-    port: 12068
-    server: 'mypanel.unixzone.us'
-    sub_tag: 'M002-260618'
-    type: 'vless'
-    udp: true
-    uuid: '05caca6c-9e97-4c0f-8edf-7b88a6e572c5'
-    ws-opts:
-      headers:
-        Host: 'mypanel.unixzone.us'
-        User-Agent: 'Mozilla/5.0 (Linux; Android 7.0; SM-G610M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36'
-      path: '/'
-    xudp: true
-    packet-encoding: 'xudp'
-    _poolOnly: true
-  - name: '❓Other_34|226KB/s|K001-260618 01'
-    password: 'null'
-    port: 23856
-    server: '51.159.225.196'
-    skip-cert-verify: true
-    sub_tag: 'K001-260618'
-    tls: true
+  - name: '🇨🇦CA_35|92KB/s|R002-260618 01'
+    port: 3118
+    server: '184.75.221.82'
+    sub_tag: 'R002-260618'
     type: 'http'
-    username: 'null'
     udp: true
     _poolOnly: true
   - alterId: '0'
     cipher: 'auto'
-    name: '🇨🇦CA_9|1.1MB/s|C002-260622 01'
+    name: '🇨🇦CA_5|604KB/s|C002-260622 01'
     network: 'raw'
     port: 18000
-    server: '23.162.200.198'
+    server: '134.195.196.211'
     skip-cert-verify: false
     sub_tag: 'C002-260622'
     tls: false
@@ -321,22 +310,14 @@ proxies:
     xudp: true
     packet-encoding: 'xudp'
     _poolOnly: true
-  - cipher: 'chacha20-ietf-poly1305'
-    name: '🇨🇦CA_15|1.3MB/s|A004-260618 01'
-    password: 'FD3rCuOsxOay'
-    port: 8388
-    server: '15.235.75.71'
+  - cipher: 'rc4-md5'
+    name: '🇨🇦CA_3|322KB/s|A004-260618 01'
+    password: '14fFPrbezE3HDZzsMOr6'
+    port: 8080
+    server: '137.184.174.93'
     sub_tag: 'A004-260618'
     type: 'ss'
     udp: true
-    _poolOnly: true
-  - name: '🇨🇦CA_35|92KB/s|R002-260618 01'
-    port: 3118
-    server: '184.75.221.82'
-    sub_tag: 'R002-260618'
-    type: 'http'
-    udp: true
-    _poolOnly: true
   - name: '🇦🇺AU_9|448KB/s|A004-260618 01'
     network: 'ws'
     port: 2087
@@ -353,15 +334,6 @@ proxies:
     xudp: true
     packet-encoding: 'xudp'
     _poolOnly: true
-  - name: '🇦🇺AU_2|442KB/s|R002-260618 01'
-    port: 443
-    server: '159.13.44.228'
-    skip-cert-verify: true
-    sub_tag: 'R002-260618'
-    tls: true
-    type: 'http'
-    udp: true
-    _poolOnly: true
   - name: '🇦🇺AU_5|442KB/s|R002-260618 01'
     password: 'None'
     port: 443
@@ -372,24 +344,31 @@ proxies:
     type: 'http'
     udp: true
     _poolOnly: true
-  - alterId: '0'
-    cipher: 'auto'
-    name: '🇮🇳IN_3|172KB/s|C002-260622 01'
-    network: 'ws'
-    port: 80
-    server: '152.67.8.205'
+  - name: '🇦🇺 澳大利亚_J2KUWM'
+    server: '51.161.204.244'
+    port: 443
+    type: 'vless'
+    uuid: '36e89875-9c53-482b-bc41-d3890e9da176'
+    tls: true
+    tfo: false
+    flow: 'xtls-rprx-vision'
     skip-cert-verify: false
-    sub_tag: 'C002-260622'
-    tls: false
-    type: 'vmess'
+    reality-opts:
+      public-key: 'gCAazs5uxNuMZIxfDdw8wPE0nwKY4QfBfBkQveKAkEk'
+      short-id: '0ad08b47f498efd2'
+    servername: 'www.cloudflare.com'
+    client-fingerprint: 'firefox'
+    network: 'tcp'
     udp: true
-    uuid: '9db4c708-aef8-4359-821b-38e47990be0d'
-    ws-opts:
-      headers: {}
-      path: '/'
-    xudp: true
-    packet-encoding: 'xudp'
-    _poolOnly: true
+  - name: '🇮🇳IN_6|814KB/s|K001-260618 01'
+    password: ''
+    port: 1088
+    server: '144.24.111.128'
+    skip-cert-verify: true
+    sub_tag: 'K001-260618'
+    type: 'socks5'
+    username: ''
+    udp: true
   - client-fingerprint: 'chrome'
     name: '🇮🇳IN_8|658KB/s|A004-260618 01'
     network: 'tcp'
@@ -402,13 +381,6 @@ proxies:
     udp: true
     sni: 'hyfuuf6.wsone.icu'
     _poolOnly: true
-  - name: '🇹🇼TW-36.224.185.173-407'
-    server: 'R3MRCG00129437X.cybervena.com'
-    port: 50099
-    type: 'ss'
-    cipher: 'chacha20-ietf-poly1305'
-    password: 'b1ae0fce-9340-4f2e-882d-fdb2218e2e2b'
-    _poolOnly: true
   - name: '🇹🇼TW_17|91KB/s 01'
     password: 'exaxgqkKkd0TAMrCxeonWg=='
     port: 1443
@@ -418,6 +390,13 @@ proxies:
     udp: true
     username: 'mrwdfNTD8M79LCukCieldrqZWqs='
     sni: 'twmoon1-cdn-route.couldflare-cdn.com'
+    _poolOnly: true
+  - name: '🇹🇼TW-36.224.185.143-212'
+    server: 'r3mrcg001286ek2.cybervena.com'
+    port: 50099
+    type: 'ss'
+    cipher: 'chacha20-ietf-poly1305'
+    password: '7e731ec3-f8e1-43f6-92cf-3978d14705c4'
     _poolOnly: true
   - name: '🇹🇼TW_28|394KB/s|R002-260618 01'
     network: 'ws'
@@ -435,7 +414,7 @@ proxies:
       path: '/81574b6b-c9d7-44a0-b83d-dad56e8cb530'
     servername: 'ty986gfazs.cainiaohub.xyz'
     _poolOnly: true
-  - name: '🇭🇰 香港_67CGTI'
+  - name: '8元老牌专线机场：cczzuu.top'
     server: '47.239.6.251'
     port: 13779
     type: 'vless'
@@ -449,7 +428,19 @@ proxies:
       short-id: 'af1bdd293097b664'
     servername: 'tesla.com'
     client-fingerprint: 'chrome'
+    network: 'raw'
+    udp: true
+    _poolOnly: true
+  - client-fingerprint: 'chrome'
+    name: '🇭🇰 香港 01'
     network: 'tcp'
+    password: 'BxceQaOe'
+    port: 443
+    server: '119.246.1.143'
+    skip-cert-verify: true
+    sni: 't.me%2Fripaojiedian'
+    sub_tag: 'C002-260622'
+    type: 'trojan'
     udp: true
   - name: '🇭🇰 香港 16'
     password: 'admin'
@@ -458,17 +449,6 @@ proxies:
     sub_tag: 'R002-260618'
     type: 'socks5'
     username: 'admin'
-    udp: true
-    _poolOnly: true
-  - name: '🇭🇰 香港 07'
-    password: 'null'
-    port: 443
-    server: 'fan.240104.xyz'
-    sni: 'fan.240104.xyz'
-    sub_tag: 'R002-260618'
-    tls: true
-    type: 'http'
-    username: 'null'
     udp: true
     _poolOnly: true
 proxy-groups:
@@ -496,8 +476,7 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇺🇸US_778|1.3MB/s|A004-260618 01'
-      - '🇺🇸US_42|719KB/s|M002-260618 01'
+      - '🇺🇸US_2|297KB/s|A004-260618 01'
   - name: 'JP · Japan'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -505,9 +484,9 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇯🇵JP_5|735KB/s|A004-260618 01'
-      - '🇯🇵JP_30|575KB/s|A004-260618 01'
-      - '🇯🇵JP_11|289KB/s|R002-260618 01'
+      - '🇯🇵JP_13|84KB/s|A004-260618 01'
+      - '🇯🇵JP_7|636KB/s|A004-260618 01'
+      - '🇯🇵JP_20|118KB/s|R002-260618 01'
   - name: 'KR · South Korea'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -515,9 +494,9 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇰🇷KR_14|612KB/s|C002-260622 01'
+      - '🇰🇷KR_1|589KB/s|C002-260622 01'
       - '🇰🇷KR_10|558KB/s|A004-260618 01'
-      - '🇰🇷KR²_1|0.7MB/s|GPT|X|History 01'
+      - '🇰🇷_KR_韩国-pool-5372b7046d6dc78a'
   - name: 'SG · Singapore'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -525,9 +504,9 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇸🇬SG_7|1021KB/s|C002-260622 01'
+      - '🇸🇬SG_2|298KB/s|C002-260622 01'
       - '🇸🇬SG_10|691KB/s|R002-260618 01'
-      - '🇸🇬SG_77|714KB/s|A004-260618 01'
+      - '🇸🇬SG_36|831KB/s|A004-260618 01'
   - name: 'GB · United Kingdom'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -535,9 +514,8 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇬🇧GB_149|3.8MB/s|A004-260618 01'
       - '🇬🇧GB_79|2.3MB/s|R002-260618 01'
-      - '🇬🇧GB_126|2.1MB/s|A004-260618 01'
+      - '🇬🇧GB_9|682KB/s|M003-260806 01'
   - name: 'DE · Germany'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -546,9 +524,8 @@ proxy-groups:
     lazy: false
     proxies:
       - '🇩🇪DE德国丨yoyapai.com_13'
-      - '🇩🇪DE_20|417KB/s|R002-260618 01'
-      - '🇩🇪DE_24|7.2MB/s 01'
-      - '🇩🇪DE_45|1.6MB/s|B007-260618 01'
+      - '🇩🇪DE_12|601KB/s|R002-260618 01'
+      - '🇩🇪DE_25|426KB/s|B007-260618 01'
   - name: 'FR · France'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -556,8 +533,9 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇫🇷FR_1980|655KB/s|B007-260618 01'
-      - '🇫🇷FR_99|1.5MB/s|M003-260806 01'
+      - '🇫🇷FR_114|601KB/s|F003-260618 01'
+      - '🇫🇷FR_580|263KB/s|B007-260618 01'
+      - '🇫🇷FR_224|1.1MB/s|M001-260618 01'
       - '🇫🇷FR_290|932KB/s|R002-260618 01'
   - name: 'NL · Netherlands'
     type: 'url-test'
@@ -566,8 +544,9 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇳🇱NL_105|2.4MB/s|A004-260618 01'
-      - '🇳🇱NL_199|611KB/s|M002-260618 01'
+      - '🇳🇱NL_139|2.5MB/s|P002-260618 01'
+      - '🇳🇱NL_102|233KB/s|A004-260618 01'
+      - '🇳🇱NL_36|519KB/s|A004-260618 01'
   - name: 'CA · Canada'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -575,9 +554,9 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇨🇦CA_9|1.1MB/s|C002-260622 01'
-      - '🇨🇦CA_15|1.3MB/s|A004-260618 01'
       - '🇨🇦CA_35|92KB/s|R002-260618 01'
+      - '🇨🇦CA_5|604KB/s|C002-260622 01'
+      - '🇨🇦CA_3|322KB/s|A004-260618 01'
   - name: 'AU · Australia'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -586,8 +565,8 @@ proxy-groups:
     lazy: false
     proxies:
       - '🇦🇺AU_9|448KB/s|A004-260618 01'
-      - '🇦🇺AU_2|442KB/s|R002-260618 01'
       - '🇦🇺AU_5|442KB/s|R002-260618 01'
+      - '🇦🇺 澳大利亚_J2KUWM'
   - name: 'IN · India'
     type: 'url-test'
     url: 'https://www.google.com/generate_204'
@@ -595,7 +574,7 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇮🇳IN_3|172KB/s|C002-260622 01'
+      - '🇮🇳IN_6|814KB/s|K001-260618 01'
       - '🇮🇳IN_8|658KB/s|A004-260618 01'
   - name: 'TW · Taiwan'
     type: 'url-test'
@@ -604,8 +583,8 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇹🇼TW-36.224.185.173-407'
       - '🇹🇼TW_17|91KB/s 01'
+      - '🇹🇼TW-36.224.185.143-212'
       - '🇹🇼TW_28|394KB/s|R002-260618 01'
   - name: 'HK · Hong Kong'
     type: 'url-test'
@@ -614,8 +593,7 @@ proxy-groups:
     tolerance: 100
     lazy: false
     proxies:
-      - '🇭🇰 香港_67CGTI'
+      - '🇭🇰 香港 01'
       - '🇭🇰 香港 16'
-      - '🇭🇰 香港 07'
 rules:
   - 'MATCH,COUNTRY'
