@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T12:30:14.397Z",
+  "generatedAt": "2026-09-19T18:37:41.951Z",
   "method": {
     "description": "Endpoint-overlap graph for source similarity; similarity is an independence signal, not a source-quality penalty.",
     "minSourceNodes": 5,
@@ -8,25 +8,25 @@
     "strongSimilarityThreshold": 0.3
   },
   "summary": {
-    "candidates": 3829,
+    "candidates": 3820,
     "eligibleSources": 12,
     "relatedPairs": 6
   },
   "sources": {
     "FreeNodes-clashmeta": {
-      "nodes": 1473,
+      "nodes": 1467,
       "similarSources": [
         {
           "source": "FreeNodes-freeclashnode",
           "intersection": 206,
-          "union": 1634,
-          "jaccard": 0.1261
+          "union": 1628,
+          "jaccard": 0.1265
         },
         {
           "source": "FreeNodes-nodev2ray",
           "intersection": 153,
-          "union": 1495,
-          "jaccard": 0.1023
+          "union": 1489,
+          "jaccard": 0.1028
         }
       ],
       "strongSimilarityCount": 0,
@@ -52,7 +52,7 @@
       "independenceWeight": 1
     },
     "mfuu-FreeProxies": {
-      "nodes": 658,
+      "nodes": 691,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -81,8 +81,8 @@
         {
           "source": "FreeNodes-clashmeta",
           "intersection": 206,
-          "union": 1634,
-          "jaccard": 0.1261
+          "union": 1628,
+          "jaccard": 0.1265
         }
       ],
       "strongSimilarityCount": 2,
@@ -119,15 +119,15 @@
         {
           "source": "FreeNodes-clashmeta",
           "intersection": 153,
-          "union": 1495,
-          "jaccard": 0.1023
+          "union": 1489,
+          "jaccard": 0.1028
         }
       ],
       "strongSimilarityCount": 1,
       "independenceWeight": 0.9147
     },
     "FreeNodes-oneclash": {
-      "nodes": 87,
+      "nodes": 86,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -189,8 +189,8 @@
       "a": "FreeNodes-clashmeta",
       "b": "FreeNodes-freeclashnode",
       "intersection": 206,
-      "union": 1634,
-      "jaccard": 0.1261
+      "union": 1628,
+      "jaccard": 0.1265
     },
     {
       "a": "FreeNodes-clashnode",
@@ -203,8 +203,8 @@
       "a": "FreeNodes-clashmeta",
       "b": "FreeNodes-nodev2ray",
       "intersection": 153,
-      "union": 1495,
-      "jaccard": 0.1023
+      "union": 1489,
+      "jaccard": 0.1028
     }
   ]
 }
