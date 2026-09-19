@@ -24,21 +24,23 @@ proxies:
     _poolOnly: true
   - alterId: 0
     cipher: 'auto'
-    name: '🇺🇸US_510|750KB/s|B007-260618 01'
+    name: '🇺🇸US_42|719KB/s|M002-260618 01'
     network: 'ws'
     port: 39495
     server: '129.146.77.248'
     skip-cert-verify: false
-    sub_tag: 'B007-260618'
+    sub_tag: 'M002-260618'
     tls: false
     type: 'vmess'
     udp: true
     uuid: 'f836c736-87fc-4fde-aabc-00857ecdff3e'
     ws-opts:
-      headers: {}
+      headers:
+        Host: '129.146.77.248'
       path: '/cctv13.m3u8'
     xudp: true
     packet-encoding: 'xudp'
+    servername: '129.146.77.248'
     _poolOnly: true
   - cipher: 'aes-128-gcm'
     name: '🇯🇵JP_5|735KB/s|A004-260618 01'
@@ -91,37 +93,29 @@ proxies:
     packet-encoding: 'xudp'
     _poolOnly: true
   - cipher: 'aes-256-cfb'
-    name: '🇰🇷KR_36|571KB/s|A004-260618 01'
+    name: '🇰🇷KR_10|558KB/s|A004-260618 01'
     password: 'qwerREWQ@@'
-    port: 13979
-    server: '221.139.79.57'
+    port: 6123
+    server: '211.178.105.134'
     sub_tag: 'A004-260618'
     type: 'ss'
     udp: true
     _poolOnly: true
+  - name: '🇰🇷KR²_1|0.7MB/s|GPT|X|History 01'
+    port: 1090
+    server: '121.169.46.116'
+    tls: false
+    type: 'socks5'
+    username: 'T2clM0QlM0Q6'
+    _poolOnly: true
   - alterId: '0'
     cipher: 'auto'
-    name: '🇰🇷KR_1|589KB/s|C002-260622 01'
-    network: 'tcp'
-    port: 443
-    server: '140.238.2.250'
-    skip-cert-verify: false
-    sub_tag: 'C002-260622'
-    tls: false
-    type: 'vmess'
-    udp: true
-    uuid: '41a7089a-040b-4538-8b8d-010902405bde'
-    xudp: true
-    packet-encoding: 'xudp'
-    _poolOnly: true
-  - alterId: 0
-    cipher: 'auto'
-    name: '🇸🇬SG_34|869KB/s|A004-260618 01'
+    name: '🇸🇬SG_7|1021KB/s|C002-260622 01'
     network: 'tcp'
     port: 18000
-    server: 'ww11.levikogjgfdd.ir'
+    server: '149.88.23.207'
     skip-cert-verify: false
-    sub_tag: 'A004-260618'
+    sub_tag: 'C002-260622'
     tls: false
     type: 'vmess'
     udp: true
@@ -190,20 +184,21 @@ proxies:
     packet-encoding: 'xudp'
     servername: 'neth4.lckdwn.ru'
     _poolOnly: true
+  - name: '🇩🇪DE_20|417KB/s|R002-260618 01'
+    password: 'udp-relay=true'
+    port: 11111
+    server: '103.237.102.191'
+    sub_tag: 'R002-260618'
+    type: 'http'
+    username: 'None'
+    udp: true
+    _poolOnly: true
   - cipher: 'aes-256-gcm'
     name: '🇩🇪DE_24|7.2MB/s 01'
     password: 'XKFKl2rULjIp74'
     port: 8008
     server: '185.226.172.8'
     type: 'ss'
-    udp: true
-    _poolOnly: true
-  - name: '🇩🇪DE_11|7.3MB/s|P002-260618 01'
-    password: 'None'
-    port: 11111
-    server: '103.237.102.191'
-    sub_tag: 'P002-260618'
-    type: 'http'
     udp: true
     _poolOnly: true
   - encryption: 'none'
@@ -223,23 +218,25 @@ proxies:
     xudp: true
     packet-encoding: 'xudp'
     _poolOnly: true
-  - encryption: 'none'
-    name: '🇫🇷FR_518|564KB/s|B007-260618 01'
+  - client-fingerprint: 'unsafe'
+    encryption: 'none'
+    name: '🇫🇷FR_1980|655KB/s|B007-260618 01'
     network: 'ws'
-    port: 2082
-    server: '172.64.150.28'
+    port: 443
+    server: '104.21.33.59'
     sub_tag: 'B007-260618'
+    tls: true
     type: 'vless'
     udp: true
-    uuid: 'e5cc16a6-ea42-46b2-82ae-ad2157e1641b'
+    uuid: '44eae030-290b-4083-8102-6f8bab05701b'
     ws-opts:
       headers:
-        Host: 'hhlfy.twiladaphne.ndjp.net'
-        User-Agent: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36'
-      path: '/fp'
+        Host: 'cfvvv-ev1.pages.dev'
+        User-Agent: 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36'
+      path: '/'
     xudp: true
     packet-encoding: 'xudp'
-    servername: 'hhlfy.twiladaphne.ndjp.net'
+    servername: 'cfvvv-ev1.pages.dev'
     _poolOnly: true
   - client-fingerprint: 'chrome'
     name: '🇫🇷FR_99|1.5MB/s|M003-260806 01'
@@ -257,21 +254,21 @@ proxies:
         User-Agent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
       path: '/'
     _poolOnly: true
-  - name: '🇫🇷FR_703|755KB/s|R002-260618 01'
+  - name: '🇫🇷FR_290|932KB/s|R002-260618 01'
     port: 443
-    server: '103.82.101.43'
+    server: '103.82.101.44'
     skip-cert-verify: true
-    sni: '76d1d3ecadca44efa2339867d7dfc9a1-8e928736d0f8dbdc.apache-iv.com'
+    sni: 'f3a61d8406d537345747f99f8a281007-3f754ed5da1bba09.apache-iv.com'
     sub_tag: 'R002-260618'
     tls: true
     type: 'http'
     udp: true
     _poolOnly: true
   - cipher: 'chacha20-ietf-poly1305'
-    name: '🇳🇱NL_188|2.6MB/s|A004-260618 01'
+    name: '🇳🇱NL_105|2.4MB/s|A004-260618 01'
     password: 'CJmTCCx7Ltud'
     port: 8388
-    server: '108.181.126.122'
+    server: '108.181.58.239'
     sub_tag: 'A004-260618'
     type: 'ss'
     udp: true
@@ -293,13 +290,15 @@ proxies:
     xudp: true
     packet-encoding: 'xudp'
     _poolOnly: true
-  - name: '🇳🇱NL_95|3.8MB/s|R002-260618 01'
+  - name: '❓Other_34|226KB/s|K001-260618 01'
+    password: 'null'
     port: 23856
     server: '51.159.225.196'
     skip-cert-verify: true
-    sub_tag: 'R002-260618'
+    sub_tag: 'K001-260618'
     tls: true
     type: 'http'
+    username: 'null'
     udp: true
     _poolOnly: true
   - alterId: '0'
@@ -317,13 +316,6 @@ proxies:
     xudp: true
     packet-encoding: 'xudp'
     _poolOnly: true
-  - name: '🇨🇦CA_35|92KB/s|R002-260618 01'
-    port: 3118
-    server: '184.75.221.82'
-    sub_tag: 'R002-260618'
-    type: 'http'
-    udp: true
-    _poolOnly: true
   - cipher: 'chacha20-ietf-poly1305'
     name: '🇨🇦CA_15|1.3MB/s|A004-260618 01'
     password: 'FD3rCuOsxOay'
@@ -331,6 +323,13 @@ proxies:
     server: '15.235.75.71'
     sub_tag: 'A004-260618'
     type: 'ss'
+    udp: true
+    _poolOnly: true
+  - name: '🇨🇦CA_35|92KB/s|R002-260618 01'
+    port: 3118
+    server: '184.75.221.82'
+    sub_tag: 'R002-260618'
+    type: 'http'
     udp: true
     _poolOnly: true
   - name: '🇦🇺AU_9|448KB/s|A004-260618 01'
@@ -386,12 +385,25 @@ proxies:
     xudp: true
     packet-encoding: 'xudp'
     _poolOnly: true
+  - client-fingerprint: 'chrome'
+    name: '🇮🇳IN_8|658KB/s|A004-260618 01'
+    network: 'tcp'
+    password: 'M7v%w11Se*'
+    port: 443
+    server: 'hyfuuf6.wsone.icu'
+    skip-cert-verify: false
+    sub_tag: 'A004-260618'
+    type: 'trojan'
+    udp: true
+    sni: 'hyfuuf6.wsone.icu'
+    _poolOnly: true
   - name: '🇹🇼TW-36.224.185.173-407'
     server: 'R3MRCG00129437X.cybervena.com'
     port: 50099
     type: 'ss'
     cipher: 'chacha20-ietf-poly1305'
     password: 'b1ae0fce-9340-4f2e-882d-fdb2218e2e2b'
+    _poolOnly: true
   - name: '🇹🇼TW_17|91KB/s 01'
     password: 'exaxgqkKkd0TAMrCxeonWg=='
     port: 1443
@@ -418,15 +430,6 @@ proxies:
       path: '/81574b6b-c9d7-44a0-b83d-dad56e8cb530'
     servername: 'ty986gfazs.cainiaohub.xyz'
     _poolOnly: true
-  - name: '🇭🇰 香港 16'
-    password: 'admin'
-    port: 1080
-    server: '47.239.116.165'
-    sub_tag: 'R002-260618'
-    type: 'socks5'
-    username: 'admin'
-    udp: true
-    _poolOnly: true
   - name: '🇭🇰 香港_67CGTI'
     server: '47.239.6.251'
     port: 13779
@@ -443,14 +446,23 @@ proxies:
     client-fingerprint: 'chrome'
     network: 'tcp'
     udp: true
-  - name: '🇸🇨SC_4|102KB/s|P002-260618 01'
-    password: 'None'
+  - name: '🇭🇰 香港 16'
+    password: 'admin'
+    port: 1080
+    server: '47.239.116.165'
+    sub_tag: 'R002-260618'
+    type: 'socks5'
+    username: 'admin'
+    udp: true
+    _poolOnly: true
+  - name: '🇭🇰 香港 07'
+    password: 'null'
     port: 443
-    server: 'hk40.240104.xyz'
-    skip-cert-verify: false
-    sub_tag: 'P002-260618'
+    server: 'fan.240104.xyz'
+    sni: 'fan.240104.xyz'
+    sub_tag: 'R002-260618'
     tls: true
     type: 'http'
+    username: 'null'
     udp: true
-    sni: 'hk40.240104.xyz'
     _poolOnly: true

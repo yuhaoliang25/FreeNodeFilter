@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T22:36:08.675Z",
+  "generatedAt": "2026-09-19T04:37:10.724Z",
   "method": {
     "description": "Endpoint-overlap graph for source similarity; similarity is an independence signal, not a source-quality penalty.",
     "minSourceNodes": 5,
@@ -8,26 +8,26 @@
     "strongSimilarityThreshold": 0.3
   },
   "summary": {
-    "candidates": 3483,
+    "candidates": 3277,
     "eligibleSources": 12,
     "relatedPairs": 5
   },
   "sources": {
     "FreeNodes-clashmeta": {
-      "nodes": 2571,
+      "nodes": 2370,
       "similarSources": [
         {
           "source": "FreeNodes-clashnode",
           "intersection": 331,
-          "union": 2622,
-          "jaccard": 0.1262
+          "union": 2421,
+          "jaccard": 0.1367
         }
       ],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
     },
     "mfuu-FreeProxies": {
-      "nodes": 701,
+      "nodes": 677,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -56,8 +56,8 @@
         {
           "source": "FreeNodes-clashmeta",
           "intersection": 331,
-          "union": 2622,
-          "jaccard": 0.1262
+          "union": 2421,
+          "jaccard": 0.1367
         }
       ],
       "strongSimilarityCount": 3,
@@ -126,14 +126,14 @@
       "strongSimilarityCount": 0,
       "independenceWeight": 1
     },
-    "FreeNodes-oneclash": {
+    "vxiaov-free-proxies": {
       "nodes": 26,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
     },
-    "vxiaov-free-proxies": {
-      "nodes": 26,
+    "FreeNodes-oneclash": {
+      "nodes": 25,
       "similarSources": [],
       "strongSimilarityCount": 0,
       "independenceWeight": 1
@@ -184,8 +184,8 @@
       "a": "FreeNodes-clashmeta",
       "b": "FreeNodes-clashnode",
       "intersection": 331,
-      "union": 2622,
-      "jaccard": 0.1262
+      "union": 2421,
+      "jaccard": 0.1367
     }
   ]
 }
